@@ -217,7 +217,7 @@ specMap = {
 class OctoSpec(SkillBase):
     def execute(__self__, intent, session):
         session_attributes = {}
-        valueExists = True;
+
         val = ""
         url = 'http://octopart.com/api/v3/parts/match?'
         url += '&apikey=0c491965'
@@ -232,17 +232,13 @@ class OctoSpec(SkillBase):
         result = response['results'][0]
         item = result['items'][0]
         specs = item['specs']
-
-        val = specs[specMap[intent['slots']['spec']['value']]]['display_value']
-        if val == {}:
-            output = "I do not have information for that spec"
-        else:
-            output = val
+        outputSpecMap = specMap[intent['slots']['spec']['value']
+        val = specs[outputSpecMap]['display_value']
 
 
         #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
 
-        speech_output = str(output)
+        speech_output = str(val)
         card_title = None
         reprompt_text = None
         should_end_session = False
