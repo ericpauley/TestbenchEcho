@@ -17,25 +17,26 @@ class Wolfram(SkillBase):
         url += "appid=238HJV-7G3G7G8VYU&input="
         url += query
         url += "&format=image,plaintext"
-        # data = urllib.urlopen(url).read()
-        # response = ET.fromstring(data)
+        data = urllib.urlopen(url).read()
+        response = ET.fromstring(data)
 
-        xml_data=urllib.urlopen(url).read()
-        incomingDictData = xmltodict.parse(xml_data)
-        print incomingDictData
+        #xml_data=urllib.urlopen(url).read()
+        #incomingDictData = xmltodict.parse(xml_data)
+        #print incomingDictData
 
-        # speech = ""
-        # for pod in root.findall('.//pod'):
-        #     speech += pod.attrib['title']
-        #     if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Circuit diagram':
-        #         for im in pod.findall('.//img'):
-        #             image = im.attrib['src']
-        #     for pt in pod.findall('.//plaintext'):
-        #         if pt.text:
-        #             speech += pt.text
+        speech = ""
+        for pod in response.findall('.//pod'):
+            speech += pod.attrib['title']
+            if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Circuit diagram':
+                for im in pod.findall('.//img'):
+                    image = im.attrib['src']
+            for pt in pod.findall('.//plaintext'):
+                if pt.text:
+                    speech += pt.text
 
         card_image = {"smallImageUrl":image,"largeImageUrl":image}
         card_text = speech
+        print speech
 
         speech_output = speech
         # If the user either does not reply to the welcome message or says something
