@@ -25,18 +25,18 @@ specMap = {
 "capactiance tolerance": 'capacitance_tolerance',
 "capacitance per foot": 'capacitance_per_foot',
 "carry current": 'carry_current',
-"SI case package": 'case_package_si',
+"si case package": 'case_package_si',
 "case package": 'case_package',
 "character height": 'character_size_height',
 "character width": 'character_size_width',
 "china ROHS": 'china_rohs',
 "clock speed": 'clock_speed',
 "coil current": 'coil_current',
-"AC coil power": 'coil_power_ac',
-"DC coil power": 'coil_power_dc',
+"ac coil power": 'coil_power_ac',
+"dc coil power": 'coil_power_dc',
 "coil resistance": 'coil_resistance',
 "coil voltage": 'coil_voltage',
-"AC coil voltage": 'coil_voltage_ac',
+"ac coil voltage": 'coil_voltage_ac',
 "color": 'color',
 "common mode rejection ratio": 'cmrr',
 "conductor material": 'conductor_material',
@@ -45,7 +45,7 @@ specMap = {
 "contact plating": 'contact_plating',
 "contact resistance": 'contact_resistance',
 "contact syle": 'contact_style',
-"DC contact voltage rating": 'contact_voltage_rating_dc',
+"dc contact voltage rating": 'contact_voltage_rating_dc',
 "contacts type": 'contacts_type',
 "continuous drain current": 'id_continuous_drain_current',
 "cord length": 'cord_length',
@@ -65,7 +65,7 @@ specMap = {
 "drain to source voltage": 'vds_drain_to_source_voltage',
 "drivers per package": 'drivers_per_package',
 "dropout voltage": 'dropout_voltage',
-"ELV compliant": 'elv_compliant',
+"elv compliant": 'elv_compliant',
 "equivalent series resistance": 'equivalent_series_resistance_esr',
 "flash memory size": 'flash_memory_bytes',
 "fram memory size": 'fram_memory_bytes',
@@ -95,7 +95,7 @@ specMap = {
 "input offset drift": 'input_offset_drift',
 "input offset voltage": 'input_offset_voltage',
 "input power": 'input_power',
-"DC input voltage": 'input_voltage_dc',
+"dc input voltage": 'input_voltage_dc',
 "insulation material": 'insulation_material',
 "insulation resistance": 'insulation_resistance',
 "isolation voltage": 'isolation_voltage',
@@ -115,17 +115,17 @@ specMap = {
 "mounting angle": 'moutning_angle',
 "mounting type": 'mounting_type',
 "negative supply voltage": 'negative_supply_voltage',
-"number of ADCs": 'number_of_adcs',
+"number of adcs": 'number_of_adcs',
 "number of bits": 'number_of_bits',
 "number of channels": 'number_of_channels',
 "number of circuits": 'number_of_circuits',
 "number of conductors": 'number_of_conductors',
 "number of contacts": 'number_of_contacts',
-"number of DACs": 'number_of_dacs',
+"number of dacs": 'number_of_dacs',
 "number of detents": 'number_of_detents',
 "number of fibers": 'number_of_fibers',
 "number of gates": 'number_of_gates',
-"number of I oh pins": 'number_of_i_o_pins',
+"number of i oh pins": 'number_of_i_o_pins',
 "number of mating cycles": 'number_of_mating_cycles',
 "number of outlets": 'number_of_outlets',
 "number of outputs": 'number_of_outputs',
@@ -134,7 +134,7 @@ specMap = {
 "number of regulated outputs": 'number_of_regulated_outputs',
 "number of rows": 'number_of_rows',
 "number of slots": 'number_of_slots',
-"number of UARTs": 'number_of_uart',
+"number of uarts": 'number_of_uart',
 "operating force": 'operating_force',
 "operating temperature": 'operating_temperature',
 "operating voltage": 'operating_voltage',
@@ -159,10 +159,10 @@ specMap = {
 "power supply rejection ratio": 'psrr',
 "processor type":'processor_type',
 "propogation delay max": 'propagation_delay_max',
-"Q factor": 'q_factor',
+"q factor": 'q_factor',
 "quiescent current": 'quiescent_current',
 "ram memory size":'ram_bytes',
-"reach SVHC compliance": 'reach_svhc_compliance',
+"reach svhc compliance": 'reach_svhc_compliance',
 "release force": 'release_force',
 "resistance": 'resistance',
 "resistance tolerance": 'resistance_tolerance',
@@ -171,7 +171,7 @@ specMap = {
 "resonant frequency": 'resonant_frequency',
 "rise time": 'rise_time',
 "rise fall time": 'rise_fall_time',
-"ROHS": 'rohs',
+"rohs": 'rohs',
 "sample rate": 'sample_rate',
 "seal": 'seal',
 "self resonant frequency": 'self_resonant_frequency',
@@ -190,8 +190,8 @@ specMap = {
 "static current": 'static_current',
 "supply current": 'supply_current',
 "supply current per channel": 'supply_current_per_channel',
-"AC supply voltage": 'supply_voltage_ac',
-"DC supply voltage": 'supply_voltage_dc',
+"ac supply voltage": 'supply_voltage_ac',
+"dc supply voltage": 'supply_voltage_dc',
 "switching current": 'switching_current',
 "switching frequency": 'switching_frequency',
 "switching voltage": 'switching_voltage',
@@ -206,8 +206,8 @@ specMap = {
 "tripping current": 'tripping_current',
 "viewing angle": 'viewing_angle',
 "voltage nodes": 'voltage_nodes',
-"AC voltage rating": 'voltage_rating_ac',
-"DC voltage rating": 'voltage_rating_dc',
+"ac voltage rating": 'voltage_rating_ac',
+"dc voltage rating": 'voltage_rating_dc',
 "transient voltage rating": 'voltage_rating_transient',
 "wavelength": 'wavelength',
 "weight": 'weight',
@@ -287,7 +287,7 @@ class OctoSpec(SkillBase):
         result = response['results'][0]
         item = result['item']
         specs = item['specs']
-        outputSpecMap = specMap[intent['slots']['spec']['value']]
+        outputSpecMap = specMap[intent['slots']['spec']['value'].lower()]
         val = specs[outputSpecMap]['display_value']
 
         result = response['results'][0]
@@ -387,8 +387,6 @@ class OctoPrice(SkillBase):
         price_data = json.dumps(prices)
         prices_dict = json.loads(price_data)
 
-        response = ""
-        for index in range(len(prices_dict['USD'])):
-            response += "The price for " + str(prices['USD'][index][0]) + " is " + str(prices['USD'][index][1]) + " dollars."
+        response = "The price ranges from " + str(prices['USD'][0][1]) + " to " str(prices['USD'][len(prices_dict['USD'])]) + " dollars."
 
         return self.respond(response)
