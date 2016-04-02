@@ -5,7 +5,7 @@ Resistor {ColorA} {ColorB} {ColorC}
 Resistor {ColorA} {ColorB} {ColorC} {ColorD}
 RevResistor colors of {value} {runits} resistor
 FGENDouble Double {type}
-FGENHalve Halve {type}
+FGENHalf Halve {type}
 FGENTriple Triple {type}
 FGENDouble Double the {type}
 FGENHalf Half the {type}
@@ -17,6 +17,5 @@ OSCOPEImage screenshot
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per division
 OSCOPESetVdiv Set channel {channel} to {value} {vunits}
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per div
-OctopartTest What value is the {spec} of {LF four one two|mpn}
 OSCOPEMeasure Measure the {measurement} on channel {channel}
 OctoSpec What value is the {spec} of {LF four one two|mpn}
