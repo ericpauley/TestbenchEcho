@@ -134,7 +134,7 @@ class WolframCompute(SkillBase):
 
         speech = ""
         for pod in response.findall('.//pod'):
-            if pod.attrib['title'] == 'Result':
+            if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Exact Result':
                 for pt in pod.findall('.//plaintext'):
                     if pt.text:
                         speech = pt.text
