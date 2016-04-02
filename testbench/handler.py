@@ -8,7 +8,7 @@ http://amzn.to/1LGWsLG
 """
 
 from __future__ import print_function
-from skills import *
+from skills import skillmap
 
 def handler(event, context):
     """ Route the incoming request based on type (LaunchRequest, IntentRequest,

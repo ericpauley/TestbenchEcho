@@ -54,3 +54,4 @@ WolframDistance Calculate distance between the {earth|objectA} and {mars|objectB
 WolframDistance Calculate distance between the {sun|objectA} and {mars|objectB}
 
 NullSkill {anything|filler}
+NullSkill {|filler}

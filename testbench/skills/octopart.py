@@ -300,10 +300,10 @@ class OctoSpec(SkillBase):
             card_title, speech_output, reprompt_text, should_end_session))
 
 class OctoDescrip(SkillBase):
-	def execute(__self__, intent, session):
-		session_attributes={}
+    def execute(__self__, intent, session):
+        session_attributes={}
 
-		mpnpre = intent['slots']['mpn']['value']
+        mpnpre = intent['slots']['mpn']['value']
 
         splitArray = mpnpre.split(' ')
         for index in range(len(splitArray)):
@@ -328,22 +328,22 @@ class OctoDescrip(SkillBase):
         data = urllib.urlopen(url).read()
         response = json.loads(data)
 
-		result = response['results'][0]
-		item = result ['item']
-		descrip = item['descriptions'][0]
-		value = descrip['value']
+        result = response['results'][0]
+        item = result ['item']
+        descrip = item['descriptions'][0]
+        value = descrip['value']
 
-		try:
-    		speech_output = "It is a " str(value)
-		except:
-    		try:
-        		descrip = item['descriptions'][1]
-        		value = descrip['value']
-        		speech_output = "It is a " str(value)
-    		except:
-        		descrip = item['descriptions'][2]
-        		value = descrip['value']
-        		speech_output = "It is a " str(value)
+        try:
+            speech_output = "It is a " + str(value)
+        except:
+            try:
+                descrip = item['descriptions'][1]
+                value = descrip['value']
+                speech_output = "It is a " + str(value)
+            except:
+                descrip = item['descriptions'][2]
+                value = descrip['value']
+                speech_output = "It is a " + str(value)
 
 
 
