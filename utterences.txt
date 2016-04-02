@@ -26,3 +26,4 @@ OSCOPEMeasure Measure the {measurement} on channel {channel}
 OctoSpec What value is the {spec} of {LF four one two|mpn}
 GuideToGalaxy What is the answer to life the universe and everything
 GuideToGalaxy What's the answer to life the universe and everything
+Wolfram Calculate {query}

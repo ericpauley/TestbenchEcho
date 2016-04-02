@@ -6,6 +6,7 @@ from skills.resistor import Resistor, RevResistor
 from skills.octospec import OctoSpec
 from skills.oscope import OSCOPEAutoset, OSCOPEImage, OSCOPESetVdiv, OSCOPEMeasure
 from skills.fgen import FGENDouble, FGENHalf, FGENTriple, FGENSetFrequency, FGENSetVoltage, FGENSetVoltageOffset
+from skills.wolfram import Wolfram
 
 skillmap = {}
 skillmap["AMAZON.HelpIntent"] = Help()
@@ -24,7 +25,6 @@ skillmap["FGENTriple"] = FGENTriple()
 skillmap["FGENSetFrequency"] = FGENSetFrequency()
 skillmap["FGENSetVoltage"] = FGENSetVoltage()
 skillmap["FGENSetVoltageOffset"] = FGENSetVoltageOffset()
-<<<<<<< Updated upstream
 skillmap["GuideToGalaxy"] = GuideToGalaxy()
-=======
->>>>>>> Stashed changes
+skillmap["Wolfram"] = Wolfram()
+

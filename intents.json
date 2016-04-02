@@ -178,6 +178,15 @@
           "type": "AMAZON.NUMBER"
         }
       ]
+    },
+    {
+      "intent": "Wolfram",
+      "slots":[
+        {
+          "name": "query",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
     }
   ]
 }
