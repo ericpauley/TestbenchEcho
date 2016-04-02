@@ -14,3 +14,4 @@ OSCOPESetVdiv Set channel {channel} to {value} {vunits}
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per div
 OctopartTest What value is the {spec} of {LF four one two|mpn}
 OSCOPEMeasure Measure the {measurement} on channel {channel}
+OctoSpec What value is the {spec} of {LF four one two|mpn}

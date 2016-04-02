@@ -63,7 +63,7 @@
       ]
     },
     {
-      "intent": "OctopartTest",
+      "intent": "OctoSpec",
       "slots":[
         {
           "name":"spec",
