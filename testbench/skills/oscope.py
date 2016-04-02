@@ -83,8 +83,8 @@ class OSCOPEMeasure(SkillBase):
         pubsub = r.pubsub()
         pubsub.subscribe("results")
         next(pubsub.listen())
-        resultData = pubsub.listen()
-        tempresult = json.loads(item['data'])
+        resultData = next(pubsub.listen())
+        tempresult = json.loads(resultData['data'])
         value = float(tempresult)
         result = str(value) + t[1]
         session_attributes = {}

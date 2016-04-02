@@ -9,6 +9,7 @@ FGENHalveFrequency Halve frequency
 FGENSetFrequency Set frequency {value} {funits}
 OSCOPEAutoset Autoset
 OSCOPEImage screen capture
+OSCOPEImage screenshot
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per division
 OSCOPESetVdiv Set channel {channel} to {value} {vunits}
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per div

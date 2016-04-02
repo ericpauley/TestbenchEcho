@@ -27,9 +27,9 @@ class OctoSpec(SkillBase):
         specs = item['specs']
 
         val = specs[specMap[intent['slots']['spec']['value']]]['display_value']
-        if val == {}
+        if val == {}:
             output = "I do not have information for that spec"
-        else
+        else:
             output = val
 
 
