@@ -23,8 +23,8 @@ class Wolfram(SkillBase):
         speech = ""
         for pod in root.findall('.//pod'):
             speech += pod.attrib['title']
-            if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Circuit diagram'
-                for im in pod.findall('.//img')
+            if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Circuit diagram':
+                for im in pod.findall('.//img'):
                     image = im.attrib['src']
             for pt in pod.findall('.//plaintext'):
                 if pt.text:
