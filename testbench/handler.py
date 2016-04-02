@@ -20,6 +20,9 @@ def handler(event, context):
     prevent someone else from configuring a skill that sends requests to this
     function.
     """
+
+    print(event, context)
+
     # if (event['session']['application']['applicationId'] !=
     #         "amzn1.echo-sdk-ams.app.[unique-value-here]"):
     #     raise ValueError("Invalid Application ID")
@@ -62,7 +65,7 @@ def on_intent(intent_request, session):
         intent_name = "AMAZON.HelpIntent"
 
     if intent_name in skillmap:
-        skillmap[intent_name].execute(intent, session)
+        return skillmap[intent_name].execute(intent, session)
     else:
         raise ValueError("Invalid intent")
 
