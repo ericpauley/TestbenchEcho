@@ -20,7 +20,7 @@ class Wolfram(SkillBase):
         # data = urllib.urlopen(url).read()
         # response = ET.fromstring(data)
 
-        xml_data=urllib.request.urlopen(url).read()
+        xml_data=urllib.urlopen(url).read()
         incomingDictData = xmltodict.parse(xml_data)
         print incomingDictData
 
