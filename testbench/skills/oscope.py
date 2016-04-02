@@ -7,7 +7,7 @@ import string
 
 #scale = [.002,.005,.01,.05,.1,.5,1,2,5]
 vunits = {"volts":1,"volt":1,"millivolts":.001,"millivolt":.001}
-measurements = {"frequency":'FREQuency',"mean":'MEAN',"period":'period',"peak to peak voltage":'PK2pk',"rms":'CRMs',"minimum":'MINImum',"maximum":'MAXImum',"rise":'RISe',"fall":'FALL',"positive pulse width":'PWIdth',"negative pulse width":'NWIdth'}
+measurements = {"frequency":['FREQuency','Hertz'],"mean":['MEAN','Volts'],"period":['period','seconds',"peak to peak voltage":['PK2pk','volts'],"rms":['CRMs','volts'],,"minimum":['MINImum','volts'],"maximum":['MAXImum','volts'],"rise":['RISe','seconds'],"fall":['FALL','seconds'],"positive pulse width":['PWIdth','seconds'],"negative pulse width":['NWIdth','seconds']}
 
 class OSCOPEAutoset(SkillBase):
 
@@ -77,14 +77,16 @@ class OSCOPEMeasure(SkillBase):
     def execute(__self__, intent, session):
         t = measurements[intent['slots']['measurement']['value']]
         ch = 'CH' + intent['slots']['channel']['value']
-        command = ['measurement', '1', ch,t]
+        command = ['measurement', '1', ch,t[0]]
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
         pubsub = r.pubsub()
         pubsub.subscribe("results")
         next(pubsub.listen())
         resultData = pubsub.listen()
-        result = json.loads(item['data'])
+        tempresult = json.loads(item['data'])
+        value = float(tempresult)
+        result = str(value) + t[1]
         session_attributes = {}
         card_title = None
         speech_output = result
