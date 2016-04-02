@@ -36,7 +36,7 @@ class Wolfram(SkillBase):
 
         
         card_text = speech
-        card_image = {"smallImageUrl":image,"largeImageUrl":image}
+
         print speech
 
         speech_output = speech
@@ -45,7 +45,7 @@ class Wolfram(SkillBase):
         reprompt_text = None
         should_end_session = False
         return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session))
+            card_title, speech_output, reprompt_text, should_end_session), image)
 
 class WolframResistor(SkillBase):
 
@@ -81,7 +81,7 @@ class WolframResistor(SkillBase):
                         speech += pt.text
 
         card_text = speech
-        card_image = {"smallImageUrl":image,"largeImageUrl":image}
+
         print speech
         print image
 
@@ -91,7 +91,7 @@ class WolframResistor(SkillBase):
         reprompt_text = None
         should_end_session = False
         return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session))
+            card_title, speech_output, reprompt_text, should_end_session, image))
 
 class WolframDistance(SkillBase):
 
@@ -115,15 +115,16 @@ class WolframDistance(SkillBase):
 
         speech = ""
         for pod in response.findall('.//pod'):
-            if pod.attrib['title'] == 'Current result':
+            if pod.attrib['title'] == 'History':
                 for im in pod.findall('.//img'):
                     image = im.attrib['src']
+            if pod.attrib['title'] == 'Current result':
                 for pt in pod.findall('.//plaintext'):
                     if pt.text:
                         speech = pt.text
 
         card_text = speech
-        card_image = {"smallImageUrl":image,"largeImageUrl":image}
+
         print speech
         print image
 
@@ -133,5 +134,5 @@ class WolframDistance(SkillBase):
         reprompt_text = None
         should_end_session = False
         return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session))
+            card_title, speech_output, reprompt_text, should_end_session, image))
 
