@@ -9,4 +9,7 @@ FGENHalveFrequency Halve frequency
 FGENSetFrequency Set frequency {value} {funits}
 OSCOPEAutoset Autoset
 OSCOPEImage screen capture
+OSCOPESetVdiv Set channel {channel} to {value} {vunits} per division
+OSCOPESetVdiv Set channel {channel} to {value} {vunits}
+OSCOPESetVdiv Set channel {channel} to {value} {vunits} per div
 OctopartTest What value is the {spec} of {LF four one two|mpn}

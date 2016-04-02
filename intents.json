@@ -98,6 +98,23 @@
     },
     {
       "intent": "OSCOPEImage"
+    },
+    {
+      "intent": "OSCOPESetVdiv",
+      "slots": [
+        {
+          "name": "channel",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "value",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "vunits",
+          "type": "VOLTAGE_UNITS"
+        }
+      ]
     }
   ]
 }
