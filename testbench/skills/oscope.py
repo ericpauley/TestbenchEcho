@@ -52,10 +52,10 @@ class OSCOPESetVdiv(SkillBase):
                     v = v*10
                     m = m + 1
                 value = ' ' + str(v) + 'E-' + str(m)
-            ch = intent['slots']['channel']['value']
-            command = ['CH',str(ch),'SCALE',value]
-            r = redis.Redis("104.236.205.31")
-            r.publish("boss",json.dumps(command))
+        ch = intent['slots']['channel']['value']
+        command = ['CH',str(ch),'SCALE',value]
+        r = redis.Redis("104.236.205.31")
+        r.publish("boss",json.dumps(command))
         session_attributes = {}
         card_title = None
         speech_output = None
