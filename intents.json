@@ -115,6 +115,9 @@
       "intent": "FGENResetShift"
     },
     {
+      "intent": "GuideToGalaxy"
+    },
+    {
       "intent": "OSCOPEAutoset"
     },
     {

@@ -20,3 +20,4 @@ OSCOPESetVdiv Set channel {channel} to {value} {vunits}
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per div
 OSCOPEMeasure Measure the {measurement} on channel {channel}
 OctoSpec What value is the {spec} of {LF four one two|mpn}
+GuideToGalaxy What is the meaning to life the universe and everything
