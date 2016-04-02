@@ -17,6 +17,9 @@ FGENSetVoltageOffset Set voltage offset {value} {vunits}
 FGENSetVoltageOffset Set the voltage offset to {value} {vunits}
 
 OSCOPEAutoset Autoset
+OSCOPEAutoset Auto set
+OSCOPEAutoset Autoscale
+OSCOPEAutoset Auto scale
 OSCOPEImage take a screen capture
 OSCOPEImage take a screenshot
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per division
@@ -37,6 +40,11 @@ OctoDescrip Tell me about {LF four one two|mpn}
 OctoDescrip Tell me about {LM three five eight|mpn}
 OctoDescrip Tell me about {MSP four three zero|mpn}
 
+OctoPrice Tell me the price of {MSP four three zero|mpn}
+OctoPrice Tell me the price of {LF four one two|mpn}
+OctoPrice Tell me the price of {LM three five eight|mpn}
+OctoPrice Tell me the price of {MSP four three zero|mpn}
+
 
 GuideToGalaxy What is the answer to life the universe and everything
 
@@ -48,9 +56,7 @@ Wolfram Calculate {parallel RL circuit|query}
 Wolfram Calculate {series RL circuit|query}
 Wolfram Calculate {permeability of free space|query}
 WolframResistor Calculate {resistorA} {unitA} in {parallel|operation} with {resistorB} {unitB}
-WolframResistor Calculate a {resistorA} {unitA} resistor in {parallel|operation} with a {resistorB} {unitB} resistor
 WolframResistor Calculate {resistorA} {unitA} in {series|operation} with {resistorB} {unitB}
-WolframResistor Calculate a {resistorA} {unitA} resistor in {series|operation} with a {resistorB} {unitB} resistor
 Wolfram Calculate {sine of x squared|query}
 Wolfram Calculate {the integral of x minus four|query}
 Wolfram Calculate {inverting amplifier|query}
@@ -64,5 +70,6 @@ WolframDistance Calculate the distance between the {sun|objectA} and {mars|objec
 WolframDistance Calculate the distance between {Philly|objectA} and {Princeton|objectB}
 WolframDistance Calculate the distance between the {Milan|objectA} and {Tokyo|objectB}
 WolframDistance Calculate the distance between the {Africa|objectA} and {Australia|objectB}
+
 
 NullSkill {anything|filler}

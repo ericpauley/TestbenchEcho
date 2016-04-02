@@ -1,6 +1,33 @@
 # --------------- Helpers that build all of the responses ----------------------
 
 
+def respond(speech="", title=None, text=None, image=None):
+    out = {
+        'outputSpeech': {
+            'type': 'PlainText',
+            'text': speech
+        },
+        'reprompt': {
+            'outputSpeech': {
+                'type': 'PlainText',
+                'text': "Reprompt"
+            }
+        },
+        'shouldEndSession': False
+    }
+    if text or title or image:
+        out["card"] = {
+            'type': 'Standard',
+            'title': title or 'EE Testbench',
+            'text': text or speech
+        }
+        if image:
+            out["card"]["image"]={
+        "smallImageUrl": image.replace("http://","https://"),
+        "largeImageUrl": image.replace("http://","https://")
+    }
+    return build_response({},out)
+
 def build_speechlet_response(title, output, reprompt_text, should_end_session, image=None):
     out = {
         'outputSpeech': {

@@ -353,6 +353,55 @@ class OctoDescrip(SkillBase):
         return util.build_response(session_attributes, util.build_speechlet_response(
             card_title, speech_output, reprompt_text, should_end_session))
 
+class OctoPrice(SkillBase):
+    def execute(__self__, intent, session):
+        session_attributes={}
+
+        mpnpre = intent['slots']['mpn']['value']
+
+        splitArray = mpnpre.split(' ')
+        for index in range(len(splitArray)):
+            for unit in units:
+                if splitArray[index].count(unit) >= 1:
+                    splitArray[index] = str(text2int(splitArray[index]))
+                    break
+
+
+        mpn = ''.join(splitArray)
+        url = "http://octopart.com/api/v3/parts/search"
+        url += "?apikey=0c491965"
+        args = [
+            ('q', mpn),
+            ('start', 0),
+            ('limit', 10)
+            ]
+
+        url += '&' + urllib.urlencode(args)
+
+        data = urllib.urlopen(url).read()
+        response = json.loads(data)
+
+        result = response['results'][0]
+        item = result ['item']
+        offers = item['offers'][0]
+        prices = offers['prices']
+
+        price_data = json.dumps(prices)
+        prices_dict = json.loads(price_data)
+
+        response = ""
+        for index in range(len(prices_dict['USD'])):
+            response += "The price for " + str(prices['USD'][index][0]) + " is " + str(prices['USD'][index][1]) + " dollars."
+        speech_output = response
+
+
+        card_title = None
+        reprompt_text = None
+        should_end_session = False
+        return util.build_response(session_attributes, util.build_speechlet_response(
+            card_title, speech_output, reprompt_text, should_end_session))
+
+
 
 
 '''# print request time (in milliseconds)
