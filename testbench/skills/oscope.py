@@ -22,7 +22,7 @@ class OSCOPEAutoset(SkillBase):
             card_title, speech_output, reprompt_text, should_end_session))
 
         
-class OSCOPEImage(SkillBase)
+class OSCOPEImage(SkillBase):
 
     def execute(__self__, intent, session):
         command = ['copy']
