@@ -5,9 +5,9 @@ from skills.skill import SkillBase
 
 
 
-specMap = {"Input Voltage (DC)": 'input_voltage_dc'}
+specMap = {"DC supply voltage": 'supply_voltage_dc'}
 
-class OctopartTest(SkillBase)
+class OctopartTest(SkillBase):
     def execute(__self__, intent, session):
         session_attributes = {}
         val = ""
@@ -21,17 +21,23 @@ class OctopartTest(SkillBase)
         data = urllib.urlopen(url).read()
         response = json.loads(data)
 
-        val = response[items][0]['specs'][specMap[intent[slots][specs]]]['display_value']
+        result = response['results'][0]
+        item = result['items'][0]
+        specs = item['specs']
+        val = specs['supply_voltage_dc']['display_value']
+
+        #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
 
         speech_output = str(val)
-        pass
+        card_title = None
+        reprompt_text = None
+        should_end_session = False
+        return util.build_response(session_attributes, util.build_speechlet_response(
+            card_title, speech_output, reprompt_text, should_end_session))
 
 
 
-
-
-
-# print request time (in milliseconds)
+'''# print request time (in milliseconds)
 print response['msec']
 
 #print response
@@ -47,3 +53,4 @@ for result in response['results']:
             print item['specs']['case_package']['display_value']
         except:
             print "this item doesn't have that attribute"
+'''

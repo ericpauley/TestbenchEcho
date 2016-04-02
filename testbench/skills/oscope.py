@@ -3,9 +3,9 @@ from skills.skill import SkillBase
 import redis
 import json
 
-scale = [.002,.005,.01,.05,.1,.5,1,2,5]
+#scale = [.002,.005,.01,.05,.1,.5,1,2,5]
 
-class OSCOPEAutoset(SkillBase)
+class OSCOPEAutoset(SkillBase):
 
     def execute(__self__, intent, session):
         command = ['AUTOSet']
@@ -20,6 +20,7 @@ class OSCOPEAutoset(SkillBase)
         should_end_session = False
         return util.build_response(session_attributes, util.build_speechlet_response(
             card_title, speech_output, reprompt_text, should_end_session))
+
         
 class OSCOPEImage(SkillBase)
 
@@ -36,3 +37,4 @@ class OSCOPEImage(SkillBase)
         should_end_session = False
         return util.build_response(session_attributes, util.build_speechlet_response(
             card_title, speech_output, reprompt_text, should_end_session))
+
