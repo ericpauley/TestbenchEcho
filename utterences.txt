@@ -25,7 +25,7 @@ OSCOPESetVdiv Set channel {channel} to {value} {vunits}
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per div
 OSCOPESetHdiv Set the horizontal scale to {value} {vunits} per division
 OSCOPESetHdiv Set horizontal scale to {value} {vunits}
-OSCOPESetHdiv Set horizontal scale to {value} {vunits} per div
+OSCOPESetHdiv Set horizontal scale to {value} {tunits} per div
 OSCOPEMeasure Measure the {measurement} on channel {channel}
 
 OctoSpec What is the {spec} of {MSP four three zero|mpn}
