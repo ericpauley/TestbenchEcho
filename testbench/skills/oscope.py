@@ -44,6 +44,7 @@ class OSCOPESetVdiv(SkillBase):
     def execute(__self__, intent, session):
         vmult = vunits[intent['slots']['vunits']['value']]
         v = vmult * intent['slots']['value']['value']
+        print v
         if (v >= .002) and (v <= 5):
             value = ' ' + str(v) + 'E0'
             m = 0
