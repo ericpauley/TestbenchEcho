@@ -138,6 +138,15 @@
       ]
     },
     {
+      "intent": "OctoPrice",
+      "slots":[
+        {
+          "name":"mpn",
+          "type":"AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
       "intent": "FGENDoubleAmplitude"
     },
     {
