@@ -71,8 +71,12 @@
       ]
     },
     {
-      "intent": "FGENSetFrequency",
+      "intent": "FGENSet",
       "slots":[
+        {
+          "name":"type",
+          "type":"LIST_OF_FGEN"
+        },
         {
           "name":"value",
           "type":"AMAZON.NUMBER"
@@ -83,32 +87,32 @@
         }
       ]
     },
-    {
-      "intent": "FGENSetVoltage",
-      "slots":[
-        {
-          "name":"value",
-          "type":"AMAZON.NUMBER"
-        },
-        {
-          "name":"vunits",
-          "type":"VOLTAGE_UNITS"
-        }
-      ]
-    },
-    {
-      "intent": "FGENSetVoltageOffset",
-      "slots":[
-        {
-          "name":"value",
-          "type":"AMAZON.NUMBER"
-        },
-        {
-          "name":"vunits",
-          "type":"VOLTAGE_UNITS"
-        }
-      ]
-    },
+    // {
+    //   "intent": "FGENSetVoltage",
+    //   "slots":[
+    //     {
+    //       "name":"value",
+    //       "type":"AMAZON.NUMBER"
+    //     },
+    //     {
+    //       "name":"vunits",
+    //       "type":"VOLTAGE_UNITS"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "intent": "FGENSetVoltageOffset",
+    //   "slots":[
+    //     {
+    //       "name":"value",
+    //       "type":"AMAZON.NUMBER"
+    //     },
+    //     {
+    //       "name":"vunits",
+    //       "type":"VOLTAGE_UNITS"
+    //     }
+    //   ]
+    // },
     {
       "intent": "OctoSpec",
       "slots":[
@@ -184,6 +188,44 @@
       "slots":[
         {
           "name": "query",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
+    }
+    {
+      "intent": "WolframResistor",
+      "slots":[
+        {
+          "name": "resitor1",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "unit1",
+          "type": "RESISTANCE_UNIT"
+        },
+        {
+          "name": "operation",
+          "type": "AMAZON.LITERAL"
+        },
+        {
+          "name": "resitor2",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "unit2",
+          "type": "RESISTANCE_UNIT"
+        }
+      ]
+    },
+    {
+      "intent": "WolframDistance",
+      "slots":[
+        {
+          "name": "object1",
+          "type": "AMAZON.LITERAL"
+        },
+        {
+          "name": "object2",
           "type": "AMAZON.LITERAL"
         }
       ]

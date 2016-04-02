@@ -10,12 +10,9 @@ FGENTriple Triple {type}
 FGENDouble Double the {type}
 FGENHalf Half the {type}
 FGENTriple Triple the {type}
-FGENSetFrequency Set frequency {value} {funits}
-FGENSetFrequency Set the frequency to {value} {funits}
-FGENSetVoltage Set voltage {value} {vunits}
-FGENSetVoltage Set the voltage to {value} {vunits}
-FGENSetVoltageOffset Set voltage offset {value} {vunits}
-FGENSetVoltageOffset Set the voltage offset to {value} {vunits}
+FGENSet Set {type} {value} {funits}
+FGENSet Set the {type} to {value} {funits}
+
 OSCOPEAutoset Autoset
 OSCOPEImage screen capture
 OSCOPEImage screenshot
@@ -30,12 +27,19 @@ OctoSpec What is the {spec} of {LM three five eight|mpn}
 OctoSpec What is the {spec} of {MSP four three zero|mpn}
 
 
-
 GuideToGalaxy What is the answer to life the universe and everything
 GuideToGalaxy What's the answer to life the universe and everything
+
 Wolfram Calculate {inverting amplifier|query}
-Wolfram Calculate {twenty ohm resister in parallel with a ten ohm resistor|query}
-Wolfram Calculate {one hundred kiloohm resister in series with a two hundred kiloohm resistor|query}
+WolframResistor Calculate {resistor1} {unit1} in {parallel|operation} with {resistor1} {unit1}
+WolframResistor Calculate {resistor1} {unit1} in {series|operation} with {resistor1} {unit1}
 Wolfram Calculate {sine of x squared|query}
 Wolfram Calculate {the integral of x minus four|query}
 Wolfram Calculate {inverting amplifier|query}
+WolframDistance Calculate distance between the {earth|object1} and the {moon|object2}
+WolframDistance Calculate distance between the {earth|object1} and the {sun|object2}
+WolframDistance Calculate distance between the {moon|object1} and the {sun|object2}
+WolframDistance Calculate distance between the {earth|object1} and {mars|object2}
+WolframDistance Calculate distance between the {sun|object1} and {mars|object2}
+
+
