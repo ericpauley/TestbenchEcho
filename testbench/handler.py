@@ -8,14 +8,12 @@ http://amzn.to/1LGWsLG
 """
 
 from __future__ import print_function
-from .skills import *
+from skills import *
 
-def lambda_handler(event, context):
+def handler(event, context):
     """ Route the incoming request based on type (LaunchRequest, IntentRequest,
     etc.) The JSON body of the request is provided in the event parameter.
     """
-    print("event.session.application.applicationId=" +
-          event['session']['application']['applicationId'])
 
     """
     Uncomment this if statement and populate with your skill's application ID to
@@ -46,14 +44,7 @@ def on_session_started(session_started_request, session):
 
 
 def on_launch(launch_request, session):
-    """ Called when the user launches the skill without specifying what they
-    want
-    """
-
-    print("on_launch requestId=" + launch_request['requestId'] +
-          ", sessionId=" + session['sessionId'])
-    # Dispatch to your skill's launch
-    return get_welcome_response()
+    return skillmap["Welcome"].execute(None, session)
 
 
 def on_intent(intent_request, session):
@@ -66,6 +57,10 @@ def on_intent(intent_request, session):
     intent_name = intent_request['intent']['name']
 
     # Dispatch to your skill's intent handlers
+
+    if intent_name not in skillmap:
+        intent_name = "AMAZON.HelpIntent"
+
     if intent_name in skillmap:
         skillmap[intent_name].execute(intent, session)
     else:

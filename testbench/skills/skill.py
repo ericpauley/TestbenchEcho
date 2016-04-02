@@ -1,4 +1,4 @@
-from testbench import util
+import util
 
 class SkillBase:
 
@@ -10,5 +10,5 @@ class SkillBase:
         # that is not understood, they will be prompted again with this text.
         reprompt_text = "yeah"
         should_end_session = False
-        return build_response(session_attributes, build_speechlet_response(
+        return util.build_response(session_attributes, util.build_speechlet_response(
             card_title, speech_output, reprompt_text, should_end_session))

@@ -1,5 +1,7 @@
-from .skill import SkillBase
-from .welcome import Welcome
+from skills.skill import SkillBase
+from skills.welcome import Welcome
+from skills.help import Help
 
 skillmap = {}
-skillmap["AMAZON.HelpIntent"] = Welcome()
+skillmap["AMAZON.HelpIntent"] = Help()
+skillmap["Welcome"] = Help()

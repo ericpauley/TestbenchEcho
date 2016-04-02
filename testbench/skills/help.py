@@ -1,12 +1,12 @@
 import util
 from skills.skill import SkillBase
 
-class Welcome(SkillBase):
+class Help(SkillBase):
 
     def execute(__self__, intent, session):
         session_attributes = {}
-        card_title = "Welcome"
-        speech_output = "Welcome to Double E testbench."
+        card_title = "EE Testbench"
+        speech_output = "You can ask me anything about double E."
         # If the user either does not reply to the welcome message or says something
         # that is not understood, they will be prompted again with this text.
         reprompt_text = "Ask me anything Double E"
