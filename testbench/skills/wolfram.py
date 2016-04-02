@@ -109,7 +109,7 @@ class WolframDistance(SkillBase):
 
         return util.respond(speech, "Wolfram Alpha", speech, image)
 
-class WolframDistance(SkillBase):
+class WolframCompute(SkillBase):
 
     def execute(__self__, intent, session):
         image = "https://www.wolframalpha.com/images/press/photos/logos/wa-logo-stacked1-large.jpg"
