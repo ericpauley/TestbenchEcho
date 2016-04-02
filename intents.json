@@ -167,6 +167,19 @@
       ]
     },
     {
+      "intent": "OSCOPESetHdiv",
+      "slots": [
+        {
+          "name": "value",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "tunits",
+          "type": "TIME_UNITS"
+        }
+      ]
+    },
+    {
       "intent": "OSCOPEMeasure",
       "slots": [
         {

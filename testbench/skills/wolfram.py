@@ -35,8 +35,9 @@ class Wolfram(SkillBase):
                     if pt.text:
                         speech += pt.text
 
-        card_image = {"smallImageUrl":image,"largeImageUrl":image}
+        
         card_text = speech
+        card_image = {"smallImageUrl":image,"largeImageUrl":image}
         print speech
 
         speech_output = speech
@@ -80,8 +81,8 @@ class WolframResistor(SkillBase):
                     if pt.text:
                         speech += pt.text
 
-        card_image = {"smallImageUrl":image,"largeImageUrl":image}
         card_text = speech
+        card_image = {"smallImageUrl":image,"largeImageUrl":image}
         print speech
         print image
 
@@ -122,8 +123,8 @@ class WolframDistance(SkillBase):
                     if pt.text:
                         speech += pt.text
 
-        card_image = {"smallImageUrl":image,"largeImageUrl":image}
         card_text = speech
+        card_image = {"smallImageUrl":image,"largeImageUrl":image}
         print speech
         print image
 

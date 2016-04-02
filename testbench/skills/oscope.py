@@ -8,6 +8,7 @@ import time
 
 #scale = [.002,.005,.01,.05,.1,.5,1,2,5]
 vunits = {"volts":1,"volt":1,"millivolts":.001,"millivolt":.001}
+tunits = {"nanoseconds":.000000001,"nanosecond":.000000001,"microseconds":.000001,"microsecond":.000001,"milliseconds":.001,"millisecond":.001,"seconds":1,"second":1}
 measurements = {"frequency":['FREQuency','Hertz'],"mean":['MEAN','Volts'],"period":['period','seconds'],"peak to peak voltage":['PK2pk','volts'],"rms":['CRMs','volts'],"minimum":['MINImum','volts'],"maximum":['MAXImum',"volts"],"rise":['RISe','seconds'],"fall":['FALL','seconds'],"positive pulse width":['PWIdth','seconds'],"negative pulse width":['NWIdth','seconds']}
 
 class OSCOPEAutoset(SkillBase):
@@ -18,7 +19,7 @@ class OSCOPEAutoset(SkillBase):
         r.publish("boss",json.dumps(command))
         session_attributes = {}
         card_title = None
-        speech_output = None
+        speech_output = 'Auto setting'
         # If the user either does not reply to the welcome message or says something
         # that is not understood, they will be prompted again with this text.
         reprompt_text = None
@@ -65,7 +66,32 @@ class OSCOPESetVdiv(SkillBase):
         r.publish("boss",json.dumps(command))
         session_attributes = {}
         card_title = None
-        speech_output = None
+        speech_output = 'Setting channel ' + ch + ' scale'
+        # If the user either does not reply to the welcome message or says something
+        # that is not understood, they will be prompted again with this text.
+        reprompt_text = None
+        should_end_session = False
+        return util.build_response(session_attributes, util.build_speechlet_response(
+            card_title, speech_output, reprompt_text, should_end_session))
+
+class OSCOPESetHdiv(SkillBase):
+
+    def execute(__self__, intent, session):
+        tmult = tunits[intent['slots']['tunits']['value']]
+        t = tmult * int(intent['slots']['value']['value'])
+        value = ' ' + str(t) + 'E0'
+        m = 0
+        if t < 1:
+            while (t < 1):
+                t = t*10
+                m = m + 1
+            value = ' ' + str(t) + 'E-' + str(m)
+        command = ['CH','SCALE',value]
+        r = redis.Redis("104.236.205.31")
+        r.publish("boss",json.dumps(command))
+        session_attributes = {}
+        card_title = None
+        speech_output = 'Changing the horizontal scale'
         # If the user either does not reply to the welcome message or says something
         # that is not understood, they will be prompted again with this text.
         reprompt_text = None

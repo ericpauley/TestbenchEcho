@@ -4,7 +4,7 @@ from skills.help import Help, GuideToGalaxy
 from skills.nullskill import NullSkill
 from skills.resistor import Resistor, RevResistor
 from skills.octospec import OctoSpec
-from skills.oscope import OSCOPEAutoset, OSCOPEImage, OSCOPESetVdiv, OSCOPEMeasure
+from skills.oscope import OSCOPEAutoset, OSCOPEImage, OSCOPESetVdiv, OSCOPEMeasure, OSCOPESetHdiv
 from skills.fgen import FGENDouble, FGENHalf, FGENTriple, FGENSetFrequency, FGENSetVoltage, FGENSetVoltageOffset
 from skills.wolfram import Wolfram, WolframResistor, WolframDistance
 
@@ -18,6 +18,7 @@ skillmap["RevResistor"] = RevResistor()
 skillmap["OSCOPEImage"] = OSCOPEImage()
 skillmap["OSCOPEAutoset"] = OSCOPEAutoset()
 skillmap["OSCOPESetVdiv"] = OSCOPESetVdiv()
+skillmap["OSCOPESetHdiv"] = OSCOPESetHdiv()
 skillmap["OSCOPEMeasure"] = OSCOPEMeasure()
 skillmap["FGENDouble"] = FGENDouble()
 skillmap["FGENHalf"] = FGENHalf()
@@ -29,3 +30,4 @@ skillmap["GuideToGalaxy"] = GuideToGalaxy()
 skillmap["Wolfram"] = Wolfram()
 skillmap["WolframResistor"] = WolframResistor()
 skillmap["WolframDistance"] = WolframDistance()
+
