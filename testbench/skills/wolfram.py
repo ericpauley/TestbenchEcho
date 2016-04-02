@@ -34,18 +34,7 @@ class Wolfram(SkillBase):
                     if pt.text:
                         speech += pt.text
 
-        
-        card_text = speech
-
-        print speech
-
-        speech_output = speech
-        # If the user either does not reply to the welcome message or says something
-        # that is not understood, they will be prompted again with this text.
-        reprompt_text = None
-        should_end_session = False
-        return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session), image)
+        return util.respond(speech, "Wolfram Alpha", speech, image)
 
 class WolframResistor(SkillBase):
 
@@ -80,18 +69,7 @@ class WolframResistor(SkillBase):
                     if pt.text:
                         speech += pt.text
 
-        card_text = speech
-
-        print speech
-        print image
-
-        speech_output = speech
-        # If the user either does not reply to the welcome message or says something
-        # that is not understood, they will be prompted again with this text.
-        reprompt_text = None
-        should_end_session = False
-        return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session, image))
+        return util.respond(speech, "Wolfram Alpha", speech, image)
 
 class WolframDistance(SkillBase):
 
@@ -123,16 +101,4 @@ class WolframDistance(SkillBase):
                     if pt.text:
                         speech = pt.text
 
-        card_text = speech
-
-        print speech
-        print image
-
-        speech_output = speech
-        # If the user either does not reply to the welcome message or says something
-        # that is not understood, they will be prompted again with this text.
-        reprompt_text = None
-        should_end_session = False
-        return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session, image))
-
+        return util.respond(speech, "Wolfram Alpha", speech, image)
