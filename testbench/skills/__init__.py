@@ -5,7 +5,7 @@ from skills.nullskill import NullSkill
 from skills.resistor import Resistor, RevResistor
 from skills.octospec import OctoSpec
 from skills.oscope import OSCOPEAutoset, OSCOPEImage, OSCOPESetVdiv, OSCOPEMeasure
-from skills.fgen import FGENDouble, FGENHalf, FGENTriple
+from skills.fgen import FGENDouble, FGENHalf, FGENTriple, FGENSetFrequency
 
 skillmap = {}
 skillmap["AMAZON.HelpIntent"] = Help()
@@ -21,3 +21,4 @@ skillmap["OSCOPEMeasure"] = OSCOPEMeasure()
 skillmap["FGENDouble"] = FGENDouble()
 skillmap["FGENHalf"] = FGENHalf()
 skillmap["FGENTriple"] = FGENTriple()
+skillmap["FGENSetFrequency"] = FGENSetFrequency()
