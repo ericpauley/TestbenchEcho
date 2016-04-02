@@ -44,7 +44,6 @@ class OSCOPEImage(SkillBase):
         out= util.build_response(session_attributes, util.build_speechlet_response(
             card_title, speech_output, reprompt_text, should_end_session, "https://alexasslisbogusandlame.tk/"+name+".bmp"))
         print out
-        time.sleep(10)
         return out
 
 class OSCOPESetVdiv(SkillBase):
