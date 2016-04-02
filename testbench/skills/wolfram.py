@@ -4,11 +4,11 @@ import util
 from skills.skill import SkillBase
 import skills.xmltodict as xmltodict
 
-image = "https://www.wolframalpha.com/images/press/photos/logos/wa-logo-stacked1-large.jpg"
 
 class Wolfram(SkillBase):
 
     def execute(__self__, intent, session):
+        image = "https://www.wolframalpha.com/images/press/photos/logos/wa-logo-stacked1-large.jpg"
         session_attributes = {}
         card_title = "Wolfram"
         query = intent['slots']['query']['value']
@@ -51,6 +51,7 @@ class Wolfram(SkillBase):
 class WolframResistor(SkillBase):
 
     def execute(__self__, intent, session):
+        image = "https://www.wolframalpha.com/images/press/photos/logos/wa-logo-stacked1-large.jpg"
         session_attributes = {}
         card_title = "Wolfram Resistor"
         r1 = intent['slots']['resistorA']['value']
@@ -97,10 +98,11 @@ class WolframResistor(SkillBase):
 class WolframDistance(SkillBase):
 
     def execute(__self__, intent, session):
+        image = "https://www.wolframalpha.com/images/press/photos/logos/wa-logo-stacked1-large.jpg"
         session_attributes = {}
         card_title = "Wolfram Distance"
         o1 = intent['slots']['objectA']['value']
-        o1 = intent['slots']['objectB']['value']
+        o2 = intent['slots']['objectB']['value']
         query = 'distance'+'%20'+'between%20'+o1+'%20'+'and%20'+o2
         url = "http://api.wolframalpha.com/v2/query?"
         url += "appid=238HJV-7G3G7G8VYU&input="
