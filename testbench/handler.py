@@ -69,7 +69,7 @@ def on_intent(intent_request, session):
         try:
             return skillmap[intent_name].execute(intent, session)
         except Exception as e:
-            print(e)
+            e.print_exc()
             return util.build_response({}, util.build_speechlet_response(
                 None, "An error has occured", "", False))
     else:
