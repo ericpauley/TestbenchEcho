@@ -34,7 +34,7 @@ class Wolfram(SkillBase):
                     if pt.text:
                         speech += pt.text
 
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.encode(image)+".png"
+        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
 
         return util.respond(speech, "Wolfram Alpha", speech, image)
 
@@ -71,7 +71,7 @@ class WolframResistor(SkillBase):
                     if pt.text:
                         speech += pt.text
 
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.encode(image)+".png"
+        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
 
         return util.respond(speech, "Wolfram Alpha", speech, image)
 
@@ -105,6 +105,6 @@ class WolframDistance(SkillBase):
                     if pt.text:
                         speech = pt.text
 
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.encode(image)+".png"
+        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
 
         return util.respond(speech, "Wolfram Alpha", speech, image)
