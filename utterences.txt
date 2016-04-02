@@ -52,8 +52,8 @@ Wolfram Calculate {series RC circuit|query}
 Wolfram Calculate {parallel RL circuit|query}
 Wolfram Calculate {series RL circuit|query}
 Wolfram Calculate {permeability of free space|query}
-WolframResistor Calculate {resistorA} {unitA} in {parallel|operation} with {resistorB} {unitB}
-WolframResistor Calculate {resistorA} {unitA} in {series|operation} with {resistorB} {unitB}
+WolframResistor Calculate {resistorA} {runitA} in {parallel|operation} with {resistorB} {runitB}
+WolframResistor Calculate {resistorA} {runitA} in {series|operation} with {resistorB} {runitB}
 Wolfram Calculate {sine of x squared|query}
 Wolfram Calculate {the integral of x minus four|query}
 Wolfram Calculate {inverting amplifier|query}

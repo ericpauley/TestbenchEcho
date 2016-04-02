@@ -45,9 +45,9 @@ class WolframResistor(SkillBase):
         session_attributes = {}
         card_title = "Wolfram Resistor"
         r1 = intent['slots']['resistorA']['value']
-        u1 = intent['slots']['unitA']['value']
+        u1 = intent['slots']['runitA']['value']
         r2 = intent['slots']['resistorB']['value']
-        u2 = intent['slots']['unitB']['value']
+        u2 = intent['slots']['runitB']['value']
         op = intent['slots']['operation']['value']
         query = r1+'%20'+u1+'%20' +'in%20'+op+'%20'+r2+'%20'+u2
         url = "http://api.wolframalpha.com/v2/query?"

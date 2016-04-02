@@ -233,7 +233,7 @@
           "type": "AMAZON.NUMBER"
         },
         {
-          "name": "unitA",
+          "name": "runitA",
           "type": "RESISTANCE_UNIT"
         },
         {
@@ -245,7 +245,7 @@
           "type": "AMAZON.NUMBER"
         },
         {
-          "name": "unitB",
+          "name": "runitB",
           "type": "RESISTANCE_UNIT"
         }
       ]
