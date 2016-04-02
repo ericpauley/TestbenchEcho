@@ -7,7 +7,7 @@ from skills.skill import SkillBase
 
 specMap = {"DC supply voltage": 'supply_voltage_dc'}
 
-class OctopartTest(SkillBase):
+class OctoSpec(SkillBase):
     def execute(__self__, intent, session):
         session_attributes = {}
         val = ""
