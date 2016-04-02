@@ -27,12 +27,13 @@ class Wolfram(SkillBase):
         speech = ""
         for pod in response.findall('.//pod'):
             speech += pod.attrib['title']
-            if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Circuit diagram' or pod.attrib['title'] == 'Equation':
+            if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Circuit diagram':
                 for im in pod.findall('.//img'):
                     image = im.attrib['src']
-            for pt in pod.findall('.//plaintext'):
-                if pt.text:
-                    speech += pt.text
+            if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Definition' or pod.attrib['title'] == 'Equation'
+                for pt in pod.findall('.//plaintext'):
+                    if pt.text:
+                        speech += pt.text
 
         card_image = {"smallImageUrl":image,"largeImageUrl":image}
         card_text = speech
@@ -74,7 +75,7 @@ class WolframResistor(SkillBase):
             if pod.attrib['title'] == 'Equation':
                 for im in pod.findall('.//img'):
                     image = im.attrib['src']
-            elif pod.attrib['title'] == 'Result'
+            elif pod.attrib['title'] == 'Result':
                 for pt in pod.findall('.//plaintext'):
                     if pt.text:
                         speech += pt.text

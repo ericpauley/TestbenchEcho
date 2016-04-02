@@ -71,12 +71,8 @@
       ]
     },
     {
-      "intent": "FGENSet",
+      "intent": "FGENSetFrequency",
       "slots":[
-        {
-          "name":"type",
-          "type":"LIST_OF_FGEN"
-        },
         {
           "name":"value",
           "type":"AMAZON.NUMBER"
@@ -84,6 +80,32 @@
         {
           "name":"funits",
           "type":"FREQUENCY_UNITS"
+        }
+      ]
+    },
+    {
+      "intent": "FGENSetVoltage",
+      "slots":[
+        {
+          "name":"value",
+          "type":"AMAZON.NUMBER"
+        },
+        {
+          "name":"vunits",
+          "type":"VOLTAGE_UNITS"
+        }
+      ]
+    },
+    {
+      "intent": "FGENSetVoltageOffset",
+      "slots":[
+        {
+          "name":"value",
+          "type":"AMAZON.NUMBER"
+        },
+        {
+          "name":"vunits",
+          "type":"VOLTAGE_UNITS"
         }
       ]
     },
