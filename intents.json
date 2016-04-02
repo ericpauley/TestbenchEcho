@@ -58,7 +58,7 @@
         },
         {
           "name":"funits",
-          "type":"FREQUENCY_UNIT"
+          "type":"FREQUENCY_UNITS"
         }
       ]
     },
