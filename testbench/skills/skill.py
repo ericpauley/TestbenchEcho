@@ -1,14 +1,38 @@
-import util
-
 class SkillBase:
 
-    def execute(__self__, intent, session):
-        session_attributes = {}
-        card_title = "Base Skill"
-        speech_output = ""
-        # If the user either does not reply to the welcome message or says something
-        # that is not understood, they will be prompted again with this text.
-        reprompt_text = ""
-        should_end_session = False
-        return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session))
+    def respond(self, speech="", title=None, text=None, image=None):
+        out = {
+            'outputSpeech': {
+                'type': 'PlainText',
+                'text': speech
+            },
+            'reprompt': {
+                'outputSpeech': {
+                    'type': 'PlainText',
+                    'text': "Reprompt"
+                }
+            },
+            'shouldEndSession': False
+        }
+        if text or title or image:
+            out["card"] = {
+                'type': 'Standard',
+                'title': title or 'EE Testbench',
+                'text': text or speech
+            }
+            if image:
+                out["card"]["image"]={
+            "smallImageUrl": image.replace("http://","https://"),
+            "largeImageUrl": image.replace("http://","https://")
+        }
+        return self.build_response({},out)
+
+    def build_response(self, session_attributes, speechlet_response):
+        return {
+            'version': '1.0',
+            'sessionAttributes': session_attributes,
+            'response': speechlet_response
+        }
+
+    def execute(self, intent, session):
+        return self.respond("Base Skill")
