@@ -120,6 +120,7 @@ class WolframCompute(SkillBase):
         op = intent['slots']['operation']['value']
         op.replace(' ','%20')
         query = n1+'%20'+op+'%20'+n2
+        print query
         url = "http://api.wolframalpha.com/v2/query?"
         url += "appid=238HJV-7G3G7G8VYU&input="
         url += query
@@ -152,6 +153,7 @@ class WolframConvert(SkillBase):
         u1 = intent['slots']['unitA']['value']
         u2 = intent['slots']['unitB']['value']
         query = n+'%20'+u1+'%20'+'in'+'%20'+u2
+        print query
         url = "http://api.wolframalpha.com/v2/query?"
         url += "appid=238HJV-7G3G7G8VYU&input="
         url += query
