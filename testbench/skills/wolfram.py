@@ -30,7 +30,7 @@ class Wolfram(SkillBase):
             if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Circuit diagram':
                 for im in pod.findall('.//img'):
                     image = im.attrib['src']
-            if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Definition' or pod.attrib['title'] == 'Equation'
+            if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Definition' or pod.attrib['title'] == 'Equation':
                 for pt in pod.findall('.//plaintext'):
                     if pt.text:
                         speech += pt.text
