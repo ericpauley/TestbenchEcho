@@ -13,7 +13,9 @@ colormap = {"black":0,
 "grey":8,
 "white":9}
 
-units = ["Ohms","Kilo Ohms","Mega Ohms","Giga Ohms"]
+units = ["Ohms","KiloOhms","MegaOhms","GigaOhms"]
+
+revunits = {"kiloohm":1000,"kiloohms":1000, "megaohm":1000000, "megaohms":1000000, "gigaohm":1000000000,"gigaohms":1000000000, "ohm":1, "ohms":1}
 
 colorvars = ["ColorA", "ColorB", "ColorC", "ColorD"]
 
@@ -41,3 +43,8 @@ class Resistor(SkillBase):
         should_end_session = False
         return util.build_response(session_attributes, util.build_speechlet_response(
             card_title, speech_output, reprompt_text, should_end_session))
+
+class RevResistor(SkillBase):
+
+    def execute(__self__, intent, session):
+        pass
