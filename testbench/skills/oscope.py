@@ -29,7 +29,7 @@ class OSCOPEImage(SkillBase):
 
     def execute(__self__, intent, session):
         name = "".join([random.choice(string.ascii_lowercase) for i in range(1)])
-        command = ['image', name]
+        command = ['copy', name]
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
         session_attributes = {}
