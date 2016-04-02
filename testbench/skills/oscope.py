@@ -4,6 +4,7 @@ import redis
 import json
 import random
 import string
+import time
 
 #scale = [.002,.005,.01,.05,.1,.5,1,2,5]
 vunits = {"volts":1,"volt":1,"millivolts":.001,"millivolt":.001}
@@ -41,8 +42,9 @@ class OSCOPEImage(SkillBase):
         reprompt_text = None
         should_end_session = False
         out= util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session, "http://104.236.205.31/"+name+".bmp"))
+            card_title, speech_output, reprompt_text, should_end_session, "https://alexasslisbogusandlame.tk/"+name+".bmp"))
         print out
+        time.sleep(10)
         return out
 
 class OSCOPESetVdiv(SkillBase):
