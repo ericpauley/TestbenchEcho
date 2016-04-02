@@ -273,7 +273,7 @@
         {
           "name": "operation",
           "type": "AMAZON.LITERAL"
-        }
+        },
         {
           "name": "numB",
           "type": "AMAZON.NUMBER"
