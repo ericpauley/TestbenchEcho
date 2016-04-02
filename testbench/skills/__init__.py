@@ -6,7 +6,7 @@ from skills.resistor import Resistor, RevResistor
 from skills.octospec import OctoSpec
 from skills.oscope import OSCOPEAutoset, OSCOPEImage, OSCOPESetVdiv, OSCOPEMeasure
 from skills.fgen import FGENDouble, FGENHalf, FGENTriple, FGENSetFrequency, FGENSetVoltage, FGENSetVoltageOffset
-from skills.wolfram import Wolfram
+from skills.wolfram import Wolfram, WolframResistor
 
 skillmap = {}
 skillmap["AMAZON.HelpIntent"] = Help()
@@ -27,3 +27,4 @@ skillmap["FGENSetVoltage"] = FGENSetVoltage()
 skillmap["FGENSetVoltageOffset"] = FGENSetVoltageOffset()
 skillmap["GuideToGalaxy"] = GuideToGalaxy()
 skillmap["Wolfram"] = Wolfram()
+skillmap["WolframResistor"] = WolframResistor()
