@@ -123,6 +123,15 @@
       ]
     },
     {
+      "intent": "OctoDescrip",
+      "slots":[
+        {
+          "name":"mpn",
+          "type":"AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
       "intent": "FGENDoubleAmplitude"
     },
     {

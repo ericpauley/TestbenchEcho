@@ -299,6 +299,60 @@ class OctoSpec(SkillBase):
         return util.build_response(session_attributes, util.build_speechlet_response(
             card_title, speech_output, reprompt_text, should_end_session))
 
+class OctoDescrip(SkillBase):
+	def execute(__self__, intent, session):
+		session_attributes={}
+
+		mpnpre = intent['slots']['mpn']['value']
+
+        splitArray = mpnpre.split(' ')
+        for index in range(len(splitArray)):
+            for unit in units:
+                if splitArray[index].count(unit) >= 1:
+                    splitArray[index] = str(text2int(splitArray[index]))
+                    break
+
+
+        mpn = ''.join(splitArray)
+        url = "http://octopart.com/api/v3/parts/search"
+        url += "?apikey=0c491965"
+        args = [
+            ('q', mpn),
+            ('start', 0),
+            ('limit', 10)
+            ]
+
+        url += '&' + urllib.urlencode(args)
+        url += '&include[]=descrition'
+
+        data = urllib.urlopen(url).read()
+        response = json.loads(data)
+
+		result = response['results'][0]
+		item = result ['item']
+		descrip = item['descriptions'][0]
+		value = descrip['value']
+
+		try:
+    		speech_output = "It is a " str(value)
+		except:
+    		try:
+        		descrip = item['descriptions'][1]
+        		value = descrip['value']
+        		speech_output = "It is a " str(value)
+    		except:
+        		descrip = item['descriptions'][2]
+        		value = descrip['value']
+        		speech_output = "It is a " str(value)
+
+
+
+        card_title = None
+        reprompt_text = None
+        should_end_session = False
+        return util.build_response(session_attributes, util.build_speechlet_response(
+            card_title, speech_output, reprompt_text, should_end_session))
+
 
 
 '''# print request time (in milliseconds)
