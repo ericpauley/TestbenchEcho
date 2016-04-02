@@ -24,5 +24,5 @@ OSCOPESetVdiv Set channel {channel} to {value} {vunits}
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per div
 OSCOPEMeasure Measure the {measurement} on channel {channel}
 OctoSpec What value is the {spec} of {LF four one two|mpn}
-GuideToGalaxy What is the meaning of life the universe and everything
-GuideToGalaxy What's the meaning of life the universe and everything
+GuideToGalaxy What is the answer to life the universe and everything
+GuideToGalaxy What's the answer to life the universe and everything

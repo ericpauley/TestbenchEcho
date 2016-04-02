@@ -1,6 +1,6 @@
 from skills.skill import SkillBase
 from skills.welcome import Welcome
-from skills.help import Help
+from skills.help import Help, GuideToGalaxy
 from skills.nullskill import NullSkill
 from skills.resistor import Resistor, RevResistor
 from skills.octospec import OctoSpec
@@ -24,3 +24,4 @@ skillmap["FGENTriple"] = FGENTriple()
 skillmap["FGENSetFrequency"] = FGENSetFrequency()
 skillmap["FGENSetVoltage"] = FGENSetVoltage()
 skillmap["FGENSetVoltageOffset"] = FGENSetVoltageOffset()
+skillmap["GuideToGalaxy"] = GuideToGalaxy()
