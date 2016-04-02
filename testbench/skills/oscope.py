@@ -84,7 +84,7 @@ class OSCOPEMeasure(SkillBase):
         result = json.loads(item['data'])
         session_attributes = {}
         card_title = None
-        speech_output = None
+        speech_output = result
         # If the user either does not reply to the welcome message or says something
         # that is not understood, they will be prompted again with this text.
         reprompt_text = None
