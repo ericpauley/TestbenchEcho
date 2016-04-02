@@ -80,6 +80,7 @@ class OSCOPEMeasure(SkillBase):
         command = ['measurement', '1', ch,t]
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
+        pubsub = r.pubsub()
         pubsub.subscribe("results")
         next(pubsub.listen())
         resultData = pubsub.listen()
