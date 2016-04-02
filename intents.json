@@ -187,12 +187,12 @@
           "type": "AMAZON.LITERAL"
         }
       ]
-    }
+    },
     {
       "intent": "WolframResistor",
       "slots":[
         {
-          "name": "resitorA",
+          "name": "resistorA",
           "type": "AMAZON.NUMBER"
         },
         {
@@ -204,7 +204,7 @@
           "type": "AMAZON.LITERAL"
         },
         {
-          "name": "resitorB",
+          "name": "resistorB",
           "type": "AMAZON.NUMBER"
         },
         {
