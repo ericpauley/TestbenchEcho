@@ -118,7 +118,9 @@ class WolframCompute(SkillBase):
         n1 = intent['slots']['numA']['value']
         n2 = intent['slots']['numB']['value']
         op = intent['slots']['operation']['value']
-        query = n1+'%20'+op.replace(' ','%20')+'%20'+n2
+        query = n1+'%20'+op+'%20'+n2
+        print query
+        query.replace(' ','%20')
         print query
         url = "http://api.wolframalpha.com/v2/query?"
         url += "appid=238HJV-7G3G7G8VYU&input="
