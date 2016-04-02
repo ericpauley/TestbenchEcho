@@ -222,7 +222,7 @@ class OctoSpec(SkillBase):
         url = 'http://octopart.com/api/v3/parts/match?'
         url += '&apikey=0c491965'
         url += '&pretty_print=false'
-        url += '&queries=[{"mpn":"LF412CD"}]'
+        url += '&queries=[{"mpn":"MSP430"}]'
         url += '&include[]=specs'
 
 

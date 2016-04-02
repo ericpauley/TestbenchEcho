@@ -27,4 +27,3 @@ skillmap["FGENSetVoltage"] = FGENSetVoltage()
 skillmap["FGENSetVoltageOffset"] = FGENSetVoltageOffset()
 skillmap["GuideToGalaxy"] = GuideToGalaxy()
 skillmap["Wolfram"] = Wolfram()
-
