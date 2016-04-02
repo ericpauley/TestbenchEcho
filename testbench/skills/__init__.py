@@ -3,6 +3,7 @@ from skills.welcome import Welcome
 from skills.help import Help
 from skills.nullskill import NullSkill
 from skills.resistor import Resistor, RevResistor
+from skills.OctopartTest import OctopartTest
 
 skillmap = {}
 skillmap["AMAZON.HelpIntent"] = Help()

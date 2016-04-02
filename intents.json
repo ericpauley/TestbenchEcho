@@ -58,7 +58,20 @@
         },
         {
           "name":"funits",
-          "type":"FREQUENCY_UNIT"
+          "type":"FREQUENCY_UNITS"
+        }
+      ]
+    },
+    {
+      "intent": "OctopartTest",
+      "slots":[
+        {
+          "name":"spec",
+          "type":"LIST_OF_OCTOSPECS"
+        },
+        {
+          "name":"mpn",
+          "type":"AMAZON.LITERAL"
         }
       ]
     },

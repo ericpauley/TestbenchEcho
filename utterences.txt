@@ -8,3 +8,4 @@ FGENDoubleFrequency Double frequency
 FGENHalveFrequency Halve frequency
 FGENSetFrequency Set frequency {value} {funits}
 OSCOPEAutoset Autoset
+OctopartTest What value is the {spec} of {LF four one two|mpn}
