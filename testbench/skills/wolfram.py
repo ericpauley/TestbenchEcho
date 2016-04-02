@@ -149,7 +149,7 @@ class WolframConvert(SkillBase):
         session_attributes = {}
         card_title = "Wolfram Computation"
         n = intent['slots']['num']['value']
-        u2 = intent['slots']['unitA']['value']
+        u1 = intent['slots']['unitA']['value']
         u2 = intent['slots']['unitB']['value']
         query = n+'%20'+u1+'%20'+'in'+'%20'+u2
         url = "http://api.wolframalpha.com/v2/query?"
