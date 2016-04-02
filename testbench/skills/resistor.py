@@ -30,6 +30,7 @@ class Resistor(SkillBase):
         for color in colorvars:
             if 'value' in intent['slots'][color]:
                 colors.append(intent['slots'][color]['value'])
+        print colors
         for color in colors[:-1]:
             val = val*10 + colormap[color]
         val = val*pow(10, colormap[colors[-1]])

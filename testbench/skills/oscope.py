@@ -43,7 +43,7 @@ class OSCOPEImage(SkillBase):
         reprompt_text = None
         should_end_session = False
         out= util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session, "https://alexasslisbogusandlame.tk/"+name+".bmp"))
+            card_title, speech_output, reprompt_text, should_end_session, "https://alexasslisbogusandlame.tk/"+name+".png"))
         print out
         return out
 

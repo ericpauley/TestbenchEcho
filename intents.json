@@ -4,7 +4,13 @@
       "intent": "Welcome"
     },
     {
-      "intent": "NullSkill"
+      "intent": "NullSkill",
+      "slots":[
+        {
+          "name": "filler",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
     },
     {
       "intent": "RevResistor",
@@ -116,6 +122,15 @@
           "name":"spec",
           "type":"LIST_OF_OCTOSPECS"
         },
+        {
+          "name":"mpn",
+          "type":"AMAZON.LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "OctoDescrip",
+      "slots":[
         {
           "name":"mpn",
           "type":"AMAZON.LITERAL"

@@ -8,7 +8,7 @@ http://amzn.to/1LGWsLG
 """
 
 from __future__ import print_function
-from skills import *
+from skills import skillmap
 
 def handler(event, context):
     """ Route the incoming request based on type (LaunchRequest, IntentRequest,
@@ -62,7 +62,7 @@ def on_intent(intent_request, session):
     # Dispatch to your skill's intent handlers
 
     if intent_name not in skillmap:
-        intent_name = "AMAZON.HelpIntent"
+        intent_name = "NullSkill"
 
     if intent_name in skillmap:
         return skillmap[intent_name].execute(intent, session)
