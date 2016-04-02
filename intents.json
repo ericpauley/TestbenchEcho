@@ -196,11 +196,11 @@
       "intent": "WolframResistor",
       "slots":[
         {
-          "name": "resitor1",
+          "name": "resitorA",
           "type": "AMAZON.NUMBER"
         },
         {
-          "name": "unit1",
+          "name": "unitA",
           "type": "RESISTANCE_UNIT"
         },
         {
@@ -208,11 +208,11 @@
           "type": "AMAZON.LITERAL"
         },
         {
-          "name": "resitor2",
+          "name": "resitorB",
           "type": "AMAZON.NUMBER"
         },
         {
-          "name": "unit2",
+          "name": "unitB",
           "type": "RESISTANCE_UNIT"
         }
       ]
@@ -221,11 +221,11 @@
       "intent": "WolframDistance",
       "slots":[
         {
-          "name": "object1",
+          "name": "objectA",
           "type": "AMAZON.LITERAL"
         },
         {
-          "name": "object2",
+          "name": "objectB",
           "type": "AMAZON.LITERAL"
         }
       ]

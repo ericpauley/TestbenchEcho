@@ -31,15 +31,15 @@ GuideToGalaxy What is the answer to life the universe and everything
 GuideToGalaxy What's the answer to life the universe and everything
 
 Wolfram Calculate {inverting amplifier|query}
-WolframResistor Calculate {resistor1} {unit1} in {parallel|operation} with {resistor1} {unit1}
-WolframResistor Calculate {resistor1} {unit1} in {series|operation} with {resistor1} {unit1}
+WolframResistor Calculate {resistorA} {unitA} in {parallel|operation} with {resistorB} {unitB}
+WolframResistor Calculate {resistorA} {unitA} in {series|operation} with {resistorB} {unitB}
 Wolfram Calculate {sine of x squared|query}
 Wolfram Calculate {the integral of x minus four|query}
 Wolfram Calculate {inverting amplifier|query}
-WolframDistance Calculate distance between the {earth|object1} and the {moon|object2}
-WolframDistance Calculate distance between the {earth|object1} and the {sun|object2}
-WolframDistance Calculate distance between the {moon|object1} and the {sun|object2}
-WolframDistance Calculate distance between the {earth|object1} and {mars|object2}
-WolframDistance Calculate distance between the {sun|object1} and {mars|object2}
+WolframDistance Calculate distance between the {earth|objectA} and the {moon|objectB}
+WolframDistance Calculate distance between the {earth|objectA} and the {sun|objectB}
+WolframDistance Calculate distance between the {moon|objectA} and the {sun|objectB}
+WolframDistance Calculate distance between the {earth|objectA} and {mars|objectB}
+WolframDistance Calculate distance between the {sun|objectA} and {mars|objectB}
 
 

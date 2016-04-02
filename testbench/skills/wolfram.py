@@ -51,10 +51,10 @@ class WolframResistor(SkillBase):
     def execute(__self__, intent, session):
         session_attributes = {}
         card_title = "Wolfram Resistor"
-        r1 = intent['slots']['resistor1']['value']
-        u1 = intent['slots']['unit1']['value']
-        r2 = intent['slots']['resistor2']['value']
-        u2 = intent['slots']['unit2']['value']
+        r1 = intent['slots']['resistorA']['value']
+        u1 = intent['slots']['unitA']['value']
+        r2 = intent['slots']['resistorB']['value']
+        u2 = intent['slots']['unitB']['value']
         op = intent['slots']['operation']['value']
         query = r1+'%20'+u1+'%20in%20'+op+'%20'+r2+'%20'+u2
         url = "http://api.wolframalpha.com/v2/query?"
@@ -97,8 +97,8 @@ class WolframDistance(SkillBase):
     def execute(__self__, intent, session):
         session_attributes = {}
         card_title = "Wolfram Distance"
-        o1 = intent['slots']['object1']['value']
-        o1 = intent['slots']['object2']['value']
+        o1 = intent['slots']['objectA']['value']
+        o1 = intent['slots']['objectB']['value']
         query = 'distance%20between%20'+o1+'%20and%20'+o2
         url = "http://api.wolframalpha.com/v2/query?"
         url += "appid=238HJV-7G3G7G8VYU&input="
