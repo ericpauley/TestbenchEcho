@@ -298,7 +298,7 @@ class OctoSpec(SkillBase):
         except:
             image = imagesets['small_image']['url']
         image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
-        resonse = str("The " intent['slots']['spec']['value'] + " is " + val)
+        response = str("The " + intent['slots']['spec']['value'] + " is " + val)
         #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
 
         return self.respond(response, "Technical Specification", response, image)
