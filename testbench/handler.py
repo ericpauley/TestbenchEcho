@@ -9,6 +9,7 @@ http://amzn.to/1LGWsLG
 
 from __future__ import print_function
 from skills import skillmap
+import util
 
 def handler(event, context):
     """ Route the incoming request based on type (LaunchRequest, IntentRequest,
@@ -65,7 +66,12 @@ def on_intent(intent_request, session):
         intent_name = "NullSkill"
 
     if intent_name in skillmap:
-        return skillmap[intent_name].execute(intent, session)
+        try:
+            return skillmap[intent_name].execute(intent, session)
+        except Exception as e:
+            print(e)
+            return util.build_response({}, util.build_speechlet_response(
+                None, "An error has occured", "", False))
     else:
         raise ValueError("Invalid intent")
 
