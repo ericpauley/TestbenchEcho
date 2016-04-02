@@ -2,12 +2,12 @@ import xml.etree.ElementTree as ET
 import urllib
 import util
 from skills.skill import SkillBase
-import skills.xmltodict as xmltodict
+import xmltodict
 import base64
 
 class Wolfram(SkillBase):
 
-    def execute(__self__, intent, session):
+    def execute(self, intent, session):
         image = "https://www.wolframalpha.com/images/press/photos/logos/wa-logo-stacked1-large.jpg"
         session_attributes = {}
         card_title = "Wolfram"
@@ -40,7 +40,7 @@ class Wolfram(SkillBase):
 
 class WolframResistor(SkillBase):
 
-    def execute(__self__, intent, session):
+    def execute(self, intent, session):
         image = "https://www.wolframalpha.com/images/press/photos/logos/wa-logo-stacked1-large.jpg"
         session_attributes = {}
         card_title = "Wolfram Resistor"
@@ -77,7 +77,7 @@ class WolframResistor(SkillBase):
 
 class WolframDistance(SkillBase):
 
-    def execute(__self__, intent, session):
+    def execute(self, intent, session):
         image = "https://www.wolframalpha.com/images/press/photos/logos/wa-logo-stacked1-large.jpg"
         session_attributes = {}
         card_title = "Wolfram Distance"

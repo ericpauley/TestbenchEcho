@@ -250,8 +250,7 @@ def text2int(textnum, numwords={}):
 
 
 class OctoSpec(SkillBase):
-    def execute(__self__, intent, session):
-        session_attributes = {}
+    def execute(self, intent, session):
 
         mpnpre = intent['slots']['mpn']['value']
 
@@ -292,15 +291,10 @@ class OctoSpec(SkillBase):
 
         #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
 
-        speech_output = str(val)
-        card_title = None
-        reprompt_text = None
-        should_end_session = False
-        return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session))
+        return self.respond(str(val))
 
 class OctoDescrip(SkillBase):
-    def execute(__self__, intent, session):
+    def execute(self, intent, session):
         session_attributes={}
 
         mpnpre = intent['slots']['mpn']['value']
@@ -345,16 +339,10 @@ class OctoDescrip(SkillBase):
                 value = descrip['value']
                 speech_output = "It is a " + str(value)
 
-
-
-        card_title = None
-        reprompt_text = None
-        should_end_session = False
-        return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session))
+        return self.respond(speech_output)
 
 class OctoPrice(SkillBase):
-    def execute(__self__, intent, session):
+    def execute(self, intent, session):
         session_attributes={}
 
         mpnpre = intent['slots']['mpn']['value']
@@ -392,32 +380,5 @@ class OctoPrice(SkillBase):
         response = ""
         for index in range(len(prices_dict['USD'])):
             response += "The price for " + str(prices['USD'][index][0]) + " is " + str(prices['USD'][index][1]) + " dollars."
-        speech_output = response
 
-
-        card_title = None
-        reprompt_text = None
-        should_end_session = False
-        return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session))
-
-
-
-
-'''# print request time (in milliseconds)
-print response['msec']
-
-#print response
-# print mpn's
-for result in response['results']:
-    for item in result['items']:
-        #print item['offers'][0]['prices']
-        try:
-            print item['mpn']
-            #print item['price']
-            #print item['specs']
-            print item['specs']['supply_voltage_dc']['display_value']
-            print item['specs']['case_package']['display_value']
-        except:
-            print "this item doesn't have that attribute"
-'''
+        return self.respond(response)

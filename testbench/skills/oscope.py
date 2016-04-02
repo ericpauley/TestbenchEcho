@@ -13,43 +13,25 @@ measurements = {"frequency":['FREQuency','Hertz'],"mean":['MEAN','Volts'],"perio
 
 class OSCOPEAutoset(SkillBase):
 
-    def execute(__self__, intent, session):
+    def execute(self, intent, session):
         command = ['AUTOSet']
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
-        session_attributes = {}
-        card_title = None
-        speech_output = 'Auto setting'
-        # If the user either does not reply to the welcome message or says something
-        # that is not understood, they will be prompted again with this text.
-        reprompt_text = None
-        should_end_session = False
-        return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session))
+        return self.respond("Auto scaling")
 
 
 class OSCOPEImage(SkillBase):
 
-    def execute(__self__, intent, session):
+    def execute(self, intent, session):
         name = "".join([random.choice(string.ascii_lowercase) for i in range(10)])
         command = ['copy', name]
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
-        session_attributes = {}
-        card_title = "New Oscilloscope Capture"
-        speech_output = "Capturing screen to the alexa app"
-        # If the user either does not reply to the welcome message or says something
-        # that is not understood, they will be prompted again with this text.
-        reprompt_text = None
-        should_end_session = False
-        out= util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session, "https://alexasslisbogusandlame.tk/"+name+".png"))
-        print out
-        return out
+        return self.respond("Capturing screen to the alexa app", "New Oscilloscope Capture", "Your capture should appear shortly.", "https://alexasslisbogusandlame.tk/"+name+".png")
 
 class OSCOPESetVdiv(SkillBase):
 
-    def execute(__self__, intent, session):
+    def execute(self, intent, session):
         vmult = vunits[intent['slots']['vunits']['value']]
         v = vmult * int(intent['slots']['value']['value'])
         if (v >= .002) and (v <= 5):
@@ -64,19 +46,11 @@ class OSCOPESetVdiv(SkillBase):
         command = ['CH',ch,'SCALE',value]
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
-        session_attributes = {}
-        card_title = None
-        speech_output = 'Setting channel ' + ch + ' scale'
-        # If the user either does not reply to the welcome message or says something
-        # that is not understood, they will be prompted again with this text.
-        reprompt_text = None
-        should_end_session = False
-        return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session))
+        return self.respond('Setting channel ' + ch + ' scale')
 
 class OSCOPESetHdiv(SkillBase):
 
-    def execute(__self__, intent, session):
+    def execute(self, intent, session):
         tmult = tunits[intent['slots']['tunits']['value']]
         t = tmult * int(intent['slots']['value']['value'])
         value = ' ' + str(t) + 'E0'
@@ -89,19 +63,11 @@ class OSCOPESetHdiv(SkillBase):
         command = ['horizontal','SCALe',value]
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
-        session_attributes = {}
-        card_title = None
-        speech_output = 'Changing the horizontal scale'
-        # If the user either does not reply to the welcome message or says something
-        # that is not understood, they will be prompted again with this text.
-        reprompt_text = None
-        should_end_session = False
-        return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session))
+        return self.respond('Changing the horizontal scale')
 
 class OSCOPEMeasure(SkillBase):
 
-    def execute(__self__, intent, session):
+    def execute(self, intent, session):
         t = measurements[intent['slots']['measurement']['value']]
         ch = 'CH' + intent['slots']['channel']['value']
         command = ['measurement', '1', ch,t[0]]
@@ -114,12 +80,4 @@ class OSCOPEMeasure(SkillBase):
         tempresult = json.loads(resultData['data'])
         value = float(tempresult)
         result = str(value) + t[1]
-        session_attributes = {}
-        card_title = None
-        speech_output = result
-        # If the user either does not reply to the welcome message or says something
-        # that is not understood, they will be prompted again with this text.
-        reprompt_text = None
-        should_end_session = False
-        return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session))
+        return self.respond(result)
