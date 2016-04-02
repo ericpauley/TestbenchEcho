@@ -4,8 +4,12 @@ Resistor What resistor is {ColorA} {ColorB} {ColorC} {ColorD}
 Resistor {ColorA} {ColorB} {ColorC}
 Resistor {ColorA} {ColorB} {ColorC} {ColorD}
 RevResistor colors of {value} {runits} resistor
-FGENDoubleFrequency Double frequency
-FGENHalveFrequency Halve frequency
+FGENDouble Double {type}
+FGENHalve Halve {type}
+FGENTriple Triple {type}
+FGENDouble Double the {type}
+FGENHalf Half the {type}
+FGENTriple Triple the {type}
 FGENSetFrequency Set frequency {value} {funits}
 OSCOPEAutoset Autoset
 OSCOPEImage screen capture

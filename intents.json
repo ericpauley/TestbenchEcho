@@ -44,10 +44,25 @@
       "intent": "AMAZON.HelpIntent"
     },
     {
-      "intent": "FGENDoubleFrequency"
+      "intent": "FGENDouble"
+      {
+          "name": "type",
+          "type": "LIST_OF_FGEN"
+      }
     },
     {
-      "intent": "FGENHalveFrequency"
+      "intent": "FGENHalf"
+      {
+          "name": "type",
+          "type": "LIST_OF_FGEN"
+      }
+    },
+    {
+      "intent": "FGENTripple"
+      {
+          "name": "type",
+          "type": "LIST_OF_FGEN"
+      }
     },
     {
       "intent": "FGENSetFrequency",
