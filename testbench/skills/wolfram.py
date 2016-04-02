@@ -1,6 +1,5 @@
 import xml.etree.ElementTree as ET
 import urllib
-import urllib.request
 import util
 from skills.skill import SkillBase
 
@@ -17,7 +16,7 @@ class Wolfram(SkillBase):
         url += "appid=238HJV-7G3G7G8VYU&input="
         url += query
         url += "&format=image,plaintext"
-        data = urllib.request.urlopen(url).read()
+        data = urllib.urlopen(url).read()
         response = ET.fromstring(data)
 
         speech = ""
