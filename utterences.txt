@@ -3,7 +3,7 @@ Resistor What resistor is {ColorA} {ColorB} {ColorC}
 Resistor What resistor is {ColorA} {ColorB} {ColorC} {ColorD}
 Resistor {ColorA} {ColorB} {ColorC}
 Resistor {ColorA} {ColorB} {ColorC} {ColorD}
-RevResistor colors of {value} {runits} resistor
+
 FGENDouble Double {type}
 FGENHalf Halve {type}
 FGENTriple Triple {type}
@@ -23,10 +23,14 @@ OSCOPESetVdiv Set channel {channel} to {value} {vunits} per division
 OSCOPESetVdiv Set channel {channel} to {value} {vunits}
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per div
 OSCOPEMeasure Measure the {measurement} on channel {channel}
-OctoSpec What value is the {spec} of {LF four one two|mpn}
-OctoSpec What value is the {spec} of a {LF four one two|mpn}
+
+OctoSpec What is the {spec} of {MSP four three zero|mpn}
 OctoSpec What is the {spec} of {LF four one two|mpn}
-OctoSpec What value is the {spec} of a {LF four one two|mpn}
+OctoSpec What is the {spec} of {LM three five eight|mpn}
+OctoSpec What is the {spec} of {MSP four three zero|mpn}
+
+
+
 GuideToGalaxy What is the answer to life the universe and everything
 GuideToGalaxy What's the answer to life the universe and everything
 Wolfram Calculate {inverting amplifier|query}
@@ -34,5 +38,4 @@ Wolfram Calculate {twenty ohm resister in parallel with a ten ohm resistor|query
 Wolfram Calculate {one hundred kiloohm resister in series with a two hundred kiloohm resistor|query}
 Wolfram Calculate {sine of x squared|query}
 Wolfram Calculate {the integral of x minus four|query}
-
-
+Wolfram Calculate {inverting amplifier|query}
