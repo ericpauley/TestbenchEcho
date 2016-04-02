@@ -3,7 +3,7 @@ import urllib
 import util
 from skills.skill import SkillBase
 import skills.xmltodict as xmltodict
-
+import base64
 
 class Wolfram(SkillBase):
 
@@ -33,6 +33,8 @@ class Wolfram(SkillBase):
                 for pt in pod.findall('.//plaintext'):
                     if pt.text:
                         speech += pt.text
+
+        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.encode(image)+".png"
 
         return util.respond(speech, "Wolfram Alpha", speech, image)
 
@@ -69,6 +71,8 @@ class WolframResistor(SkillBase):
                     if pt.text:
                         speech += pt.text
 
+        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.encode(image)+".png"
+
         return util.respond(speech, "Wolfram Alpha", speech, image)
 
 class WolframDistance(SkillBase):
@@ -100,5 +104,7 @@ class WolframDistance(SkillBase):
                 for pt in pod.findall('.//plaintext'):
                     if pt.text:
                         speech = pt.text
+
+        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.encode(image)+".png"
 
         return util.respond(speech, "Wolfram Alpha", speech, image)

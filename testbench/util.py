@@ -5,7 +5,7 @@ def respond(speech="", title=None, text=None, image=None):
     out = {
         'outputSpeech': {
             'type': 'PlainText',
-            'text': output
+            'text': speech
         },
         'reprompt': {
             'outputSpeech': {
