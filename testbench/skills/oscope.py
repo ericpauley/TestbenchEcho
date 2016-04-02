@@ -86,7 +86,7 @@ class OSCOPESetHdiv(SkillBase):
                 t = t*10
                 m = m + 1
             value = ' ' + str(t) + 'E-' + str(m)
-        command = ['CH','SCALE',value]
+        command = ['HORizontal','SCALE',value]
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
         session_attributes = {}
