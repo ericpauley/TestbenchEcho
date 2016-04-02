@@ -118,6 +118,7 @@ class WolframCompute(SkillBase):
         n1 = intent['slots']['numA']['value']
         n2 = intent['slots']['numB']['value']
         op = intent['slots']['operation']['value']
+        op.replace(' ','%20')
         query = n1+'%20'+op+'%20'+n2
         url = "http://api.wolframalpha.com/v2/query?"
         url += "appid=238HJV-7G3G7G8VYU&input="
@@ -140,3 +141,36 @@ class WolframCompute(SkillBase):
         image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
 
         return util.respond(speech, "Wolfram Alpha", speech, image)
+
+class WolframConvert(SkillBase):
+
+    def execute(__self__, intent, session):
+        image = "https://www.wolframalpha.com/images/press/photos/logos/wa-logo-stacked1-large.jpg"
+        session_attributes = {}
+        card_title = "Wolfram Computation"
+        n = intent['slots']['num']['value']
+        u2 = intent['slots']['unitA']['value']
+        u2 = intent['slots']['unitB']['value']
+        query = n+'%20'+u1+'%20'+'in'+'%20'+u2
+        url = "http://api.wolframalpha.com/v2/query?"
+        url += "appid=238HJV-7G3G7G8VYU&input="
+        url += query
+        url += "&format=image,plaintext"
+        data = urllib.urlopen(url).read()
+        response = ET.fromstring(data)
+
+        #xml_data=urllib.urlopen(url).read()
+        #incomingDictData = xmltodict.parse(xml_data)
+        #print incomingDictData
+
+        speech = ""
+        for pod in response.findall('.//pod'):
+            if pod.attrib['title'] == 'Result':
+                for pt in pod.findall('.//plaintext'):
+                    if pt.text:
+                        speech = pt.text
+
+        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+
+        return util.respond(speech, "Wolfram Alpha", speech, image)
+

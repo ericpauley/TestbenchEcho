@@ -279,6 +279,23 @@
           "type": "AMAZON.NUMBER"
         }
       ]
+    },
+    {
+      "intent": "WolframConvert",
+      "slots":[
+        {
+          "name": "num",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "unitA",
+          "type": "AMAZON.LITERAL"
+        },
+        {
+          "name": "unitB",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
     }
   ]
 }
