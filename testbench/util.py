@@ -2,15 +2,10 @@
 
 
 def build_speechlet_response(title, output, reprompt_text, should_end_session):
-    return {
+    out = {
         'outputSpeech': {
             'type': 'PlainText',
             'text': output
-        },
-        'card': {
-            'type': 'Simple',
-            'title': 'SessionSpeechlet - ' + title,
-            'content': 'SessionSpeechlet - ' + output
         },
         'reprompt': {
             'outputSpeech': {
@@ -20,6 +15,13 @@ def build_speechlet_response(title, output, reprompt_text, should_end_session):
         },
         'shouldEndSession': should_end_session
     }
+    if title is not None:
+        out["card"] = {
+            'type': 'Simple',
+            'title': 'SessionSpeechlet - ' + title,
+            'content': 'SessionSpeechlet - ' + output
+        }
+    return out
 
 
 def build_response(session_attributes, speechlet_response):
