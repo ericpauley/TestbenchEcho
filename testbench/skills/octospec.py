@@ -24,7 +24,7 @@ class OctoSpec(SkillBase):
         result = response['results'][0]
         item = result['items'][0]
         specs = item['specs']
-        val = specs[specMac[intent['slots']['spec']['value']]]['display_value']
+        val = specs[specMap[intent['slots']['spec']['value']]]['display_value']
 
         #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
 
