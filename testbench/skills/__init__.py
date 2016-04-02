@@ -4,7 +4,7 @@ from skills.help import Help
 from skills.nullskill import NullSkill
 from skills.resistor import Resistor, RevResistor
 from skills.octospec import OctoSpec
-from skills.oscope import OSCOPEAutoset, OSCOPEImage, OSCOPESetVdiv
+from skills.oscope import OSCOPEAutoset, OSCOPEImage, OSCOPESetVdiv, OSCOPEMeasure
 
 skillmap = {}
 skillmap["AMAZON.HelpIntent"] = Help()
@@ -16,3 +16,4 @@ skillmap["RevResistor"] = RevResistor()
 skillmap["OSCOPEImage"] = OSCOPEImage()
 skillmap["OSCOPEAutoset"] = OSCOPEAutoset()
 skillmap["OSCOPESetVdiv"] = OSCOPESetVdiv()
+skillmap["OSCOPEMeasure"] = OSCOPEMeasure()

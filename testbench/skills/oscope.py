@@ -7,6 +7,7 @@ import string
 
 #scale = [.002,.005,.01,.05,.1,.5,1,2,5]
 vunits = {"volts":1,"volt":1,"millivolts":.001,"millivolt":.001}
+measurements = {"frequency":'FREQuency',"mean":'MEAN',"period":'period',"peak to peak voltage":'PK2pk',"rms":'CRMs',"minimum":'MINImum',"maximum":'MAXImum',"rise":'RISe',"fall":'FALL',"positive pulse width":'PWIdth',"negative pulse width":'NWIdth'}
 
 class OSCOPEAutoset(SkillBase):
 
@@ -59,6 +60,28 @@ class OSCOPESetVdiv(SkillBase):
         command = ['CH',ch,'SCALE',value]
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
+        session_attributes = {}
+        card_title = None
+        speech_output = None
+        # If the user either does not reply to the welcome message or says something
+        # that is not understood, they will be prompted again with this text.
+        reprompt_text = None
+        should_end_session = False
+        return util.build_response(session_attributes, util.build_speechlet_response(
+            card_title, speech_output, reprompt_text, should_end_session))
+
+class OSCOPEMeasure(SkillBase):
+
+    def execute(__self__, intent, session):
+        t = measurements[intent['slots']['measurement']['value']]
+        ch = 'CH' + intent['slots']['channel']['value']
+        command = ['measurement', '1', ch,t]
+        r = redis.Redis("104.236.205.31")
+        r.publish("boss",json.dumps(command))
+        pubsub.subscribe("results")
+        next(pubsub.listen())
+        resultData = pubsub.listen()
+        result = json.loads(item['data'])
         session_attributes = {}
         card_title = None
         speech_output = None

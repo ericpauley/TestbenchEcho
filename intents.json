@@ -115,6 +115,19 @@
           "type": "VOLTAGE_UNITS"
         }
       ]
+    },
+    {
+      "intent": "OSCOPEMeasure",
+      "slots": [
+        {
+          "name": "measurement",
+          "type": "LIST_OF_MEASUREMENTS"
+        },
+        {
+          "name": "channel",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
     }
   ]
 }
