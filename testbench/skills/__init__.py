@@ -5,7 +5,7 @@ from skills.nullskill import NullSkill
 from skills.resistor import Resistor, RevResistor
 from skills.octospec import OctoSpec
 from skills.oscope import OSCOPEAutoset, OSCOPEImage, OSCOPESetVdiv, OSCOPEMeasure
-from skills.fgen import FGENDouble, FGENHalf, FGENTriple, FGENSetFrequency
+from skills.fgen import FGENDouble, FGENHalf, FGENTriple, FGENSetFrequency, FGENSetVoltage, FGENSetVoltageOffset
 
 skillmap = {}
 skillmap["AMAZON.HelpIntent"] = Help()
