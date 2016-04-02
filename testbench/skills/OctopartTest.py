@@ -5,7 +5,7 @@ from skills.skill import SkillBase
 
 
 
-specMap = {"DC input voltage": 'input_voltage_dc'}
+specMap = {"DC supply voltage": 'supply_voltage_dc'}
 
 class OctopartTest(SkillBase):
     def execute(__self__, intent, session):
@@ -21,7 +21,12 @@ class OctopartTest(SkillBase):
         data = urllib.urlopen(url).read()
         response = json.loads(data)
 
-        val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
+        result = response['results'][0]
+        item = result['items'][0]
+        specs = item['specs']
+        val = specs['supply_voltage_dc']['display_value']
+
+        #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
 
         speech_output = str(val)
         pass
