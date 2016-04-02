@@ -10,7 +10,7 @@ def build_speechlet_response(title, output, reprompt_text, should_end_session, i
         'reprompt': {
             'outputSpeech': {
                 'type': 'PlainText',
-                'text': reprompt_text
+                'text': "Reprompt"
             }
         },
         'shouldEndSession': should_end_session
