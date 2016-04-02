@@ -12,6 +12,10 @@ FGENHalf Half the {type}
 FGENTriple Triple the {type}
 FGENSetFrequency Set frequency {value} {funits}
 FGENSetFrequency Set the frequency to {value} {funits}
+FGENSetVoltage Set voltage {value} {vunits}
+FGENSetVoltage Set the voltage to {value} {vunits}
+FGENSetVoltageOffset Set voltage offset {value} {vunits}
+FGENSetVoltageOffset Set the voltage offset to {value} {vunits}
 OSCOPEAutoset Autoset
 OSCOPEImage screen capture
 OSCOPEImage screenshot
@@ -20,4 +24,5 @@ OSCOPESetVdiv Set channel {channel} to {value} {vunits}
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per div
 OSCOPEMeasure Measure the {measurement} on channel {channel}
 OctoSpec What value is the {spec} of {LF four one two|mpn}
-GuideToGalaxy What is the meaning to life the universe and everything
+GuideToGalaxy What is the meaning of life the universe and everything
+GuideToGalaxy What's the meaning of life the universe and everything
