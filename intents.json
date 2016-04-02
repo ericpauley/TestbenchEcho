@@ -105,7 +105,7 @@
         },
         {
           "name":"vunits",
-          "type":"FREQUENCY_UNITS"
+          "type":"VOLTAGE_UNITS"
         }
       ]
     },
