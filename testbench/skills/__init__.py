@@ -4,6 +4,7 @@ from skills.help import Help
 from skills.nullskill import NullSkill
 from skills.resistor import Resistor, RevResistor
 from skills.OctopartTest import OctopartTest
+from skills.oscope import OSCOPEImage
 
 skillmap = {}
 skillmap["AMAZON.HelpIntent"] = Help()
@@ -12,3 +13,4 @@ skillmap["NullSkill"] = NullSkill()
 skillmap["Resistor"] = Resistor()
 skillmap["OctopartTest"] = OctopartTest()
 skillmap["RevResistor"] = RevResistor()
+skillmap["OSCOPEImage"] = OSCOPEImage()

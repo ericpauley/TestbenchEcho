@@ -95,6 +95,9 @@
     },
     {
       "intent": "OSCOPEAutoset"
+    },
+    {
+      "intent": "OSCOPEImage"
     }
   ]
 }
