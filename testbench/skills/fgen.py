@@ -86,7 +86,7 @@ class FGENSetVoltage(SkillBase):
         r.publish("boss",json.dumps(command))
         session_attributes = {}
         card_title = None
-        speech_output = 'changing the voltage to ' + intent['slots']['value']['value'] + intent['slots']['funits']['value']
+        speech_output = 'changing the voltage to ' + intent['slots']['value']['value'] + intent['slots']['vunits']['value']
         # If the user either does not reply to the welcome message or says something
         # that is not understood, they will be prompted again with this text.
         reprompt_text = None
@@ -103,7 +103,7 @@ class FGENSetVoltageOffset(SkillBase):
         r.publish("boss",json.dumps(command))
         session_attributes = {}
         card_title = None
-        speech_output = 'changing the voltage offset to ' + intent['slots']['value']['value'] + intent['slots']['funits']['value']
+        speech_output = 'changing the voltage offset to ' + intent['slots']['value']['value'] + intent['slots']['vunits']['value']
         # If the user either does not reply to the welcome message or says something
         # that is not understood, they will be prompted again with this text.
         reprompt_text = None
