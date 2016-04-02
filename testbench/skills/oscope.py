@@ -7,7 +7,7 @@ import string
 
 #scale = [.002,.005,.01,.05,.1,.5,1,2,5]
 vunits = {"volts":1,"volt":1,"millivolts":.001,"millivolt":.001}
-measurements = {"frequency":['FREQuency','Hertz'],"mean":['MEAN','Volts'],"period":['period','seconds',"peak to peak voltage":['PK2pk','volts'],"rms":['CRMs','volts'],,"minimum":['MINImum','volts'],"maximum":['MAXImum','volts'],"rise":['RISe','seconds'],"fall":['FALL','seconds'],"positive pulse width":['PWIdth','seconds'],"negative pulse width":['NWIdth','seconds']}
+measurements = {"frequency":['FREQuency','Hertz'],"mean":['MEAN','Volts'],"period":['period','seconds'],"peak to peak voltage":['PK2pk','volts'],"rms":['CRMs','volts'],"minimum":['MINImum','volts'],"maximum":['MAXImum',"volts"],"rise":['RISe','seconds'],"fall":['FALL','seconds'],"positive pulse width":['PWIdth','seconds'],"negative pulse width":['NWIdth','seconds']}
 
 class OSCOPEAutoset(SkillBase):
 
