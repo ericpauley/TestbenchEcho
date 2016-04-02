@@ -323,7 +323,7 @@ class OctoDescrip(SkillBase):
             ]
 
         url += '&' + urllib.urlencode(args)
-        url += '&include[]=description'
+        url += '&include[]=descriptions'
 
         data = urllib.urlopen(url).read()
         response = json.loads(data)

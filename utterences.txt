@@ -32,6 +32,11 @@ OctoSpec What is the {spec} of {LF four one two|mpn}
 OctoSpec What is the {spec} of {LM three five eight|mpn}
 OctoSpec What is the {spec} of {MSP four three zero|mpn}
 
+OctoDescrip Tell me about {MSP four three zero|mpn}
+OctoDescrip Tell me about {LF four one two|mpn}
+OctoDescrip Tell me about {LM three five eight|mpn}
+OctoDescrip Tell me about {MSP four three zero|mpn}
+
 
 GuideToGalaxy What is the answer to life the universe and everything
 
@@ -58,4 +63,3 @@ WolframDistance Calculate the distance between the {earth|objectA} and {mars|obj
 WolframDistance Calculate the distance between the {sun|objectA} and {mars|objectB}
 
 NullSkill {anything|filler}
-NullSkill {|filler}
