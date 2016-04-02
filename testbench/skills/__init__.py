@@ -9,8 +9,5 @@ skillmap["AMAZON.HelpIntent"] = Help()
 skillmap["Welcome"] = Welcome()
 skillmap["NullSkill"] = NullSkill()
 skillmap["Resistor"] = Resistor()
-<<<<<<< Updated upstream
 skillmap["OctopartTest"] = OctopartTest()
-=======
 skillmap["RevResistor"] = RevResistor()
->>>>>>> Stashed changes
