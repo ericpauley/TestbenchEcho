@@ -5,7 +5,7 @@ from skills.nullskill import NullSkill
 from skills.resistor import Resistor, RevResistor
 from skills.octospec import OctoSpec
 from skills.oscope import OSCOPEAutoset, OSCOPEImage, OSCOPESetVdiv, OSCOPEMeasure
-from skills.fgen import FGENDouble, FGENHalf, FGENTriple, FGENSetFrequency, FGENSetVoltage, FGENSetVoltageOffset
+from skills.fgen import FGENDouble, FGENHalf, FGENTriple, FGENSet
 from skills.wolfram import Wolfram, WolframResistor, WolframDistance
 
 skillmap = {}
@@ -22,9 +22,7 @@ skillmap["OSCOPEMeasure"] = OSCOPEMeasure()
 skillmap["FGENDouble"] = FGENDouble()
 skillmap["FGENHalf"] = FGENHalf()
 skillmap["FGENTriple"] = FGENTriple()
-skillmap["FGENSetFrequency"] = FGENSetFrequency()
-skillmap["FGENSetVoltage"] = FGENSetVoltage()
-skillmap["FGENSetVoltageOffset"] = FGENSetVoltageOffset()
+skillmap["FGENSet"] = FGENSet()
 skillmap["GuideToGalaxy"] = GuideToGalaxy()
 skillmap["Wolfram"] = Wolfram()
 skillmap["WolframResistor"] = WolframResistor()
