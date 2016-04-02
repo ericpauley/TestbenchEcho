@@ -46,8 +46,7 @@ class OSCOPESetVdiv(SkillBase):
 
     def execute(__self__, intent, session):
         vmult = vunits[intent['slots']['vunits']['value']]
-        v = vmult * intent['slots']['value']['value']
-        print v
+        v = vmult * int(intent['slots']['value']['value'])
         if (v >= .002) and (v <= 5):
             value = ' ' + str(v) + 'E0'
             m = 0
@@ -57,7 +56,7 @@ class OSCOPESetVdiv(SkillBase):
                     m = m + 1
                 value = ' ' + str(v) + 'E-' + str(m)
         ch = intent['slots']['channel']['value']
-        command = ['CH',str(ch),'SCALE',value]
+        command = ['CH',ch,'SCALE',value]
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
         session_attributes = {}
