@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import urllib
 import util
 from skills.skill import SkillBase
-import xmltodict
+import skills.xmltodict as xmltodict
 
 image = "https://www.wolframalpha.com/images/press/photos/logos/wa-logo-stacked1-large.jpg"
 
