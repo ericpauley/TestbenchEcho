@@ -3,7 +3,7 @@ from skills.skill import SkillBase
 import redis
 import json
 
-class OSCOPEAutoset(SkillBase)
+class OSCOPEAutoset(SkillBase):
 
     def execute(__self__, intent, session):
         command = ['AUTOSet']
@@ -18,4 +18,3 @@ class OSCOPEAutoset(SkillBase)
         should_end_session = False
         return util.build_response(session_attributes, util.build_speechlet_response(
             card_title, speech_output, reprompt_text, should_end_session))
-        
