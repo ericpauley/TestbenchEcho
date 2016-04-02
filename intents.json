@@ -262,6 +262,23 @@
           "type": "AMAZON.LITERAL"
         }
       ]
+    },
+    {
+      "intent": "WolframCompute",
+      "slots":[
+        {
+          "name": "numA",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "operation",
+          "type": "AMAZON.LITERAL"
+        }
+        {
+          "name": "numB",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
     }
   ]
 }

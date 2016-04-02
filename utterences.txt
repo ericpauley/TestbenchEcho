@@ -70,6 +70,12 @@ WolframDistance Calculate the distance between the {sun|objectA} and {mars|objec
 WolframDistance Calculate the distance between {Philly|objectA} and {Princeton|objectB}
 WolframDistance Calculate the distance between the {Milan|objectA} and {Tokyo|objectB}
 WolframDistance Calculate the distance between the {Africa|objectA} and {Australia|objectB}
+WolframCompute Calculate {numA} {plus|operation} {numB}
+WolframCompute Calculate {numA} {minus|operation} {numB}
+WolframCompute Calculate {numA} {times|operation} {numB}
+WolframCompute Calculate {numA} {divided by|operation} {numB}
+WolframCompute Calculate {numA} {to the power of|operation} {numB}
+WolframCompute Calculate {numA} {mod|operation} {numB}
 
 
 NullSkill {anything|filler}
