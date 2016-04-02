@@ -1,0 +1,84 @@
+{
+  "intents": [
+    {
+      "intent": "Welcome"
+    },
+    {
+      "intent": "NullSkill"
+    },
+    {
+      "intent": "RevResistor",
+      "slots": [
+        {
+          "name": "runits",
+          "type": "RESISTANCE_UNIT"
+        },
+        {
+          "name": "value",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "Resistor",
+      "slots": [
+        {
+          "name": "ColorA",
+          "type": "LIST_OF_COLORS"
+        },
+        {
+          "name": "ColorB",
+          "type": "LIST_OF_COLORS"
+        },
+        {
+          "name": "ColorC",
+          "type": "LIST_OF_COLORS"
+        },
+        {
+          "name": "ColorD",
+          "type": "LIST_OF_COLORS"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "FGENDoubleFrequency"
+    },
+    {
+      "intent": "FGENHalveFrequency"
+    },
+    {
+      "intent": "FGENSetFrequency",
+      "slots":[
+        {
+          "name":"value",
+          "type":"AMAZON.NUMBER"
+        },
+        {
+          "name":"funits",
+          "type":"FREQUENCY_UNIT"
+        }
+      ]
+    },
+    {
+      "intent": "FGENDoubleAmplitude"
+    },
+    {
+      "intent": "FGENHalveAmplitude"
+    },
+    {
+      "intent": "FGENSetAmplitude"
+    },
+    {
+      "intent": "FGENShiftUp"
+    },
+    {
+      "intent": "FGENShiftDown"
+    },
+    {
+      "intent": "FGENResetShift"
+    }
+  ]
+}

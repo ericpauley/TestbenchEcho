@@ -8,10 +8,12 @@ colormap = {"black":0,
 "yellow":4,
 "green":5,
 "blue":6,
-"violet":7,
 "purple":7,
+"violet":7,
 "grey":8,
 "white":9}
+
+revcolormap = {v: k for k, v in colormap.items()}
 
 units = ["Ohms","KiloOhms","MegaOhms","GigaOhms"]
 
@@ -47,4 +49,18 @@ class Resistor(SkillBase):
 class RevResistor(SkillBase):
 
     def execute(__self__, intent, session):
-        pass
+        session_attributes = {}
+        card_title = None
+        val = str(int(intent['slots']['value']['value']) * revunits[intent['slots']['units']['value']])
+        colors = [revcolormap[int(v)] for v in val]
+        while colors[-1] == "black":
+            colors = colors[:-1]
+        colors = colors[:3]
+        colors += [revcolormap[len(val)-len(colors)]]
+        speech_output = " ".join(colors)
+        # If the user either does not reply to the welcome message or says something
+        # that is not understood, they will be prompted again with this text.
+        reprompt_text = None
+        should_end_session = False
+        return util.build_response(session_attributes, util.build_speechlet_response(
+            card_title, speech_output, reprompt_text, should_end_session))

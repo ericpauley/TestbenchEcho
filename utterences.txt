@@ -1,0 +1,9 @@
+Welcome welcome me
+Resistor What resistor is {ColorA} {ColorB} {ColorC}
+Resistor What resistor is {ColorA} {ColorB} {ColorC} {ColorD}
+Resistor {ColorA} {ColorB} {ColorC}
+Resistor {ColorA} {ColorB} {ColorC} {ColorD}
+RevResistor colors of {value} {runits} resistor
+FGENDoubleFrequency Double frequency
+FGENHalveFrequency Halve frequency
+FGENSetFrequency Set frequency {value} {funits}
