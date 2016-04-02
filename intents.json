@@ -87,32 +87,6 @@
         }
       ]
     },
-    // {
-    //   "intent": "FGENSetVoltage",
-    //   "slots":[
-    //     {
-    //       "name":"value",
-    //       "type":"AMAZON.NUMBER"
-    //     },
-    //     {
-    //       "name":"vunits",
-    //       "type":"VOLTAGE_UNITS"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "intent": "FGENSetVoltageOffset",
-    //   "slots":[
-    //     {
-    //       "name":"value",
-    //       "type":"AMAZON.NUMBER"
-    //     },
-    //     {
-    //       "name":"vunits",
-    //       "type":"VOLTAGE_UNITS"
-    //     }
-    //   ]
-    // },
     {
       "intent": "OctoSpec",
       "slots":[
