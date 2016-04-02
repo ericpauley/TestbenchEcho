@@ -7,3 +7,4 @@ RevResistor colors of {value} {runits} resistor
 FGENDoubleFrequency Double frequency
 FGENHalveFrequency Halve frequency
 FGENSetFrequency Set frequency {value} {funits}
+OSCOPEAutoset Autoset
