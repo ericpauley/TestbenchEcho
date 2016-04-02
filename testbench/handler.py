@@ -62,7 +62,7 @@ def on_intent(intent_request, session):
     # Dispatch to your skill's intent handlers
 
     if intent_name not in skillmap:
-        intent_name = "AMAZON.HelpIntent"
+        intent_name = "NullSkill"
 
     if intent_name in skillmap:
         return skillmap[intent_name].execute(intent, session)

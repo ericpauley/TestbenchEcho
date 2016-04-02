@@ -4,7 +4,13 @@
       "intent": "Welcome"
     },
     {
-      "intent": "NullSkill"
+      "intent": "NullSkill",
+      "slots":[
+        {
+          "name": "filler",
+          "type": "AMAZON.LITERAL"
+        }
+      ]
     },
     {
       "intent": "RevResistor",
