@@ -44,25 +44,31 @@
       "intent": "AMAZON.HelpIntent"
     },
     {
-      "intent": "FGENDouble"
-      {
-          "name": "type",
-          "type": "LIST_OF_FGEN"
-      }
+      "intent": "FGENDouble",
+      "slots": [
+        {
+            "name": "type",
+            "type": "LIST_OF_FGEN"
+        }
+      ]
     },
     {
-      "intent": "FGENHalf"
-      {
-          "name": "type",
-          "type": "LIST_OF_FGEN"
-      }
+      "intent": "FGENHalf",
+      "slots": [
+        {
+            "name": "type",
+            "type": "LIST_OF_FGEN"
+        }
+      ]
     },
     {
-      "intent": "FGENTripple"
-      {
-          "name": "type",
-          "type": "LIST_OF_FGEN"
-      }
+      "intent": "FGENTripple",
+      "slots": [
+        {
+            "name": "type",
+            "type": "LIST_OF_FGEN"
+        }
+      ]
     },
     {
       "intent": "FGENSetFrequency",
