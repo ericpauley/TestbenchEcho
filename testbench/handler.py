@@ -8,7 +8,7 @@ http://amzn.to/1LGWsLG
 """
 
 from __future__ import print_function
-from skills import skillmap
+from skills import skillmap,SkillBase
 import traceback
 import util
 
@@ -71,8 +71,7 @@ def on_intent(intent_request, session):
             return skillmap[intent_name].execute(intent, session)
         except Exception as e:
             traceback.print_exc()
-            return util.build_response({}, util.build_speechlet_response(
-                None, "An error has occured", "", False))
+            return SkillBase().respond("An error has occured", "Error", str(e))
     else:
         raise ValueError("Invalid intent")
 

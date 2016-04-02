@@ -1,6 +1,7 @@
 import json
 import urllib
 import util
+import base64
 from skills.skill import SkillBase
 
 
@@ -293,14 +294,14 @@ class OctoSpec(SkillBase):
         item = result ['item']
         imagesets = item['imagesets'][0]
         try:
-            largeImage = imagesets['large_image']['url']
+            image = imagesets['large_image']['url']
         except:
-            smallImage = imagesets['small_image']['url']
-
-        resonse = str("The " intent['slots']['spec']['value'] + " is " + val)
+            image = imagesets['small_image']['url']
+        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+        response = str("The " + intent['slots']['spec']['value'] + " is " + val)
         #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
 
-        return self.respond(response, "Technical Specification", response, smallImage)
+        return self.respond(response, "Technical Specification", response, image)
 
 class OctoDescrip(SkillBase):
     def execute(self, intent, session):
