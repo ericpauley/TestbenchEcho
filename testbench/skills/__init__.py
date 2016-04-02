@@ -24,4 +24,7 @@ skillmap["FGENTriple"] = FGENTriple()
 skillmap["FGENSetFrequency"] = FGENSetFrequency()
 skillmap["FGENSetVoltage"] = FGENSetVoltage()
 skillmap["FGENSetVoltageOffset"] = FGENSetVoltageOffset()
+<<<<<<< Updated upstream
 skillmap["GuideToGalaxy"] = GuideToGalaxy()
+=======
+>>>>>>> Stashed changes

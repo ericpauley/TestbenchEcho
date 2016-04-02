@@ -30,7 +30,7 @@ class OSCOPEAutoset(SkillBase):
 class OSCOPEImage(SkillBase):
 
     def execute(__self__, intent, session):
-        name = "".join([random.choice(string.ascii_lowercase) for i in range(1)])
+        name = "".join([random.choice(string.ascii_lowercase) for i in range(10)])
         command = ['copy', name]
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
