@@ -266,20 +266,25 @@ class OctoSpec(SkillBase):
         mpn = ''.join(splitArray)
 
         val = ""
-        url = 'http://octopart.com/api/v3/parts/match?'
-        url += '&apikey=0c491965'
-        url += '&pretty_print=false'
-        url += '&queries=[{"mpn":"'
-        url += mpn
-        url += '"}]'
-        url += '&include[]=specs'
+        url = "http://octopart.com/api/v3/parts/search"
 
+# NOTE: Use your API key here (https://octopart.com/api/register)
+        url += "?apikey=0c491965"
+
+        args = [
+            ('q', mpn),
+            ('start', 0),
+            ('limit', 10)
+            ]
+
+        url += '&' + urllib.urlencode(args)
+        url += '&include[]=specs'
 
         data = urllib.urlopen(url).read()
         response = json.loads(data)
 
         result = response['results'][0]
-        item = result['items'][0]
+        item = result['item']
         specs = item['specs']
         outputSpecMap = specMap[intent['slots']['spec']['value']]
         val = specs[outputSpecMap]['display_value']
