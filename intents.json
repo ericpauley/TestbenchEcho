@@ -62,7 +62,7 @@
       ]
     },
     {
-      "intent": "FGENTripple",
+      "intent": "FGENTriple",
       "slots": [
         {
             "name": "type",
