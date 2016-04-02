@@ -217,7 +217,7 @@ specMap = {
 class OctoSpec(SkillBase):
     def execute(__self__, intent, session):
         session_attributes = {}
-        valueExists = true;
+        valueExists = True;
         val = ""
         url = 'http://octopart.com/api/v3/parts/match?'
         url += '&apikey=0c491965'
