@@ -5,7 +5,7 @@ from skills.skill import SkillBase
 
 
 
-specMap = {"DC supply voltage": 'supply_voltage_dc'}
+specMap = {"DC supply voltage": 'supply_voltage_dc', "supply current": 'supply_current', "slew rate": 'slew_rate'}
 
 class OctoSpec(SkillBase):
     def execute(__self__, intent, session):
@@ -24,7 +24,7 @@ class OctoSpec(SkillBase):
         result = response['results'][0]
         item = result['items'][0]
         specs = item['specs']
-        val = specs['supply_voltage_dc']['display_value']
+        val = specs[specMac[intent['slots']['spec']['value']]]['display_value']
 
         #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
 
