@@ -57,7 +57,7 @@ class WolframResistor(SkillBase):
         r2 = intent['slots']['resistorB']['value']
         u2 = intent['slots']['unitB']['value']
         op = intent['slots']['operation']['value']
-        query = r1+'%20'+u1+'%20in%20'+op+'%20'+r2+'%20'+u2
+        query = r1+'%20'+u1+'%20' +'in%20'+op+'%20'+r2+'%20'+u2
         url = "http://api.wolframalpha.com/v2/query?"
         url += "appid=238HJV-7G3G7G8VYU&input="
         url += query
@@ -100,7 +100,7 @@ class WolframDistance(SkillBase):
         card_title = "Wolfram Distance"
         o1 = intent['slots']['objectA']['value']
         o1 = intent['slots']['objectB']['value']
-        query = 'distance%20between%20'+o1+'%20and%20'+o2
+        query = 'distance'+'%20'+'between%20'+o1+'%20'+'and%20'+o2
         url = "http://api.wolframalpha.com/v2/query?"
         url += "appid=238HJV-7G3G7G8VYU&input="
         url += query
