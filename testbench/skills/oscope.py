@@ -2,6 +2,8 @@ import util
 from skills.skill import SkillBase
 import redis
 import json
+import random
+import string
 
 #scale = [.002,.005,.01,.05,.1,.5,1,2,5]
 vunits = {"volts":1,"volt":1,"millivolts":.001,"millivolt":.001}
@@ -22,11 +24,12 @@ class OSCOPEAutoset(SkillBase):
         return util.build_response(session_attributes, util.build_speechlet_response(
             card_title, speech_output, reprompt_text, should_end_session))
 
-        
+
 class OSCOPEImage(SkillBase):
 
     def execute(__self__, intent, session):
-        command = ['copy']
+        name = "".join([random.choice(string.ascii_lowercase) for i in range(1)])
+        command = ['copy', name]
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
         session_attributes = {}
@@ -48,7 +51,7 @@ class OSCOPESetVdiv(SkillBase):
         if (v >= .002) and (v <= 5):
             value = ' ' + str(v) + 'E0'
             m = 0
-            if v < 1:   
+            if v < 1:
                 while (v < 1):
                     v = v*10
                     m = m + 1
@@ -66,4 +69,3 @@ class OSCOPESetVdiv(SkillBase):
         should_end_session = False
         return util.build_response(session_attributes, util.build_speechlet_response(
             card_title, speech_output, reprompt_text, should_end_session))
-
