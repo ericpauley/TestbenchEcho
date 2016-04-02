@@ -115,10 +115,10 @@ class WolframDistance(SkillBase):
 
         speech = ""
         for pod in response.findall('.//pod'):
-            if pod.attrib['title'] == 'History':
+            if pod.attrib['title'] == 'History' or pod.attrib['title'] == 'Map':
                 for im in pod.findall('.//img'):
                     image = im.attrib['src']
-            if pod.attrib['title'] == 'Current result':
+            if pod.attrib['title'] == 'Current result' or pod.attrib['title'] == 'Result':
                 for pt in pod.findall('.//plaintext'):
                     if pt.text:
                         speech = pt.text

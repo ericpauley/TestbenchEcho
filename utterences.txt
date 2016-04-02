@@ -61,5 +61,8 @@ WolframDistance Calculate the distance between {earth|objectA} and the {sun|obje
 WolframDistance Calculate the distance between the {moon|objectA} and the {sun|objectB}
 WolframDistance Calculate the distance between the {earth|objectA} and {mars|objectB}
 WolframDistance Calculate the distance between the {sun|objectA} and {mars|objectB}
+WolframDistance Calculate the distance between {Philly|objectA} and {Princeton|objectB}
+WolframDistance Calculate the distance between the {Milan|objectA} and {Tokyo|objectB}
+WolframDistance Calculate the distance between the {Africa|objectA} and {Australia|objectB}
 
 NullSkill {anything|filler}
