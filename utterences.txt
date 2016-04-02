@@ -1,8 +1,7 @@
-Welcome welcome me
 Resistor What resistor is {ColorA} {ColorB} {ColorC}
 Resistor What resistor is {ColorA} {ColorB} {ColorC} {ColorD}
-Resistor {ColorA} {ColorB} {ColorC}
-Resistor {ColorA} {ColorB} {ColorC} {ColorD}
+Resistor Resistor {ColorA} {ColorB} {ColorC}
+Resistor Resistor {ColorA} {ColorB} {ColorC} {ColorD}
 
 FGENDouble Double {type}
 FGENHalf Halve {type}
@@ -18,8 +17,8 @@ FGENSetVoltageOffset Set voltage offset {value} {vunits}
 FGENSetVoltageOffset Set the voltage offset to {value} {vunits}
 
 OSCOPEAutoset Autoset
-OSCOPEImage screen capture
-OSCOPEImage screenshot
+OSCOPEImage take a screen capture
+OSCOPEImage take a screenshot
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per division
 OSCOPESetVdiv Set channel {channel} to {value} {vunits}
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per div
@@ -53,5 +52,3 @@ WolframDistance Calculate distance between the {earth|objectA} and the {sun|obje
 WolframDistance Calculate distance between the {moon|objectA} and the {sun|objectB}
 WolframDistance Calculate distance between the {earth|objectA} and {mars|objectB}
 WolframDistance Calculate distance between the {sun|objectA} and {mars|objectB}
-
-
