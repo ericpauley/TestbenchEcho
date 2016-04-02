@@ -34,14 +34,16 @@ class OSCOPEImage(SkillBase):
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
         session_attributes = {}
-        card_title = None
-        speech_output = None
+        card_title = "New Oscilloscope Capture"
+        speech_output = "Capturing screen to the alexa app"
         # If the user either does not reply to the welcome message or says something
         # that is not understood, they will be prompted again with this text.
         reprompt_text = None
         should_end_session = False
-        return util.build_response(session_attributes, util.build_speechlet_response(
-            card_title, speech_output, reprompt_text, should_end_session))
+        out= util.build_response(session_attributes, util.build_speechlet_response(
+            card_title, speech_output, reprompt_text, should_end_session, "http://104.236.205.31/"+name+".bmp"))
+        print out
+        return out
 
 class OSCOPESetVdiv(SkillBase):
 
