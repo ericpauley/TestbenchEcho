@@ -291,15 +291,18 @@ class OctoDescrip(SkillBase):
 
         data = urllib.urlopen(url).read()
         response = json.loads(data)
-
+        partT = ""
         try:
             result = response['results'][0]
             item = result ['item']
             descrip = item['descriptions'][0]
             value = descrip['value']
+            partT = item['mpn']
+
         except:
             speech_output = "I cannot find that part"
             image = None
+            partT = "Could not find part"
 
         imagesets = item['imagesets'][0]
         try:
@@ -323,7 +326,7 @@ class OctoDescrip(SkillBase):
                 value = descrip['value']
                 speech_output = "It is a " + str(value)
 
-        return self.respond(speech_output, item['mpn'], speech_output[8:], image)
+        return self.respond(speech_output, partT, speech_output[8:], image)
 
 
 class OctoPrice(SkillBase):
