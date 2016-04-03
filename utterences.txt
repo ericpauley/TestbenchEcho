@@ -77,5 +77,7 @@ WolframConvert Convert {num} {meters|unitA} to {feet|unitB}
 WolframConvert Convert {num} {pound|unitA} to {ounces|unitB}
 WolframConvert Convert {num} {years|unitA} in {decades|unitB}
 
+DevDocs Pull up {api}
+DevMethod Pull up {api} {method}
 
 NullSkill {anything|filler}
