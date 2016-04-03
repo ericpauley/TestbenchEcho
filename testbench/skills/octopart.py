@@ -264,6 +264,7 @@ class OctoSpec(SkillBase):
             #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
         except:
             response = "I cannot find that part specification"
+            image = None
         return self.respond(response, "Technical specification: " + intent['slots']['spec']['value'], response, image)
 
 class OctoDescrip(SkillBase):
@@ -320,6 +321,7 @@ class OctoDescrip(SkillBase):
                     speech_output = "It is a " + str(value)
         except:
             speech_output = "I cannot find that part"
+            image = None
 
         return self.respond(speech_output, item['mpn'], speech_output[8:], image)
 
