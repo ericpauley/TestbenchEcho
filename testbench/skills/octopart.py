@@ -263,18 +263,11 @@ class OctoSpec(SkillBase):
 
 class OctoDescrip(SkillBase):
     def execute(self, intent, session):
-
-        digits = ""
-        for i in ascii_uppercase:
-            if i in intent['slots'] and 'value' in intent['slots'][i]:
-                digit = intent['slots'][i]['value'].replace(".","")
-                digits += digit
-        for i in ascii_lowercase:
-            digits = digits.replace(i,"")
+        mpn = str(intent['slots']['mpn']['value'])
         url = "http://octopart.com/api/v3/parts/search"
         url += "?apikey=0c491965"
         args = [
-            ('q', digits),
+            ('q', mpn),
             ('start', 0),
             ('limit', 10)
             ]
@@ -304,34 +297,14 @@ class OctoDescrip(SkillBase):
 
         return self.respond(speech_output)
 
-class SpookyPricing(SkillBase):
-    def execute(self, intent, session):
-        digits = ""
-        for i in ascii_uppercase:
-            if i in intent['slots'] and 'value' in intent['slots'][i]:
-                digit = intent['slots'][i]['value'].replace(".","")
-                digits += digit
-        for i in ascii_lowercase:
-            digits = digits.replace(i,"")
-        return self.respond(digits, digits, digits)
-
+c
 class OctoPrice(SkillBase):
     def execute(self, intent, session):
-
-        digits = ""
-        for i in ascii_uppercase:
-            if i in intent['slots'] and 'value' in intent['slots'][i]:
-                digit = intent['slots'][i]['value'].replace(".","")
-                digits += digit
-        #for i in ascii_lowercase:
-            #digits = digits.replace(i,"")
-            digits = digits.replace(" ", "")
-            digits = digits.replace(".","")
-            digits.upper()
+        mpn = str(intent['slots']['mpn']['value'])
         url = "http://octopart.com/api/v3/parts/search"
         url += "?apikey=0c491965"
         args = [
-            ('q', digits),
+            ('q', mpn),
             ('start', 0),
             ('limit', 10)
             ]
