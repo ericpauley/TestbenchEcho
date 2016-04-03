@@ -1,3 +1,4 @@
+Welcome Welcome
 Resistor What resistor is {ColorA} {ColorB} {ColorC}
 Resistor What resistor is {ColorA} {ColorB} {ColorC} {ColorD}
 Resistor Resistor {ColorA} {ColorB} {ColorC}

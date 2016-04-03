@@ -4,4 +4,4 @@ class Welcome(SkillBase):
 
     def execute(self, intent, session):
         #return self.respond("Welcome to Double E testbench")
-        return self.respond("EEYY BOSS!")
+        return self.respond("Welcome!", "Welcome", "welcome")
