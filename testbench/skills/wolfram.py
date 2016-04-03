@@ -209,3 +209,20 @@ class WolframFunction(SkillBase):
         image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
 
         return util.respond(speech, "Wolfram Alpha", speech, image)
+
+class WolframTest(SkillBase):
+
+    def execute(self, intent, session):
+        ch = intent['slots']['channel']['value']   
+        command = ['curve', ch,'1','2500']
+        r = redis.Redis("104.236.205.31")
+        r.publish("boss",json.dumps(command))
+        # pubsub = r.pubsub()
+        # pubsub.subscribe("results")
+        # next(pubsub.listen())
+        # resultData = next(pubsub.listen())
+        # tempresult = json.loads(resultData['data'])
+        # value = float(tempresult)
+        # result = str(value) + t[1]
+        result = 'none'
+        return self.respond(result, "Wolfram Test", result)

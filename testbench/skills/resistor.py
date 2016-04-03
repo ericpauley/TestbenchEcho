@@ -21,6 +21,8 @@ revunits = {"kiloohm":1000,"kiloohms":1000, "megaohm":1000000, "megaohms":100000
 
 colorvars = ["ColorA", "ColorB", "ColorC", "ColorD"]
 
+vunits = {"volts":1,"volt":1,"millivolts":.001,"millivolt":.001}
+
 class Resistor(SkillBase):
 
     def execute(self, intent, session):
@@ -48,3 +50,15 @@ class RevResistor(SkillBase):
         colors = colors[:3]
         colors += [revcolormap[len(val)-len(colors)]]
         return self.respond(" ".join(colors))
+
+class VoltageDivider(SkillBase):
+
+    def execute(self, intent, session):
+        image = "http://web.mit.edu/rec/www/workshop/voltage-divider.gif"
+        v = int(intent['slots']['vin']['value'])
+        u = intent['slots']['vunits']['value']
+        r1 = int(intent['slots']['resistorA']['value']) * revunits[intent['slots']['runitsA']['value']]
+        r2 = int(intent['slots']['resistorB']['value']) * revunits[intent['slots']['runitsB']['value']]
+        vo = v*r2/(r1 + r2)
+        result = str(vo) + u
+        return self.respond(result, "Voltage Divider", result, image)

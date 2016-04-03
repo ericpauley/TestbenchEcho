@@ -47,6 +47,35 @@
       ]
     },
     {
+      "intent": "VoltageDivider",
+      "slots": [
+        {
+          "name": "vin",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "vunits",
+          "type": "VOLTAGE_UNITS"
+        },
+        {
+          "name": "resistorA",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "runitsA",
+          "type": "RESISTANCE_UNIT"
+        },
+        {
+          "name": "resistorB",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "runitsB",
+          "type": "RESISTANCE_UNIT"
+        }
+      ]
+    },
+    {
       "intent": "AMAZON.HelpIntent"
     },
     {
@@ -301,7 +330,7 @@
       "intent": "WolframFunction",
       "slots":[
         {
-          "name": "funtion",
+          "name": "function",
           "type": "LIST_OF_FUNCTIONS"
         },
         {
@@ -310,6 +339,15 @@
         },
       ]
     },
+    {
+      "intent": "WolframTest",
+      "slots":[
+        {
+          "name": "channel",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    }
     {
       "intent": "SpookyPricing",
       "slots":[

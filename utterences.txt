@@ -2,6 +2,8 @@ Resistor What resistor is {ColorA} {ColorB} {ColorC}
 Resistor What resistor is {ColorA} {ColorB} {ColorC} {ColorD}
 Resistor Resistor {ColorA} {ColorB} {ColorC}
 Resistor Resistor {ColorA} {ColorB} {ColorC} {ColorD}
+VoltageDivider Voltage divider with input {vin} {vunits} resistor one equals {resistorA} {runitsA} and resistor two equals {resistorB} {runitsB}
+VoltageDivider Voltage divider {vin} {vunits} {resistorA} {runitsA} {resistorB} {runitsB}
 
 FGENDouble Double {type}
 FGENHalf Halve {type}
@@ -9,11 +11,11 @@ FGENTriple Triple {type}
 FGENDouble Double the {type}
 FGENHalf Half the {type}
 FGENTriple Triple the {type}
-FGENSetFrequency Set frequency {value} {funits}
+FGENSetFrequency Set frequency to {value} {funits}
 FGENSetFrequency Set the frequency to {value} {funits}
-FGENSetVoltage Set voltage {value} {vunits}
+FGENSetVoltage Set voltage to {value} {vunits}
 FGENSetVoltage Set the voltage to {value} {vunits}
-FGENSetVoltageOffset Set voltage offset {value} {vunits}
+FGENSetVoltageOffset Set voltage offset to {value} {vunits}
 FGENSetVoltageOffset Set the voltage offset to {value} {vunits}
 
 OSCOPEAutoset Autoset the oscilliscope
@@ -102,12 +104,14 @@ WolframCompute Calculate {numA} {div|operation} {numB}
 WolframConvert Convert {num} {meters|unitA} to {feet|unitB}
 WolframConvert Convert {num} {pound|unitA} to {ounces|unitB}
 WolframConvert Convert {num} {years|unitA} in {decades|unitB}
+WolframConvert Convert {num} {hex|unitA} in {decimal|unitB}
 WolframFunction Calculate {function} of {x squared|expression}
 WolframFunction Calculate the {function} of {pi|expression}
 WolframFunction Calculate {function} of {the square root of x|expression}
 WolframFunction Calculate the {function} of {five hundred|expression}
 WolframFunction Calculate {function} of {e to the x|expression}
-WolframFunction Calculate the {function} of {x over 2|expression}
+WolframFunction Calculate the {function} of {x over two|expression}
+WolframTest Run Wolfram Testing on channel {channel}
 
 SpookyPricing Part {A}
 SpookyPricing Part {A} {B}
