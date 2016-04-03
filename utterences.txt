@@ -86,6 +86,7 @@ WolframFunction Calculate the {function} of {five hundred|expression}
 WolframFunction Calculate {function} of {e to the x|expression}
 WolframFunction Calculate the {function} of {x over two|expression}
 WolframTest Run Wolfram Testing on channel {channel}
+WolframTest Run curve
 
 
 DevDocs Pull up {api}
