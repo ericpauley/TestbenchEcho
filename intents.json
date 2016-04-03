@@ -336,7 +336,7 @@
         {
           "name": "expression",
           "type": "AMAZON.LITERAL"
-        },
+        }
       ]
     },
     {
