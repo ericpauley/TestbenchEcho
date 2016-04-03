@@ -275,7 +275,7 @@ class OctoSpec(SkillBase):
 
         url += '&' + urllib.urlencode(args)
         url += '&include[]=specs'
-        url += '&include[]=imagesets'
+        #url += '&include[]=imagesets'
 
         data = urllib.urlopen(url).read()
         response = json.loads(data)
@@ -289,18 +289,18 @@ class OctoSpec(SkillBase):
         result = response['results'][0]
         item = result ['item']
         imagesets = item['imagesets'][0]
-        try:
-            image = imagesets['large_image']['url']
-        except:
-            try:
-                image = imagesets['small_image']['url']
-            except:
-                image = None
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+        #try:
+        #    image = imagesets['large_image']['url']
+        #except:
+            #try:
+                #image = imagesets['small_image']['url']
+        #    except:
+                #image = None
+        #image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
         response = str("The " + intent['slots']['spec']['value'] + " is " + val)
         #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
 
-        return self.respond(response, "Technical Specification", response, image)
+        return self.respond(response)
 
 class OctoDescrip(SkillBase):
     def execute(self, intent, session):
