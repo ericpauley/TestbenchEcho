@@ -298,6 +298,19 @@
       ]
     },
     {
+      "intent": "WolframFunction",
+      "slots":[
+        {
+          "name": "funtion",
+          "type": "LIST_OF_FUNCTIONS"
+        },
+        {
+          "name": "expression",
+          "type": "AMAZON.LITERAL"
+        },
+      ]
+    },
+    {
       "intent": "SpookyPricing",
       "slots":[
         {

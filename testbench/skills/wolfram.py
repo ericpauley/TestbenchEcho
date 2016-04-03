@@ -178,3 +178,34 @@ class WolframConvert(SkillBase):
 
         return util.respond(speech, "Wolfram Alpha", speech, image)
 
+class WolframFunction(SkillBase):
+
+    def execute(__self__, intent, session):
+        image = "https://www.wolframalpha.com/images/press/photos/logos/wa-logo-stacked1-large.jpg"
+        session_attributes = {}
+        card_title = "Wolfram Computation"
+        f = intent['slots']['function']['value']
+        e = intent['slots']['expression']['value']
+        query = f+'%20'+'of'+'%20'+e.replace(' ','%20')
+        print query
+        url = "http://api.wolframalpha.com/v2/query?"
+        url += "appid=238HJV-7G3G7G8VYU&input="
+        url += query
+        url += "&format=image,plaintext"
+        data = urllib.urlopen(url).read()
+        response = ET.fromstring(data)
+
+        #xml_data=urllib.urlopen(url).read()
+        #incomingDictData = xmltodict.parse(xml_data)
+        #print incomingDictData
+
+        speech = ""
+        for pod in response.findall('.//pod'):
+            if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Exact Result':
+                for pt in pod.findall('.//plaintext'):
+                    if pt.text:
+                        speech = pt.text
+
+        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+
+        return util.respond(speech, "Wolfram Alpha", speech, image)

@@ -85,6 +85,12 @@ WolframCompute Calculate {numA} {div|operation} {numB}
 WolframConvert Convert {num} {meters|unitA} to {feet|unitB}
 WolframConvert Convert {num} {pound|unitA} to {ounces|unitB}
 WolframConvert Convert {num} {years|unitA} in {decades|unitB}
+WolframFunction Calculate {function} of {x squared|expression}
+WolframFunction Calculate the {function} of {pi|expression}
+WolframFunction Calculate {function} of {the square root of x|expression}
+WolframFunction Calculate the {function} of {five hundred|expression}
+WolframFunction Calculate {function} of {e to the x|expression}
+WolframFunction Calculate the {function} of {x over 2|expression}
 
 SpookyPricing Part {A}
 SpookyPricing Part {A} {B}
