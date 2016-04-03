@@ -3,7 +3,7 @@ import urllib
 import util
 import base64
 from skills.skill import SkillBase
-from string import ascii_uppercase
+from string import ascii_uppercase,ascii_lowercase
 
 
 specMap = {
@@ -253,17 +253,13 @@ def text2int(textnum, numwords={}):
 class OctoSpec(SkillBase):
     def execute(self, intent, session):
 
-        mpnpre = intent['slots']['mpn']['value']
-
-        splitArray = mpnpre.split(' ')
-        for index in range(len(splitArray)):
-            for unit in units:
-                if splitArray[index].count(unit) >= 1:
-                    splitArray[index] = str(text2int(splitArray[index]))
-                    break
-
-
-        mpn = ''.join(splitArray)
+        digits = ""
+        for i in ascii_uppercase:
+            if i in intent['slots'] and 'value' in intent['slots'][i]:
+                digit = intent['slots'][i]['value'].replace(".","")
+                digits += digit
+        for i in ascii_lowercase:
+            digits = digits.replace(i,"")
 
         val = ""
         url = "http://octopart.com/api/v3/parts/search"
@@ -272,7 +268,7 @@ class OctoSpec(SkillBase):
         url += "?apikey=0c491965"
 
         args = [
-            ('q', mpn),
+            ('q', digits),
             ('start', 0),
             ('limit', 10)
             ]
@@ -305,23 +301,18 @@ class OctoSpec(SkillBase):
 
 class OctoDescrip(SkillBase):
     def execute(self, intent, session):
-        session_attributes={}
 
-        mpnpre = intent['slots']['mpn']['value']
-
-        splitArray = mpnpre.split(' ')
-        for index in range(len(splitArray)):
-            for unit in units:
-                if splitArray[index].count(unit) >= 1:
-                    splitArray[index] = str(text2int(splitArray[index]))
-                    break
-
-
-        mpn = ''.join(splitArray)
+        digits = ""
+        for i in ascii_uppercase:
+            if i in intent['slots'] and 'value' in intent['slots'][i]:
+                digit = intent['slots'][i]['value'].replace(".","")
+                digits += digit
+        for i in ascii_lowercase:
+            digits = digits.replace(i,"")
         url = "http://octopart.com/api/v3/parts/search"
         url += "?apikey=0c491965"
         args = [
-            ('q', mpn),
+            ('q', digits),
             ('start', 0),
             ('limit', 10)
             ]
@@ -358,27 +349,24 @@ class SpookyPricing(SkillBase):
             if i in intent['slots'] and 'value' in intent['slots'][i]:
                 digit = intent['slots'][i]['value'].replace(".","")
                 digits += digit
+        for i in ascii_lowercase:
+            digits = digits.replace(i,"")
         return self.respond(digits, digits, digits)
 
 class OctoPrice(SkillBase):
     def execute(self, intent, session):
-        session_attributes={}
 
-        mpnpre = intent['slots']['mpn']['value']
-
-        splitArray = mpnpre.split(' ')
-        for index in range(len(splitArray)):
-            for unit in units:
-                if splitArray[index].count(unit) >= 1:
-                    splitArray[index] = str(text2int(splitArray[index]))
-                    break
-
-
-        mpn = ''.join(splitArray)
+        digits = ""
+        for i in ascii_uppercase:
+            if i in intent['slots'] and 'value' in intent['slots'][i]:
+                digit = intent['slots'][i]['value'].replace(".","")
+                digits += digit
+        for i in ascii_lowercase:
+            digits = digits.replace(i,"")
         url = "http://octopart.com/api/v3/parts/search"
         url += "?apikey=0c491965"
         args = [
-            ('q', mpn),
+            ('q', digits),
             ('start', 0),
             ('limit', 10)
             ]

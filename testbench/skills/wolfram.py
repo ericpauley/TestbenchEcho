@@ -133,7 +133,7 @@ class WolframCompute(SkillBase):
         #print incomingDictData
         if op == 'divided by':
             speech = str(float(n1)/float(n2))
-        elif:
+        else:
             speech = ""
         for pod in response.findall('.//pod'):
             if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Exact Result':

@@ -27,21 +27,38 @@ OSCOPESetHdiv Set horizontal scale to {value} {tunits}
 OSCOPESetHdiv Set horizontal scale to {value} {tunits} per div
 OSCOPEMeasure Measure the {measurement} on channel {channel}
 
-OctoSpec What is the {spec} of {MSP four three zero|mpn}
-OctoSpec What is the {spec} of {LF four one two|mpn}
-OctoSpec What is the {spec} of {LM three five eight|mpn}
-OctoSpec What is the {spec} of {MSP four three zero|mpn}
+OctoSpec What is the {spec} of {A}
+OctoSpec What is the {spec} of {A} {B}
+OctoSpec What is the {spec} of {A} {B} {C}
+OctoSpec What is the {spec} of {A} {B} {C} {D}
+OctoSpec What is the {spec} of {A} {B} {C} {D} {E}
+OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F}
+OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F} {G}
+OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F} {G} {H}
+OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F} {G} {H} {I}
+OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F} {G} {H} {I} {J}
 
-OctoDescrip Tell me about {MSP four three zero|mpn}
-OctoDescrip Tell me about {LF four one two|mpn}
-OctoDescrip Tell me about {LM three five eight|mpn}
-OctoDescrip Tell me about {MSP four three zero|mpn}
+OctoDescrip Tell me about {A}
+OctoDescrip Tell me about {A} {B}
+OctoDescrip Tell me about {A} {B} {C}
+OctoDescrip Tell me about {A} {B} {C} {D}
+OctoDescrip Tell me about {A} {B} {C} {D} {E}
+OctoDescrip Tell me about {A} {B} {C} {D} {E} {F}
+OctoDescrip Tell me about {A} {B} {C} {D} {E} {F} {G}
+OctoDescrip Tell me about {A} {B} {C} {D} {E} {F} {G} {H}
+OctoDescrip Tell me about {A} {B} {C} {D} {E} {F} {G} {H} {I}
+OctoDescrip Tell me about {A} {B} {C} {D} {E} {F} {G} {H} {I} {J}
 
-OctoPrice Tell me the price of {MSP four three zero|mpn}
-OctoPrice Tell me the price of {LF four one two|mpn}
-OctoPrice Tell me the price of {LM three five eight|mpn}
-OctoPrice Tell me the price of {MSP four three zero|mpn}
-
+OctoPrice Tell me the price of {A}
+OctoPrice Tell me the price of {A} {B}
+OctoPrice Tell me the price of {A} {B} {C}
+OctoPrice Tell me the price of {A} {B} {C} {D}
+OctoPrice Tell me the price of {A} {B} {C} {D} {E}
+OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F}
+OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F} {G}
+OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F} {G} {H}
+OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F} {G} {H} {I}
+OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F} {G} {H} {I} {J}
 
 GuideToGalaxy What is the answer to life the universe and everything
 
@@ -102,21 +119,5 @@ SpookyPricing Part {A} {B} {C} {D} {E} {F} {G}
 SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H}
 SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I}
 SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S} {T}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S} {T} {U}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S} {T} {U} {V}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S} {T} {U} {V} {W}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S} {T} {U} {V} {W} {X}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S} {T} {U} {V} {W} {X} {Y}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S} {T} {U} {V} {W} {X} {Y} {Z}
 
 NullSkill {anything|filler}
