@@ -361,8 +361,8 @@ class OctoPrice(SkillBase):
             if i in intent['slots'] and 'value' in intent['slots'][i]:
                 digit = intent['slots'][i]['value'].replace(".","")
                 digits += digit
-        for i in ascii_lowercase:
-            digits = digits.replace(i,"")
+        #for i in ascii_lowercase:
+            #digits = digits.replace(i,"")
         url = "http://octopart.com/api/v3/parts/search"
         url += "?apikey=0c491965"
         args = [
