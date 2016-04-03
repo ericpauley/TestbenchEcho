@@ -242,29 +242,29 @@ class OctoSpec(SkillBase):
         data = urllib.urlopen(url).read()
         response = json.loads(data)
 
-
-        result = response['results'][0]
-        item = result['item']
-        specs = item['specs']
-        outputSpecMap = specMap[intent['slots']['spec']['value']]
-        val = specs[outputSpecMap]['display_value']
-
-        result = response['results'][0]
-        item = result ['item']
-        imagesets = item['imagesets'][0]
         try:
-            image = imagesets['large_image']['url']
-        except:
+            result = response['results'][0]
+            item = result['item']
+            specs = item['specs']
+            outputSpecMap = specMap[intent['slots']['spec']['value']]
+            val = specs[outputSpecMap]['display_value']
+
+            result = response['results'][0]
+            item = result ['item']
+            imagesets = item['imagesets'][0]
             try:
-                image = imagesets['small_image']['url']
+                image = imagesets['large_image']['url']
             except:
-                image = None
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
-        response = str("The " + intent['slots']['spec']['value'] + " is " + val)
+                try:
+                    image = imagesets['small_image']['url']
+                except:
+                    image = None
+            image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+            response = str("The " + intent['slots']['spec']['value'] + " is " + val)
             #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
-        #except:
-            #response = "I cannot find that part specification"
-            #image = None
+        except:
+            response = "I cannot find that part specification"
+            image = None
         return self.respond(response, "Technical specification: " + intent['slots']['spec']['value'], response, image)
 
 class OctoDescrip(SkillBase):
