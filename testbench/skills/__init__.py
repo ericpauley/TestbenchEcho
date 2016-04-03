@@ -6,7 +6,7 @@ from skills.resistor import Resistor, RevResistor, VoltageDivider
 from skills.octopart import OctoSpec, OctoDescrip, OctoPrice, SpookyPricing
 from skills.oscope import OSCOPEAutoset, OSCOPEImage, OSCOPESetVdiv, OSCOPEMeasure, OSCOPESetHdiv
 from skills.fgen import FGENDouble, FGENHalf, FGENTriple, FGENSetFrequency, FGENSetVoltage, FGENSetVoltageOffset
-from skills.wolfram import Wolfram, WolframResistor, WolframDistance, WolframCompute, WolframConvert, WolframFunction
+from skills.wolfram import Wolfram, WolframResistor, WolframDistance, WolframCompute, WolframConvert, WolframFunction, WolframTest
 
 skillmap = {}
 skillmap["AMAZON.HelpIntent"] = Help()
@@ -37,3 +37,4 @@ skillmap["WolframDistance"] = WolframDistance()
 skillmap["WolframCompute"] = WolframCompute()
 skillmap["WolframConvert"] = WolframConvert()
 skillmap["WolframFunction"] = WolframFunction()
+skillmap["WolframTest"] = WolframTest()
