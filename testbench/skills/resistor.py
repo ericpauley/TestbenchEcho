@@ -1,5 +1,6 @@
 import util
 from skills.skill import SkillBase
+import base64
 
 colormap = {"black":0,
 "brown":1,
@@ -54,7 +55,7 @@ class RevResistor(SkillBase):
 class VoltageDivider(SkillBase):
 
     def execute(self, intent, session):
-        image = "http://web.mit.edu/rec/www/workshop/voltage-divider.gif"+base64.b32encode(image)+".png"
+        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode("http://web.mit.edu/rec/www/workshop/voltage-divider.gif")+".png"
         v = int(intent['slots']['vin']['value'])
         u = intent['slots']['vunits']['value']
         r1 = int(intent['slots']['resistorA']['value']) * revunits[intent['slots']['runitsA']['value']]

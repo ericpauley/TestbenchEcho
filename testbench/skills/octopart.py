@@ -312,7 +312,6 @@ class OctoDescrip(SkillBase):
 
         return self.respond(speech_output)
 
-
 class OctoPrice(SkillBase):
     def execute(self, intent, session):
 
