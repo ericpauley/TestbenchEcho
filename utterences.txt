@@ -41,7 +41,7 @@ Wolfram Calculate {parallel RL circuit|query}
 Wolfram Calculate {series RL circuit|query}
 Wolfram Calculate {permeability of free space|query}
 Wolfram Calculate {star chart|query}
-Wolfram Calculate {forcast|quesry}
+Wolfram Calculate {forcast|query}
 WolframResistor Calculate {resistorA} {runitA} in {parallel|operation} with {resistorB} {runitB}
 WolframResistor Calculate {resistorA} {runitA} in {series|operation} with {resistorB} {runitB}
 Wolfram Calculate {sine of x squared|query}

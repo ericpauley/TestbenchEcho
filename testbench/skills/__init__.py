@@ -2,7 +2,7 @@ from skills.skill import SkillBase
 from skills.welcome import Welcome
 from skills.help import Help, GuideToGalaxy
 from skills.nullskill import NullSkill
-from skills.resistor import Resistor, RevResistor
+from skills.resistor import Resistor, RevResistor, VoltageDivider
 from skills.octopart import OctoSpec, OctoDescrip, OctoPrice
 from skills.oscope import OSCOPEAutoset, OSCOPEImage, OSCOPESetVdiv, OSCOPEMeasure, OSCOPESetHdiv
 from skills.fgen import FGENDouble, FGENHalf, FGENTriple, FGENSetFrequency, FGENSetVoltage, FGENSetVoltageOffset
@@ -14,6 +14,7 @@ skillmap["AMAZON.HelpIntent"] = Help()
 skillmap["Welcome"] = Welcome()
 skillmap["NullSkill"] = NullSkill()
 skillmap["Resistor"] = Resistor()
+skillmap["VoltageDivider"] = VoltageDivider()
 skillmap["OctoSpec"] = OctoSpec()
 skillmap["OctoDescrip"] = OctoDescrip()
 skillmap["OctoPrice"] = OctoPrice()
