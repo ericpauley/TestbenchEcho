@@ -289,6 +289,7 @@ class OctoDescrip(SkillBase):
 
         url += '&' + urllib.urlencode(args)
         url += '&include[]=descriptions'
+        url += '&include[]=imagesets'
 
         data = urllib.urlopen(url).read()
         response = json.loads(data)
@@ -297,6 +298,16 @@ class OctoDescrip(SkillBase):
         item = result ['item']
         descrip = item['descriptions'][0]
         value = descrip['value']
+
+        imagesets = item['imagesets'][0]
+        try:
+            image = imagesets['large_image']['url']
+        except:
+            try:
+                image = imagesets['small_image']['url']
+            except:
+                image = None
+        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
 
         try:
             speech_output = "It is a " + str(value)
@@ -310,7 +321,7 @@ class OctoDescrip(SkillBase):
                 value = descrip['value']
                 speech_output = "It is a " + str(value)
 
-        return self.respond(speech_output)
+        return self.respond(speech_output, item['mpn'], speech_output, image)
 
 class OctoPrice(SkillBase):
     def execute(self, intent, session):
