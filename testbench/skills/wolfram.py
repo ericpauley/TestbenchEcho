@@ -193,7 +193,7 @@ class WolframFunction(SkillBase):
         print f
         e = intent['slots']['expression']['value']
         print e
-        query = f+'%20'+'of'+'%20'+e.replace(' ','%20')
+        query = f+'('+ e.replace(' ','%20') + ')'
         print query
         url = "http://api.wolframalpha.com/v2/query?"
         url += "appid=238HJV-7G3G7G8VYU&input="
