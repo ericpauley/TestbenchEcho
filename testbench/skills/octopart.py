@@ -3,7 +3,7 @@ import urllib
 import util
 import base64
 from skills.skill import SkillBase
-
+from string import ascii_uppercase
 
 
 specMap = {
@@ -350,6 +350,14 @@ class OctoDescrip(SkillBase):
                 speech_output = "It is a " + str(value)
 
         return self.respond(speech_output)
+
+class SpookyPricing(SkillBase):
+    def execute(self, intent, session):
+        digits = ""
+        for i in ascii_uppercase:
+            if i in intent['slots'] and 'value' in intent['slots'][i]:
+                digits += intent['slots'][i]['value']
+        return self.respond(digits, digits, digits)
 
 class OctoPrice(SkillBase):
     def execute(self, intent, session):

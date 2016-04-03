@@ -16,9 +16,9 @@ FGENSetVoltage Set the voltage to {value} {vunits}
 FGENSetVoltageOffset Set voltage offset {value} {vunits}
 FGENSetVoltageOffset Set the voltage offset to {value} {vunits}
 
-OSCOPEAutoset Autoset
-OSCOPEImage take a screen capture
-OSCOPEImage take a screenshot
+OSCOPEAutoset Autoset the oscilliscope
+OSCOPEImage take a screen capture of the oscilloscope
+OSCOPEImage take a screenshot of the oscilloscope
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per division
 OSCOPESetVdiv Set channel {channel} to {value} {vunits}
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per div
@@ -57,25 +57,59 @@ WolframResistor Calculate {resistorA} {runitA} in {series|operation} with {resis
 Wolfram Calculate {sine of x squared|query}
 Wolfram Calculate {the integral of x minus four|query}
 Wolfram Calculate {inverting amplifier|query}
-WolframDistance Calculate the distance between the {earth|objectA} and the {moon|objectB}
-WolframDistance Calculate the distance between {earth|objectA} and the {moon|objectB}
-WolframDistance Calculate the distance between the {earth|objectA} and the {sun|objectB}
-WolframDistance Calculate the distance between {earth|objectA} and the {sun|objectB}
-WolframDistance Calculate the distance between the {moon|objectA} and the {sun|objectB}
+WolframDistance Calculate the distance between {the earth|objectA} and {the moon|objectB}
+WolframDistance Calculate the distance between {earth|objectA} and {the moon|objectB}
+WolframDistance Calculate the distance between the {earth|objectA} and {the sun|objectB}
+WolframDistance Calculate the distance between {earth|objectA} and {the sun|objectB}
+WolframDistance Calculate the distance between the {moon|objectA} and {the sun|objectB}
 WolframDistance Calculate the distance between the {earth|objectA} and {mars|objectB}
 WolframDistance Calculate the distance between the {sun|objectA} and {mars|objectB}
 WolframDistance Calculate the distance between {Philly|objectA} and {Princeton|objectB}
 WolframDistance Calculate the distance between {Milan|objectA} and {Tokyo|objectB}
 WolframDistance Calculate the distance between {Africa|objectA} and {Australia|objectB}
+WolframDistance Calculate the distance between the {Milan|objectA} and {Tokyo|objectB}
+WolframDistance Calculate the distance between the {Africa|objectA} and {Australia|objectB}
+WolframDistance Calculate the distance between the {West|objectA} and {The Moon|objectB}
+
+
 WolframCompute Calculate {numA} {plus|operation} {numB}
 WolframCompute Calculate {numA} {minus|operation} {numB}
 WolframCompute Calculate {numA} {times|operation} {numB}
+WolframCompute Calculate {numA} {multiplied by|operation} {numB}
 WolframCompute Calculate {numA} {divided by|operation} {numB}
 WolframCompute Calculate {numA} {to the power of|operation} {numB}
+WolframCompute Calculate {numA} {to the|operation} {numB}
 WolframCompute Calculate {numA} {mod|operation} {numB}
+WolframCompute Calculate {numA} {module|operation} {numB}
 WolframConvert Convert {num} {meters|unitA} to {feet|unitB}
 WolframConvert Convert {num} {pound|unitA} to {ounces|unitB}
 WolframConvert Convert {num} {years|unitA} in {decades|unitB}
 
+SpookyPricing Part {A}
+SpookyPricing Part {A} {B}
+SpookyPricing Part {A} {B} {C}
+SpookyPricing Part {A} {B} {C} {D}
+SpookyPricing Part {A} {B} {C} {D} {E}
+SpookyPricing Part {A} {B} {C} {D} {E} {F}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S} {T}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S} {T} {U}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S} {T} {U} {V}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S} {T} {U} {V} {W}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S} {T} {U} {V} {W} {X}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S} {T} {U} {V} {W} {X} {Y}
+SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J} {K} {L} {M} {N} {O} {P} {Q} {R} {S} {T} {U} {V} {W} {X} {Y} {Z}
 
 NullSkill {anything|filler}

@@ -296,6 +296,115 @@
           "type": "AMAZON.LITERAL"
         }
       ]
+    },
+    {
+      "intent": "SpookyPricing",
+      "slots":[
+        {
+          "name": "A",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "B",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "C",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "D",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "E",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "F",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "G",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "H",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "I",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "J",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "K",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "L",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "M",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "N",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "O",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "P",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "Q",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "R",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "S",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "T",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "U",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "V",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "W",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "X",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "Y",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "Z",
+          "type": "DIGIT_TYPE"
+        }
+      ]
     }
   ]
 }
