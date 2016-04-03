@@ -66,7 +66,7 @@ def on_intent(intent_request, session):
             return skillmap[intent_name].execute(intent, session)
         except Exception as e:
             traceback.print_exc()
-            return SkillBase().respond("An error has occured", "Error", str(e))
+            return SkillBase().respond("Ya goofed fam", "Error", str(e))
     else:
         raise ValueError("Invalid intent")
 

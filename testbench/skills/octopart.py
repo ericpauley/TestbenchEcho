@@ -319,11 +319,12 @@ class OctoDescrip(SkillBase):
                     descrip = item['descriptions'][2]
                     value = descrip['value']
                     speech_output = "It is a " + str(value)
+            return self.respond(speech_output, item['mpn'], speech_output[8:], image)
         except:
             speech_output = "I cannot find that part"
             image = None
 
-        return self.respond(speech_output, item['mpn'], speech_output[8:], image)
+
 
 class OctoPrice(SkillBase):
     def execute(self, intent, session):
