@@ -347,7 +347,7 @@
           "type": "AMAZON.NUMBER"
         }
       ]
-    }
+    },
     {
       "intent": "SpookyPricing",
       "slots":[
