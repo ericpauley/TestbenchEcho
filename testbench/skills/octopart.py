@@ -297,33 +297,33 @@ class OctoDescrip(SkillBase):
             item = result ['item']
             descrip = item['descriptions'][0]
             value = descrip['value']
-
-            imagesets = item['imagesets'][0]
-            try:
-                image = imagesets['large_image']['url']
-            except:
-                try:
-                    image = imagesets['small_image']['url']
-                except:
-                    image = None
-            image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
-
-            try:
-                speech_output = "It is a " + str(value)
-            except:
-                try:
-                    descrip = item['descriptions'][1]
-                    value = descrip['value']
-                    speech_output = "It is a " + str(value)
-                except:
-                    descrip = item['descriptions'][2]
-                    value = descrip['value']
-                    speech_output = "It is a " + str(value)
-            return self.respond(speech_output, item['mpn'], speech_output[8:], image)
         except:
             speech_output = "I cannot find that part"
             image = None
 
+        imagesets = item['imagesets'][0]
+        try:
+            image = imagesets['large_image']['url']
+        except:
+            try:
+                image = imagesets['small_image']['url']
+            except:
+                image = None
+        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+
+        try:
+            speech_output = "It is a " + str(value)
+        except:
+            try:
+                descrip = item['descriptions'][1]
+                value = descrip['value']
+                speech_output = "It is a " + str(value)
+            except:
+                descrip = item['descriptions'][2]
+                value = descrip['value']
+                speech_output = "It is a " + str(value)
+
+        return self.respond(speech_output, item['mpn'], speech_output[8:], image)
 
 
 class OctoPrice(SkillBase):
