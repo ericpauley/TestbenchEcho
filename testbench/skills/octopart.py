@@ -266,7 +266,7 @@ class OctoSpec(SkillBase):
         response = str("The " + intent['slots']['spec']['value'] + " is " + val)
         #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
 
-        return self.respond(response)
+        return self.respond(response, "Technical specification: " + intent['slots']['spec']['value'], response, image)
 
 class OctoDescrip(SkillBase):
     def execute(self, intent, session):
