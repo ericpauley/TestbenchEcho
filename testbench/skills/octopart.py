@@ -214,52 +214,11 @@ specMap = {
 "wire guage": 'wire_guage'
 }
 
-units = [
-  "zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
-  "nine"
-]
-
-def text2int(textnum, numwords={}):
-    if not numwords:
-      units = [
-        "zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
-        "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
-        "sixteen", "seventeen", "eighteen", "nineteen",
-      ]
-
-      tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
-
-      scales = ["hundred", "thousand", "million", "billion", "trillion"]
-
-      numwords["and"] = (1, 0)
-      for idx, word in enumerate(units):    numwords[word] = (1, idx)
-      for idx, word in enumerate(tens):     numwords[word] = (1, idx * 10)
-      for idx, word in enumerate(scales):   numwords[word] = (10 ** (idx * 3 or 2), 0)
-
-    current = result = 0
-    for word in textnum.split():
-        if word not in numwords:
-          raise Exception("Illegal word: " + word)
-
-        scale, increment = numwords[word]
-        current = current * scale + increment
-        if scale > 100:
-            result += current
-            current = 0
-
-    return result + current
-
 
 class OctoSpec(SkillBase):
     def execute(self, intent, session):
 
-        digits = ""
-        for i in ascii_uppercase:
-            if i in intent['slots'] and 'value' in intent['slots'][i]:
-                digit = intent['slots'][i]['value'].replace(".","")
-                digits += digit
-        for i in ascii_lowercase:
-            digits = digits.replace(i,"")
+        mpn = str(intent['slots']['mpn']['value'])
 
         val = ""
         url = "http://octopart.com/api/v3/parts/search"
@@ -268,7 +227,7 @@ class OctoSpec(SkillBase):
         url += "?apikey=0c491965"
 
         args = [
-            ('q', digits),
+            ('q', mpn),
             ('start', 0),
             ('limit', 10)
             ]
@@ -289,14 +248,14 @@ class OctoSpec(SkillBase):
         result = response['results'][0]
         item = result ['item']
         imagesets = item['imagesets'][0]
-        #try:
-        #    image = imagesets['large_image']['url']
-        #except:
-            #try:
-                #image = imagesets['small_image']['url']
-        #    except:
-                #image = None
-        #image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+        try:
+            image = imagesets['large_image']['url']
+        except:
+            try:
+                image = imagesets['small_image']['url']
+            except:
+                image = None
+        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
         response = str("The " + intent['slots']['spec']['value'] + " is " + val)
         #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
 
