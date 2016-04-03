@@ -283,7 +283,7 @@ class OctoSpec(SkillBase):
         result = response['results'][0]
         item = result['item']
         specs = item['specs']
-        outputSpecMap = specMap[intent['slots']['spec']['value'].lower()]
+        outputSpecMap = specMap[intent['slots']['spec']['value']]
         val = specs[outputSpecMap]['display_value']
 
         result = response['results'][0]
