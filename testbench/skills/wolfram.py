@@ -120,11 +120,10 @@ class WolframCompute(SkillBase):
         op = intent['slots']['operation']['value']
         query = n1+'%20'+op+'%20'+n2
         print query
-        query.replace(' ','%20')
-        print query
+        print query.replace(' ','%20')
         url = "http://api.wolframalpha.com/v2/query?"
         url += "appid=238HJV-7G3G7G8VYU&input="
-        url += query
+        url += query.replace(' ','%20')
         url += "&format=image,plaintext"
         data = urllib.urlopen(url).read()
         response = ET.fromstring(data)
