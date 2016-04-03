@@ -222,9 +222,10 @@ class WolframTest(SkillBase):
         command = ['curve', ch,'1','2500']
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
-        pubsub = r.pubsub()
-        pubsub.subscribe("results")
-        next(pubsub.listen())
-        resultData = next(pubsub.listen())
-        result = json.loads(resultData['data'])
+        # pubsub = r.pubsub()
+        # pubsub.subscribe("results")
+        # next(pubsub.listen())
+        # resultData = next(pubsub.listen())
+        # result = json.loads(resultData['data'])
+        result = ''
         return self.respond('saving curve', "Wolfram Test", result)
