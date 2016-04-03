@@ -386,8 +386,8 @@ class OctoPrice(SkillBase):
 
         minPrice = str(prices['USD'][0][1])
         maxPrice = str(prices['USD'][len(prices_dict['USD'])-1][1])
-
-
+        minPrice = minPrice[:-3];
+        maxPrice = maxPrice[:-3];
         response = "The price ranges from " + maxPrice + "$"  " to " + minPrice + "$"
 
         return self.respond(response)
