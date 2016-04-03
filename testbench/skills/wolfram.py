@@ -4,6 +4,8 @@ import util
 from skills.skill import SkillBase
 import xmltodict
 import base64
+import redis
+import json
 
 class Wolfram(SkillBase):
 
@@ -225,4 +227,4 @@ class WolframTest(SkillBase):
         # value = float(tempresult)
         # result = str(value) + t[1]
         result = 'none'
-        return self.respond(result, "Wolfram Test", result)
+        return self.respond('saving curve', "Wolfram Test", result)
