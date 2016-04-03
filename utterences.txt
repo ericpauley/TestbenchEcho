@@ -18,9 +18,9 @@ FGENSetVoltage Set the voltage to {value} {vunits}
 FGENSetVoltageOffset Set voltage offset to {value} {vunits}
 FGENSetVoltageOffset Set the voltage offset to {value} {vunits}
 
-OSCOPEAutoset Autoset the oscilliscope
-OSCOPEImage take a screen capture of the oscilloscope
-OSCOPEImage take a screenshot of the oscilloscope
+OSCOPEAutoset Autoset
+OSCOPEImage take a screen capture
+OSCOPEImage take a screenshot
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per division
 OSCOPESetVdiv Set channel {channel} to {value} {vunits}
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per div
@@ -29,38 +29,21 @@ OSCOPESetHdiv Set horizontal scale to {value} {tunits}
 OSCOPESetHdiv Set horizontal scale to {value} {tunits} per div
 OSCOPEMeasure Measure the {measurement} on channel {channel}
 
-OctoSpec What is the {spec} of {A}
-OctoSpec What is the {spec} of {A} {B}
-OctoSpec What is the {spec} of {A} {B} {C}
-OctoSpec What is the {spec} of {A} {B} {C} {D}
-OctoSpec What is the {spec} of {A} {B} {C} {D} {E}
-OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F}
-OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F} {G}
-OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F} {G} {H}
-OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F} {G} {H} {I}
-OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F} {G} {H} {I} {J}
+OctoSpec What is the {spec} of {MSP four three zero|mpn}
+OctoSpec What is the {spec} of {LF four one two|mpn}
+OctoSpec What is the {spec} of {LM three five eight|mpn}
+OctoSpec What is the {spec} of {MSP four three zero|mpn}
 
-OctoDescrip Tell me about {A}
-OctoDescrip Tell me about {A} {B}
-OctoDescrip Tell me about {A} {B} {C}
-OctoDescrip Tell me about {A} {B} {C} {D}
-OctoDescrip Tell me about {A} {B} {C} {D} {E}
-OctoDescrip Tell me about {A} {B} {C} {D} {E} {F}
-OctoDescrip Tell me about {A} {B} {C} {D} {E} {F} {G}
-OctoDescrip Tell me about {A} {B} {C} {D} {E} {F} {G} {H}
-OctoDescrip Tell me about {A} {B} {C} {D} {E} {F} {G} {H} {I}
-OctoDescrip Tell me about {A} {B} {C} {D} {E} {F} {G} {H} {I} {J}
+OctoDescrip Tell me about {MSP four three zero|mpn}
+OctoDescrip Tell me about {LF four one two|mpn}
+OctoDescrip Tell me about {LM three five eight|mpn}
+OctoDescrip Tell me about {MSP four three zero|mpn}
 
-OctoPrice Tell me the price of {A}
-OctoPrice Tell me the price of {A} {B}
-OctoPrice Tell me the price of {A} {B} {C}
-OctoPrice Tell me the price of {A} {B} {C} {D}
-OctoPrice Tell me the price of {A} {B} {C} {D} {E}
-OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F}
-OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F} {G}
-OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F} {G} {H}
-OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F} {G} {H} {I}
-OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F} {G} {H} {I} {J}
+OctoPrice Tell me the price of {MSP four three zero|mpn}
+OctoPrice Tell me the price of {LF four one two|mpn}
+OctoPrice Tell me the price of {LM three five eight|mpn}
+OctoPrice Tell me the price of {MSP four three zero|mpn}
+
 
 GuideToGalaxy What is the answer to life the universe and everything
 
@@ -76,31 +59,22 @@ WolframResistor Calculate {resistorA} {runitA} in {series|operation} with {resis
 Wolfram Calculate {sine of x squared|query}
 Wolfram Calculate {the integral of x minus four|query}
 Wolfram Calculate {inverting amplifier|query}
-WolframDistance Calculate the distance between {the earth|objectA} and {the moon|objectB}
-WolframDistance Calculate the distance between {earth|objectA} and {the moon|objectB}
-WolframDistance Calculate the distance between the {earth|objectA} and {the sun|objectB}
-WolframDistance Calculate the distance between {earth|objectA} and {the sun|objectB}
-WolframDistance Calculate the distance between the {moon|objectA} and {the sun|objectB}
+WolframDistance Calculate the distance between the {earth|objectA} and the {moon|objectB}
+WolframDistance Calculate the distance between {earth|objectA} and the {moon|objectB}
+WolframDistance Calculate the distance between the {earth|objectA} and the {sun|objectB}
+WolframDistance Calculate the distance between {earth|objectA} and the {sun|objectB}
+WolframDistance Calculate the distance between the {moon|objectA} and the {sun|objectB}
 WolframDistance Calculate the distance between the {earth|objectA} and {mars|objectB}
 WolframDistance Calculate the distance between the {sun|objectA} and {mars|objectB}
 WolframDistance Calculate the distance between {Philly|objectA} and {Princeton|objectB}
-WolframDistance Calculate the distance between {Milan|objectA} and {Tokyo|objectB}
-WolframDistance Calculate the distance between {Africa|objectA} and {Australia|objectB}
 WolframDistance Calculate the distance between the {Milan|objectA} and {Tokyo|objectB}
 WolframDistance Calculate the distance between the {Africa|objectA} and {Australia|objectB}
-WolframDistance Calculate the distance between the {West|objectA} and {The Moon|objectB}
-
-
 WolframCompute Calculate {numA} {plus|operation} {numB}
 WolframCompute Calculate {numA} {minus|operation} {numB}
 WolframCompute Calculate {numA} {times|operation} {numB}
-WolframCompute Calculate {numA} {multiplied by|operation} {numB}
 WolframCompute Calculate {numA} {divided by|operation} {numB}
 WolframCompute Calculate {numA} {to the power of|operation} {numB}
-WolframCompute Calculate {numA} {to the|operation} {numB}
 WolframCompute Calculate {numA} {mod|operation} {numB}
-WolframCompute Calculate {numA} {module|operation} {numB}
-WolframCompute Calculate {numA} {div|operation} {numB}
 WolframConvert Convert {num} {meters|unitA} to {feet|unitB}
 WolframConvert Convert {num} {pound|unitA} to {ounces|unitB}
 WolframConvert Convert {num} {years|unitA} in {decades|unitB}
@@ -113,15 +87,8 @@ WolframFunction Calculate {function} of {e to the x|expression}
 WolframFunction Calculate the {function} of {x over two|expression}
 WolframTest Run Wolfram Testing on channel {channel}
 
-SpookyPricing Part {A}
-SpookyPricing Part {A} {B}
-SpookyPricing Part {A} {B} {C}
-SpookyPricing Part {A} {B} {C} {D}
-SpookyPricing Part {A} {B} {C} {D} {E}
-SpookyPricing Part {A} {B} {C} {D} {E} {F}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I}
-SpookyPricing Part {A} {B} {C} {D} {E} {F} {G} {H} {I} {J}
+
+DevDocs Pull up {api}
+DevMethod Pull up {api} {method}
 
 NullSkill {anything|filler}

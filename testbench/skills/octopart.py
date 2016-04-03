@@ -275,7 +275,7 @@ class OctoSpec(SkillBase):
 
         url += '&' + urllib.urlencode(args)
         url += '&include[]=specs'
-        url += '&include[]=imagesets'
+        #url += '&include[]=imagesets'
 
         data = urllib.urlopen(url).read()
         response = json.loads(data)
@@ -283,21 +283,24 @@ class OctoSpec(SkillBase):
         result = response['results'][0]
         item = result['item']
         specs = item['specs']
-        outputSpecMap = specMap[intent['slots']['spec']['value'].lower()]
+        outputSpecMap = specMap[intent['slots']['spec']['value']]
         val = specs[outputSpecMap]['display_value']
 
         result = response['results'][0]
         item = result ['item']
         imagesets = item['imagesets'][0]
-        try:
-            image = imagesets['large_image']['url']
-        except:
-            image = imagesets['small_image']['url']
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+        #try:
+        #    image = imagesets['large_image']['url']
+        #except:
+            #try:
+                #image = imagesets['small_image']['url']
+        #    except:
+                #image = None
+        #image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
         response = str("The " + intent['slots']['spec']['value'] + " is " + val)
         #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
 
-        return self.respond(response, "Technical Specification", response, image)
+        return self.respond(response)
 
 class OctoDescrip(SkillBase):
     def execute(self, intent, session):
@@ -361,8 +364,11 @@ class OctoPrice(SkillBase):
             if i in intent['slots'] and 'value' in intent['slots'][i]:
                 digit = intent['slots'][i]['value'].replace(".","")
                 digits += digit
-        for i in ascii_lowercase:
-            digits = digits.replace(i,"")
+        #for i in ascii_lowercase:
+            #digits = digits.replace(i,"")
+            digits = digits.replace(" ", "")
+            digits = digits.replace(".","")
+            digits.upper()
         url = "http://octopart.com/api/v3/parts/search"
         url += "?apikey=0c491965"
         args = [
@@ -384,6 +390,10 @@ class OctoPrice(SkillBase):
         price_data = json.dumps(prices)
         prices_dict = json.loads(price_data)
 
-        response = "The price ranges from " + str(prices['USD'][0][1]) + " to " + str(prices['USD'][len(prices_dict['USD'])-1]) + " dollars."
+        minPrice = str(prices['USD'][0][1])
+        maxPrice = str(prices['USD'][len(prices_dict['USD'])-1][1])
+        minPrice = minPrice[:-3];
+        maxPrice = maxPrice[:-3];
+        response = "The price ranges from " + maxPrice + "$"  " to " + minPrice + "$"
 
         return self.respond(response)
