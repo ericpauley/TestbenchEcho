@@ -4,6 +4,8 @@ import util
 from skills.skill import SkillBase
 import xmltodict
 import base64
+import redis
+import json
 
 class Wolfram(SkillBase):
 
