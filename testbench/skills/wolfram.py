@@ -131,8 +131,10 @@ class WolframCompute(SkillBase):
         #xml_data=urllib.urlopen(url).read()
         #incomingDictData = xmltodict.parse(xml_data)
         #print incomingDictData
-
-        speech = ""
+        if op == 'divided by':
+            speech = str(float(n1)/float(n2))
+        elif:
+            speech = ""
         for pod in response.findall('.//pod'):
             if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Exact Result':
                 for pt in pod.findall('.//plaintext'):
