@@ -218,7 +218,14 @@ specMap = {
 class OctoSpec(SkillBase):
     def execute(self, intent, session):
 
-        mpn = str(intent['slots']['mpn']['value'])
+        digits = ""
+        for i in ascii_uppercase:
+            if i in intent['slots'] and 'value' in intent['slots'][i]:
+                digit = intent['slots'][i]['value'].replace(".","")
+                digits += digit
+        digits = digits.replace(" ", "")
+        digits = digits.replace(".","")
+        digits.upper()
 
         val = ""
         url = "http://octopart.com/api/v3/parts/search"
@@ -227,7 +234,7 @@ class OctoSpec(SkillBase):
         url += "?apikey=0c491965"
 
         args = [
-            ('q', mpn),
+            ('q', digits),
             ('start', 0),
             ('limit', 10)
             ]
@@ -263,11 +270,19 @@ class OctoSpec(SkillBase):
 
 class OctoDescrip(SkillBase):
     def execute(self, intent, session):
-        mpn = str(intent['slots']['mpn']['value'])
+
+        digits = ""
+        for i in ascii_uppercase:
+            if i in intent['slots'] and 'value' in intent['slots'][i]:
+                digit = intent['slots'][i]['value'].replace(".","")
+                digits += digit
+        digits = digits.replace(" ", "")
+        digits = digits.replace(".","")
+        digits.upper()
         url = "http://octopart.com/api/v3/parts/search"
         url += "?apikey=0c491965"
         args = [
-            ('q', mpn),
+            ('q', digits),
             ('start', 0),
             ('limit', 10)
             ]
@@ -297,14 +312,24 @@ class OctoDescrip(SkillBase):
 
         return self.respond(speech_output)
 
-c
+
 class OctoPrice(SkillBase):
     def execute(self, intent, session):
-        mpn = str(intent['slots']['mpn']['value'])
+
+        digits = ""
+        for i in ascii_uppercase:
+            if i in intent['slots'] and 'value' in intent['slots'][i]:
+                digit = intent['slots'][i]['value'].replace(".","")
+                digits += digit
+        #for i in ascii_lowercase:
+            #digits = digits.replace(i,"")
+            digits = digits.replace(" ", "")
+            digits = digits.replace(".","")
+            digits.upper()
         url = "http://octopart.com/api/v3/parts/search"
         url += "?apikey=0c491965"
         args = [
-            ('q', mpn),
+            ('q', digits),
             ('start', 0),
             ('limit', 10)
             ]

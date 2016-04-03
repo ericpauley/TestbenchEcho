@@ -29,20 +29,6 @@ OSCOPESetHdiv Set horizontal scale to {value} {tunits}
 OSCOPESetHdiv Set horizontal scale to {value} {tunits} per div
 OSCOPEMeasure Measure the {measurement} on channel {channel}
 
-OctoSpec What is the {spec} of {mpn}
-OctoSpec What is the {spec} of {mpn}
-OctoSpec What is the {spec} of {mpn}
-OctoSpec What is the {spec} of {mpn}
-
-OctoDescrip Tell me about {mpn}
-OctoDescrip Tell me about {mpn}
-OctoDescrip Tell me about {mpn}
-OctoDescrip Tell me about {mpn}
-
-OctoPrice Tell me the price of {mpn}
-OctoPrice Tell me the price of {mpn}
-OctoPrice Tell me the price of {mpn}
-OctoPrice Tell me the price of {mpn}
 
 
 GuideToGalaxy What is the answer to life the universe and everything
@@ -87,6 +73,40 @@ WolframFunction Calculate {function} of {e to the x|expression}
 WolframFunction Calculate the {function} of {x over two|expression}
 WolframTest Run Wolfram Testing on channel {channel}
 WolframTest Run curve {channel}
+
+OctoSpec What is the {spec} of {A}
+OctoSpec What is the {spec} of {A} {B}
+OctoSpec What is the {spec} of {A} {B} {C}
+OctoSpec What is the {spec} of {A} {B} {C} {D}
+OctoSpec What is the {spec} of {A} {B} {C} {D} {E}
+OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F}
+OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F} {G}
+OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F} {G} {H}
+OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F} {G} {H} {I}
+OctoSpec What is the {spec} of {A} {B} {C} {D} {E} {F} {G} {H} {I} {J}
+
+OctoDescrip Tell me about {A}
+OctoDescrip Tell me about {A} {B}
+OctoDescrip Tell me about {A} {B} {C}
+OctoDescrip Tell me about {A} {B} {C} {D}
+OctoDescrip Tell me about {A} {B} {C} {D} {E}
+OctoDescrip Tell me about {A} {B} {C} {D} {E} {F}
+OctoDescrip Tell me about {A} {B} {C} {D} {E} {F} {G}
+OctoDescrip Tell me about {A} {B} {C} {D} {E} {F} {G} {H}
+OctoDescrip Tell me about {A} {B} {C} {D} {E} {F} {G} {H} {I}
+OctoDescrip Tell me about {A} {B} {C} {D} {E} {F} {G} {H} {I} {J}
+
+OctoPrice Tell me the price of {A}
+OctoPrice Tell me the price of {A} {B}
+OctoPrice Tell me the price of {A} {B} {C}
+OctoPrice Tell me the price of {A} {B} {C} {D}
+OctoPrice Tell me the price of {A} {B} {C} {D} {E}
+OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F}
+OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F} {G}
+OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F} {G} {H}
+OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F} {G} {H} {I}
+OctoPrice Tell me the price of {A} {B} {C} {D} {E} {F} {G} {H} {I} {J}
+
 
 
 NullSkill {anything|filler}
