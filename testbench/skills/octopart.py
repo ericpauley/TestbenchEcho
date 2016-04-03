@@ -363,4 +363,4 @@ class OctoPrice(SkillBase):
         maxPrice = maxPrice[:-3];
         response = "The price ranges from " + maxPrice + "$"  " to " + minPrice + "$"
 
-        return self.respond(response, "Price Breaks for " + item['mpn'], str(prices dict), None)
+        return self.respond(response, "Price Breaks for " + item['mpn'], str(prices dict))
