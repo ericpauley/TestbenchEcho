@@ -241,7 +241,7 @@ class OctoSpec(SkillBase):
 
         url += '&' + urllib.urlencode(args)
         url += '&include[]=specs'
-        #url += '&include[]=imagesets'
+        url += '&include[]=imagesets'
 
         data = urllib.urlopen(url).read()
         response = json.loads(data)
@@ -311,7 +311,6 @@ class OctoDescrip(SkillBase):
                 speech_output = "It is a " + str(value)
 
         return self.respond(speech_output)
-
 
 class OctoPrice(SkillBase):
     def execute(self, intent, session):
