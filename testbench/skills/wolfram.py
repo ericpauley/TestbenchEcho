@@ -192,8 +192,9 @@ class WolframFunction(SkillBase):
             f = 'sine'
         print f
         e = intent['slots']['expression']['value']
+        newe = e.replace('pie','pi')
         print e
-        query = f+'('+ e.replace(' ','%20') + ')'
+        query = f+'('+ newe.replace(' ','%20') + ')'
         print query
         url = "http://api.wolframalpha.com/v2/query?"
         url += "appid=238HJV-7G3G7G8VYU&input="
