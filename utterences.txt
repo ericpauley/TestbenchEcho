@@ -81,6 +81,7 @@ WolframCompute Calculate {numA} {to the power of|operation} {numB}
 WolframCompute Calculate {numA} {to the|operation} {numB}
 WolframCompute Calculate {numA} {mod|operation} {numB}
 WolframCompute Calculate {numA} {module|operation} {numB}
+WolframCompute Calculate {numA} {div|operation} {numB}
 WolframConvert Convert {num} {meters|unitA} to {feet|unitB}
 WolframConvert Convert {num} {pound|unitA} to {ounces|unitB}
 WolframConvert Convert {num} {years|unitA} in {decades|unitB}
