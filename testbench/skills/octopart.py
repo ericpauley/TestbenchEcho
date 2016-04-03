@@ -356,7 +356,8 @@ class SpookyPricing(SkillBase):
         digits = ""
         for i in ascii_uppercase:
             if i in intent['slots'] and 'value' in intent['slots'][i]:
-                digits += intent['slots'][i]['value']
+                digit = intent['slots'][i]['value'].replace(".","")
+                digits += digit
         return self.respond(digits, digits, digits)
 
 class OctoPrice(SkillBase):
