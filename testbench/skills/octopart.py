@@ -321,7 +321,7 @@ class OctoDescrip(SkillBase):
                 value = descrip['value']
                 speech_output = "It is a " + str(value)
 
-        return self.respond(speech_output, item['mpn'], speech_output, image)
+        return self.respond(speech_output, item['mpn'], speech_output[8|:], image)
 
 class OctoPrice(SkillBase):
     def execute(self, intent, session):
