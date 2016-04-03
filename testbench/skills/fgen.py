@@ -6,7 +6,7 @@ import random
 import string
 
 types = {"frequency":'frequency',"voltage":'voltage',"voltage offset":'voltageoffset'}
-funits = {"Hertz":1,"kilohertz":1000,"megahertz":100000}
+funits = {"hertz":1,"kilohertz":1000,"megahertz":100000}
 vunits = {"volts":1,"volt":1,"millivolts":.001,"millivolt":.001}
 
 class FGENDouble(SkillBase):
