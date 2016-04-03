@@ -74,6 +74,7 @@ WolframFunction Calculate {function} of {the square root of x|expression}
 WolframFunction Calculate the {function} of {five hundred|expression}
 WolframFunction Calculate {function} of {e to the x|expression}
 WolframFunction Calculate the {function} of {x over two|expression}
+WolframFunction Calculate the {function} of {one|expression}
 WolframTest Run Wolfram Testing on channel {channel}
 WolframTest Run curve {channel}
 
