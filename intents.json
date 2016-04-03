@@ -296,6 +296,64 @@
           "type": "AMAZON.LITERAL"
         }
       ]
+    },
+    {
+      "intent": "WolframFunction",
+      "slots":[
+        {
+          "name": "funtion",
+          "type": "LIST_OF_FUNCTIONS"
+        },
+        {
+          "name": "expression",
+          "type": "AMAZON.LITERAL"
+        },
+      ]
+    },
+    {
+      "intent": "SpookyPricing",
+      "slots":[
+        {
+          "name": "A",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "B",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "C",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "D",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "E",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "F",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "G",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "H",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "I",
+          "type": "DIGIT_TYPE"
+        },
+        {
+          "name": "J",
+          "type": "DIGIT_TYPE"
+        }
+      ]
     }
   ]
 }

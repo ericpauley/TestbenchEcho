@@ -9,7 +9,7 @@ class SkillBase:
             'reprompt': {
                 'outputSpeech': {
                     'type': 'PlainText',
-                    'text': "Reprompt"
+                    'text': ""
                 }
             },
             'shouldEndSession': False

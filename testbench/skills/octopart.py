@@ -3,7 +3,7 @@ import urllib
 import util
 import base64
 from skills.skill import SkillBase
-
+from string import ascii_uppercase,ascii_lowercase
 
 
 specMap = {
@@ -253,17 +253,13 @@ def text2int(textnum, numwords={}):
 class OctoSpec(SkillBase):
     def execute(self, intent, session):
 
-        mpnpre = intent['slots']['mpn']['value']
-
-        splitArray = mpnpre.split(' ')
-        for index in range(len(splitArray)):
-            for unit in units:
-                if splitArray[index].count(unit) >= 1:
-                    splitArray[index] = str(text2int(splitArray[index]))
-                    break
-
-
-        mpn = ''.join(splitArray)
+        digits = ""
+        for i in ascii_uppercase:
+            if i in intent['slots'] and 'value' in intent['slots'][i]:
+                digit = intent['slots'][i]['value'].replace(".","")
+                digits += digit
+        for i in ascii_lowercase:
+            digits = digits.replace(i,"")
 
         val = ""
         url = "http://octopart.com/api/v3/parts/search"
@@ -272,7 +268,7 @@ class OctoSpec(SkillBase):
         url += "?apikey=0c491965"
 
         args = [
-            ('q', mpn),
+            ('q', digits),
             ('start', 0),
             ('limit', 10)
             ]
@@ -305,23 +301,18 @@ class OctoSpec(SkillBase):
 
 class OctoDescrip(SkillBase):
     def execute(self, intent, session):
-        session_attributes={}
 
-        mpnpre = intent['slots']['mpn']['value']
-
-        splitArray = mpnpre.split(' ')
-        for index in range(len(splitArray)):
-            for unit in units:
-                if splitArray[index].count(unit) >= 1:
-                    splitArray[index] = str(text2int(splitArray[index]))
-                    break
-
-
-        mpn = ''.join(splitArray)
+        digits = ""
+        for i in ascii_uppercase:
+            if i in intent['slots'] and 'value' in intent['slots'][i]:
+                digit = intent['slots'][i]['value'].replace(".","")
+                digits += digit
+        for i in ascii_lowercase:
+            digits = digits.replace(i,"")
         url = "http://octopart.com/api/v3/parts/search"
         url += "?apikey=0c491965"
         args = [
-            ('q', mpn),
+            ('q', digits),
             ('start', 0),
             ('limit', 10)
             ]
@@ -351,25 +342,31 @@ class OctoDescrip(SkillBase):
 
         return self.respond(speech_output)
 
+class SpookyPricing(SkillBase):
+    def execute(self, intent, session):
+        digits = ""
+        for i in ascii_uppercase:
+            if i in intent['slots'] and 'value' in intent['slots'][i]:
+                digit = intent['slots'][i]['value'].replace(".","")
+                digits += digit
+        for i in ascii_lowercase:
+            digits = digits.replace(i,"")
+        return self.respond(digits, digits, digits)
+
 class OctoPrice(SkillBase):
     def execute(self, intent, session):
-        session_attributes={}
 
-        mpnpre = intent['slots']['mpn']['value']
-
-        splitArray = mpnpre.split(' ')
-        for index in range(len(splitArray)):
-            for unit in units:
-                if splitArray[index].count(unit) >= 1:
-                    splitArray[index] = str(text2int(splitArray[index]))
-                    break
-
-
-        mpn = ''.join(splitArray)
+        digits = ""
+        for i in ascii_uppercase:
+            if i in intent['slots'] and 'value' in intent['slots'][i]:
+                digit = intent['slots'][i]['value'].replace(".","")
+                digits += digit
+        for i in ascii_lowercase:
+            digits = digits.replace(i,"")
         url = "http://octopart.com/api/v3/parts/search"
         url += "?apikey=0c491965"
         args = [
-            ('q', mpn),
+            ('q', digits),
             ('start', 0),
             ('limit', 10)
             ]
@@ -387,6 +384,6 @@ class OctoPrice(SkillBase):
         price_data = json.dumps(prices)
         prices_dict = json.loads(price_data)
 
-        response = "The price ranges from " + str(prices['USD'][0][1]) + " to " + str(prices['USD'][len(prices_dict['USD'])]) + " dollars."
+        response = "The price ranges from " + str(prices['USD'][0][1]) + " to " + str(prices['USD'][len(prices_dict['USD'])-1]) + " dollars."
 
         return self.respond(response)
