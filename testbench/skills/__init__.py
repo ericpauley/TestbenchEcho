@@ -3,7 +3,7 @@ from skills.welcome import Welcome
 from skills.help import Help, GuideToGalaxy
 from skills.nullskill import NullSkill
 from skills.resistor import Resistor, RevResistor
-from skills.octopart import OctoSpec, OctoDescrip, OctoPrice
+from skills.octopart import OctoSpec, OctoDescrip, OctoPrice, SpookyPricing
 from skills.oscope import OSCOPEAutoset, OSCOPEImage, OSCOPESetVdiv, OSCOPEMeasure, OSCOPESetHdiv
 from skills.fgen import FGENDouble, FGENHalf, FGENTriple, FGENSetFrequency, FGENSetVoltage, FGENSetVoltageOffset
 from skills.wolfram import Wolfram, WolframResistor, WolframDistance, WolframCompute, WolframConvert
@@ -16,6 +16,7 @@ skillmap["Resistor"] = Resistor()
 skillmap["OctoSpec"] = OctoSpec()
 skillmap["OctoDescrip"] = OctoDescrip()
 skillmap["OctoPrice"] = OctoPrice()
+skillmap["SpookyPricing"] = SpookyPricing()
 skillmap["RevResistor"] = RevResistor()
 skillmap["OSCOPEImage"] = OSCOPEImage()
 skillmap["OSCOPEAutoset"] = OSCOPEAutoset()
