@@ -13,8 +13,8 @@ class Wolfram(SkillBase):
         image = "https://www.wolframalpha.com/images/press/photos/logos/wa-logo-stacked1-large.jpg"
         session_attributes = {}
         card_title = "Wolfram"
-        query = intent['slots']['query']['value']
-        query.replace(' ','%20')
+        temp = intent['slots']['query']['value']
+        query = temp.replace(' ','%20')
         url = "http://api.wolframalpha.com/v2/query?"
         url += "appid=238HJV-7G3G7G8VYU&input="
         url += query
@@ -31,7 +31,7 @@ class Wolfram(SkillBase):
             if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Circuit diagram':
                 for im in pod.findall('.//img'):
                     image = im.attrib['src']
-            if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Definition' or pod.attrib['title'] == 'Equation':
+            if pod.attrib['title'] == 'Result' or pod.attrib['title'] == 'Definition' or pod.attrib['title'] == 'Equation' or 'forecast' in pod.attrib['title']:
                 for pt in pod.findall('.//plaintext'):
                     if pt.text:
                         speech += pt.text
