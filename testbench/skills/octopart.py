@@ -241,7 +241,7 @@ class OctoSpec(SkillBase):
 
         url += '&' + urllib.urlencode(args)
         url += '&include[]=specs'
-        #url += '&include[]=imagesets'
+        url += '&include[]=imagesets'
 
         data = urllib.urlopen(url).read()
         response = json.loads(data)
