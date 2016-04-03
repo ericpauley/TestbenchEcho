@@ -363,6 +363,8 @@ class OctoPrice(SkillBase):
                 digits += digit
         #for i in ascii_lowercase:
             #digits = digits.replace(i,"")
+            digits = digits.replace(" ", "")
+            digits = digits.replace(".","")
         url = "http://octopart.com/api/v3/parts/search"
         url += "?apikey=0c491965"
         args = [
