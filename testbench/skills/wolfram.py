@@ -188,6 +188,8 @@ class WolframFunction(SkillBase):
         session_attributes = {}
         card_title = "Wolfram Computation"
         f = intent['slots']['function']['value']
+        if f == 'sign':
+            f = 'sine'
         print f
         e = intent['slots']['expression']['value']
         print e
