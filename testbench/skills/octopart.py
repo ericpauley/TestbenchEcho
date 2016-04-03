@@ -384,6 +384,10 @@ class OctoPrice(SkillBase):
         price_data = json.dumps(prices)
         prices_dict = json.loads(price_data)
 
-        response = "The price ranges from " + "<say-as interpret-as="unit">" + str(prices['USD'][0][1]) + "$" + "</say-as>" + " to " + "<say-as interpret-as="unit">" + str(prices['USD'][len(prices_dict['USD'])-1][1]) + "$" + "</say-as>"
+        minPrice = str(prices['USD'][0][1])
+        maxPrice = str(prices['USD'][len(prices_dict['USD'])-1][1])
+
+
+        response = "The price ranges from " + maxPrice + "$"  " to " + minPrice + "$"
 
         return self.respond(response)
