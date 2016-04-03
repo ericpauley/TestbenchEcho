@@ -229,16 +229,12 @@ class OctoSpec(SkillBase):
 
         val = ""
         url = "http://octopart.com/api/v3/parts/search"
-
-# NOTE: Use your API key here (https://octopart.com/api/register)
         url += "?apikey=0c491965"
-
         args = [
             ('q', digits),
             ('start', 0),
             ('limit', 10)
             ]
-
         url += '&' + urllib.urlencode(args)
         url += '&include[]=specs'
         url += '&include[]=imagesets'
@@ -246,26 +242,29 @@ class OctoSpec(SkillBase):
         data = urllib.urlopen(url).read()
         response = json.loads(data)
 
-        result = response['results'][0]
-        item = result['item']
-        specs = item['specs']
-        outputSpecMap = specMap[intent['slots']['spec']['value']]
-        val = specs[outputSpecMap]['display_value']
-
-        result = response['results'][0]
-        item = result ['item']
-        imagesets = item['imagesets'][0]
         try:
-            image = imagesets['large_image']['url']
-        except:
-            try:
-                image = imagesets['small_image']['url']
-            except:
-                image = None
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
-        response = str("The " + intent['slots']['spec']['value'] + " is " + val)
-        #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
+            result = response['results'][0]
+            item = result['item']
+            specs = item['specs']
+            outputSpecMap = specMap[intent['slots']['spec']['value']]
+            val = specs[outputSpecMap]['display_value']
 
+            result = response['results'][0]
+            item = result ['item']
+            imagesets = item['imagesets'][0]
+            try:
+                image = imagesets['large_image']['url']
+            except:
+                try:
+                    image = imagesets['small_image']['url']
+                except:
+                    image = None
+            image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+            response = str("The " + intent['slots']['spec']['value'] + " is " + val)
+            #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
+        except:
+            response = "I cannot find that part specification"
+            image = None
         return self.respond(response, "Technical specification: " + intent['slots']['spec']['value'], response, image)
 
 class OctoDescrip(SkillBase):
@@ -286,7 +285,6 @@ class OctoDescrip(SkillBase):
             ('start', 0),
             ('limit', 10)
             ]
-
         url += '&' + urllib.urlencode(args)
         url += '&include[]=descriptions'
         url += '&include[]=imagesets'
@@ -294,34 +292,38 @@ class OctoDescrip(SkillBase):
         data = urllib.urlopen(url).read()
         response = json.loads(data)
 
-        result = response['results'][0]
-        item = result ['item']
-        descrip = item['descriptions'][0]
-        value = descrip['value']
-
-        imagesets = item['imagesets'][0]
         try:
-            image = imagesets['large_image']['url']
-        except:
+            result = response['results'][0]
+            item = result ['item']
+            descrip = item['descriptions'][0]
+            value = descrip['value']
+
+            imagesets = item['imagesets'][0]
             try:
-                image = imagesets['small_image']['url']
+                image = imagesets['large_image']['url']
             except:
-                image = None
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+                try:
+                    image = imagesets['small_image']['url']
+                except:
+                    image = None
+            image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
 
-        try:
-            speech_output = "It is a " + str(value)
-        except:
             try:
-                descrip = item['descriptions'][1]
-                value = descrip['value']
                 speech_output = "It is a " + str(value)
             except:
-                descrip = item['descriptions'][2]
-                value = descrip['value']
-                speech_output = "It is a " + str(value)
+                try:
+                    descrip = item['descriptions'][1]
+                    value = descrip['value']
+                    speech_output = "It is a " + str(value)
+                except:
+                    descrip = item['descriptions'][2]
+                    value = descrip['value']
+                    speech_output = "It is a " + str(value)
+        except:
+            speech_output = "I cannot find that part"
+            image = None
 
-        return self.respond(speech_output, item['mpn'], speech_output, image)
+        return self.respond(speech_output, item['mpn'], speech_output[8:], image)
 
 class OctoPrice(SkillBase):
     def execute(self, intent, session):
@@ -348,19 +350,21 @@ class OctoPrice(SkillBase):
 
         data = urllib.urlopen(url).read()
         response = json.loads(data)
+        try:
+            result = response['results'][0]
+            item = result ['item']
+            offers = item['offers'][0]
+            prices = offers['prices']
 
-        result = response['results'][0]
-        item = result ['item']
-        offers = item['offers'][0]
-        prices = offers['prices']
+            price_data = json.dumps(prices)
+            prices_dict = json.loads(price_data)
 
-        price_data = json.dumps(prices)
-        prices_dict = json.loads(price_data)
-
-        minPrice = str(prices['USD'][0][1])
-        maxPrice = str(prices['USD'][len(prices_dict['USD'])-1][1])
-        minPrice = minPrice[:-3];
-        maxPrice = maxPrice[:-3];
-        response = "The price ranges from " + maxPrice + "$"  " to " + minPrice + "$"
+            minPrice = str(prices['USD'][0][1])
+            maxPrice = str(prices['USD'][len(prices_dict['USD'])-1][1])
+            minPrice = minPrice[:-3];
+            maxPrice = maxPrice[:-3];
+            response = "The price ranges from " + maxPrice + "$"  " to " + minPrice + "$"
+        except:
+            response = "I cannot gather price information for that part"
 
         return self.respond(response)
