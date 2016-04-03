@@ -292,7 +292,10 @@ class OctoSpec(SkillBase):
         try:
             image = imagesets['large_image']['url']
         except:
-            image = imagesets['small_image']['url']
+            try:
+                image = imagesets['small_image']['url']
+            except:
+                image = None
         image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
         response = str("The " + intent['slots']['spec']['value'] + " is " + val)
         #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
