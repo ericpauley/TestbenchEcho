@@ -183,11 +183,14 @@ class WolframConvert(SkillBase):
 class WolframFunction(SkillBase):
 
     def execute(__self__, intent, session):
+        print 'entering Wolfram Function Skill'
         image = "https://www.wolframalpha.com/images/press/photos/logos/wa-logo-stacked1-large.jpg"
         session_attributes = {}
         card_title = "Wolfram Computation"
         f = intent['slots']['function']['value']
+        print f
         e = intent['slots']['expression']['value']
+        print e
         query = f+'%20'+'of'+'%20'+e.replace(' ','%20')
         print query
         url = "http://api.wolframalpha.com/v2/query?"
