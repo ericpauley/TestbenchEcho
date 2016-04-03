@@ -292,17 +292,14 @@ class OctoDescrip(SkillBase):
         data = urllib.urlopen(url).read()
         response = json.loads(data)
         partT = ""
-        try:
-            result = response['results'][0]
-            item = result ['item']
-            descrip = item['descriptions'][0]
-            value = descrip['value']
-            partT = item['mpn']
 
-        except:
-            speech_output = "I cannot find that part"
-            image = None
-            partT = "Could not find part"
+        result = response['results'][0]
+        item = result ['item']
+        descrip = item['descriptions'][0]
+        value = descrip['value']
+        partT = item['mpn']
+
+
 
         imagesets = item['imagesets'][0]
         try:
