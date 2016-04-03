@@ -365,6 +365,7 @@ class OctoPrice(SkillBase):
             #digits = digits.replace(i,"")
             digits = digits.replace(" ", "")
             digits = digits.replace(".","")
+            digits.upper()
         url = "http://octopart.com/api/v3/parts/search"
         url += "?apikey=0c491965"
         args = [
