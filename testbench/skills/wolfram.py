@@ -36,7 +36,7 @@ class Wolfram(SkillBase):
                     if pt.text:
                         speech += pt.text
 
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+        image = "https://authenticspokl.tk/pngify/"+base64.b32encode(image)+".png"
 
         return util.respond(speech, "Wolfram Alpha", speech, image)
 
@@ -73,7 +73,7 @@ class WolframResistor(SkillBase):
                     if pt.text:
                         speech += pt.text
 
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+        image = "https://authenticspokl.tk/pngify/"+base64.b32encode(image)+".png"
 
         return util.respond(speech, "Wolfram Alpha", speech, image)
 
@@ -107,7 +107,7 @@ class WolframDistance(SkillBase):
                     if pt.text:
                         speech = pt.text
 
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+        image = "https://authenticspokl.tk/pngify/"+base64.b32encode(image)+".png"
 
         return util.respond(speech, "Wolfram Alpha", speech, image)
 
@@ -143,7 +143,7 @@ class WolframCompute(SkillBase):
                     if pt.text:
                         speech = pt.text
 
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+        image = "https://authenticspokl.tk/pngify/"+base64.b32encode(image)+".png"
 
         return util.respond(speech, "Wolfram Alpha", speech, image)
 
@@ -176,7 +176,7 @@ class WolframConvert(SkillBase):
                     if pt.text:
                         speech = pt.text
 
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+        image = "https://authenticspokl.tk/pngify/"+base64.b32encode(image)+".png"
 
         return util.respond(speech, "Wolfram Alpha", speech, image)
 
@@ -192,9 +192,8 @@ class WolframFunction(SkillBase):
             f = 'sine'
         print f
         e = intent['slots']['expression']['value']
-        newe = e.replace('pie','pi')
         print e
-        query = f+'('+ newe.replace(' ','%20') + ')'
+        query = f+'('+ e.replace(' ','%20') + ')'
         print query
         url = "http://api.wolframalpha.com/v2/query?"
         url += "appid=238HJV-7G3G7G8VYU&input="
@@ -214,7 +213,7 @@ class WolframFunction(SkillBase):
                     if pt.text:
                         speech = pt.text
 
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+        image = "https://authenticspokl.tk/pngify/"+base64.b32encode(image)+".png"
 
         return util.respond(speech, "Wolfram Alpha", speech, image)
 

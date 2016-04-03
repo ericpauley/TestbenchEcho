@@ -20,6 +20,7 @@ FGENSetVoltageOffset Set voltage offset to {value} {vunits}
 FGENSetVoltageOffset Set the voltage offset to {value} {vunits}
 
 OSCOPEAutoset Autoset
+OSCOPEAutoset Autoscale
 OSCOPEImage take a screen capture
 OSCOPEImage take a screenshot
 OSCOPESetVdiv Set channel {channel} to {value} {vunits} per division

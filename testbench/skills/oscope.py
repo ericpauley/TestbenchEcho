@@ -27,7 +27,7 @@ class OSCOPEImage(SkillBase):
         command = ['copy', name]
         r = redis.Redis("104.236.205.31")
         r.publish("boss",json.dumps(command))
-        return self.respond("Capturing screen to the alexa app", "New Oscilloscope Capture", "Your capture should appear shortly.", "https://alexasslisbogusandlame.tk/"+name+".png")
+        return self.respond("Capturing screen to the alexa app", "New Oscilloscope Capture", "Your capture should appear shortly.", "https://authenticspokl.tk/"+name+".png")
 
 class OSCOPESetVdiv(SkillBase):
 

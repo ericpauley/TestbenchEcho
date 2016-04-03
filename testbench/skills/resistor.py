@@ -55,7 +55,7 @@ class RevResistor(SkillBase):
 class VoltageDivider(SkillBase):
 
     def execute(self, intent, session):
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode("http://web.mit.edu/rec/www/workshop/voltage-divider.gif")+".png"
+        image = "https://authenticspokl.tk/pngify/"+base64.b32encode("http://web.mit.edu/rec/www/workshop/voltage-divider.gif")+".png"
         v = int(intent['slots']['vin']['value'])
         u = intent['slots']['vunits']['value']
         r1 = int(intent['slots']['resistorA']['value']) * revunits[intent['slots']['runitsA']['value']]

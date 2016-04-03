@@ -25,7 +25,9 @@ class SkillBase:
             "smallImageUrl": image.replace("http://","https://"),
             "largeImageUrl": image.replace("http://","https://")
         }
-        return self.build_response({},out)
+        out = self.build_response({},out)
+        print out
+        return out
 
     def build_response(self, session_attributes, speechlet_response):
         return {

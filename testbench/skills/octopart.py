@@ -259,7 +259,7 @@ class OctoSpec(SkillBase):
                     image = imagesets['small_image']['url']
                 except:
                     image = None
-            image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+            image = "https://authenticspokl.tk/pngify/"+base64.b32encode(image)+".png"
             response = str("The " + intent['slots']['spec']['value'] + " is " + val)
             #val = response["results"][0]["items"][0]['specs'][specMap[intent['slots']['spec']['value']]]['display_value']
         except:
@@ -309,7 +309,7 @@ class OctoDescrip(SkillBase):
                 image = imagesets['small_image']['url']
             except:
                 image = None
-        image = "https://alexasslisbogusandlame.tk/pngify/"+base64.b32encode(image)+".png"
+        image = "https://authenticspokl.tk/pngify/"+base64.b32encode(image)+".png"
 
         try:
             speech_output = "It is a " + str(value)
